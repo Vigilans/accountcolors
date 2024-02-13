@@ -44,6 +44,7 @@
 <!ENTITY accountcolors.thread.colorbkgd "Färga radbakgrunden">
 <!ENTITY accountcolors.thread.colorfrom "Color From Font">
 <!ENTITY accountcolors.thread.colorother "Color Recipient/Date/Size/Account/etc Fonts">
+<!ENTITY accountcolors.thread.colorpanebkgd "Color Pane Background">
 <!ENTITY accountcolors.thread.blackrowfont "Black Row Fonts">
 <!ENTITY accountcolors.thread.lightpanebkgd "Light Pane Background">
 <!ENTITY accountcolors.thread.whiterowfont "White Row Fonts">

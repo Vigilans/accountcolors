@@ -212,6 +212,10 @@
     background-image: linear-gradient(to right, var(--ac-bkgd-color), var(--ac-bkgd-color) var(--ac-card-label-width), transparent var(--ac-card-label-width), transparent 100%);
 }
 
+#threadPane[ac-colorpanebkgd] > #threadTree {
+    background-color: var(--ac-bkgd-color, var(--tree-view-bg));
+}
+
 /* Thread Pane - Font Style / Font Weight */
 
 #threadTree tr[is="thread-row"] > td[ac-fsw="normal"] { font-style: normal; font-weight:normal; }

@@ -44,6 +44,7 @@
 <!ENTITY accountcolors.thread.colorbkgd "行背景色">
 <!ENTITY accountcolors.thread.colorfrom "来自字体颜色">
 <!ENTITY accountcolors.thread.colorother "收件人/日期/大小/帐户/等字体颜色">
+<!ENTITY accountcolors.thread.colorpanebkgd "Color Pane Background">
 <!ENTITY accountcolors.thread.blackrowfont "Black Row Fonts">
 <!ENTITY accountcolors.thread.lightpanebkgd "Light Pane Background">
 <!ENTITY accountcolors.thread.whiterowfont "White Row Fonts">

@@ -1563,10 +1563,35 @@ var accountColorsAbout3Pane_115 = {
         }
       }
     },
+
+    /* Update thread pane background color */
+
+    updateThreadPaneBkgdColor: function(event) {
+      var folder, bkgdcolor;
+      folder = window.gFolder || window.gFolderDisplay.displayedFolder || (event && accountColorsAbout3Pane.folderLookup.getFolderForURL(event.detail));
+      if (folder) {
+        bkgdcolor = accountColorsUtilities.bkgdColorPref(accountColorsUtilities.resolveAccountIdentityKeyForFolder(folder));
+        document.getElementById("threadPane").style.setProperty("--ac-bkgd-color", bkgdcolor);
+      }
+    },
   },
 
   threadPane: function () {
     var element, fontsize, fromsize;
+
+    /* Color pane background */
+
+    if (accountColorsAbout3Pane.prefs.getBoolPref("thread-colorpanebkgd")) {
+      element = accountColorsUtilities.thunderbirdVersion.major > 102 ? document.getElementById("threadPane") : accountColorsAbout3Pane.threadTree;
+      element.setAttribute("ac-colorpanebkgd", "");
+      accountColorsAbout3Pane.threadPaneManager.updateThreadPaneBkgdColor();
+      window.addEventListener("folderURIChanged", accountColorsAbout3Pane.threadPaneManager.updateThreadPaneBkgdColor, false);
+    } else {
+      element = accountColorsUtilities.thunderbirdVersion.major > 102 ? document.getElementById("threadPane") : accountColorsAbout3Pane.threadTree;
+      element.removeAttribute("ac-colorpanebkgd");
+      element.style.removeProperty("--ac-bkgd-color");
+      window.removeEventListener("folderURIChanged", accountColorsAbout3Pane.threadPaneManager.updateThreadPaneBkgdColor, false);
+    }
 
     /* Black/White row fonts */
 

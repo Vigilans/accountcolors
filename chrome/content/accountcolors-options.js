@@ -611,6 +611,18 @@ var accountColorsOptions = {
       checkbox.checked = false;
     }
 
+    checkbox = document.getElementById("accountcolors-thread-colorpanebkgd");
+    try {
+      if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("thread-colorpanebkgd");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 102 and below, as not implemented for legacy mail frontend
+      }
+    } catch (e) {
+      checkbox.checked = false;
+    }
+
     checkbox = document.getElementById("accountcolors-thread-blackrowfont");
     try {
       if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
@@ -1386,6 +1398,7 @@ var accountColorsOptions = {
     accountColorsOptions.prefs.setBoolPref("thread-colorbkgd", document.getElementById("accountcolors-thread-colorbkgd").checked);
     accountColorsOptions.prefs.setBoolPref("thread-colorfrom", document.getElementById("accountcolors-thread-colorfrom").checked);
     accountColorsOptions.prefs.setBoolPref("thread-colorother", document.getElementById("accountcolors-thread-colorother").checked);
+    accountColorsOptions.prefs.setBoolPref("thread-colorpanebkgd", document.getElementById("accountcolors-thread-colorpanebkgd").checked);
     accountColorsOptions.prefs.setBoolPref("thread-blackrowfont", document.getElementById("accountcolors-thread-blackrowfont").checked);
     accountColorsOptions.prefs.setBoolPref("thread-lightpanebkgd", document.getElementById("accountcolors-thread-lightpanebkgd").checked);
     accountColorsOptions.prefs.setBoolPref("thread-whiterowfont", document.getElementById("accountcolors-thread-whiterowfont").checked);

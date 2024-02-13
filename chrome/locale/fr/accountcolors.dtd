@@ -44,6 +44,7 @@
 <!ENTITY accountcolors.thread.colorbkgd "Couleur de fond des lignes">
 <!ENTITY accountcolors.thread.colorfrom "Couleur de fond de du champ expéditeur">
 <!ENTITY accountcolors.thread.colorother "Couleur des polices pour Destinataire/Date/Taille/Compte/etc">
+<!ENTITY accountcolors.thread.colorpanebkgd "Color Pane Background">
 <!ENTITY accountcolors.thread.blackrowfont "Black Row Fonts">
 <!ENTITY accountcolors.thread.lightpanebkgd "Light Pane Background">
 <!ENTITY accountcolors.thread.whiterowfont "White Row Fonts">
