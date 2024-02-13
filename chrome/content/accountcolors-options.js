@@ -349,32 +349,48 @@ var accountColorsOptions = {
 
     checkbox = document.getElementById("accountcolors-folder-blackrowfont");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("folder-blackrowfont");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("folder-blackrowfont");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
 
     checkbox = document.getElementById("accountcolors-folder-lightpanebkgd");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("folder-lightpanebkgd");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("folder-lightpanebkgd");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
 
     checkbox = document.getElementById("accountcolors-folder-whiterowfont");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("folder-whiterowfont");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("folder-whiterowfont");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
 
     checkbox = document.getElementById("accountcolors-folder-darkpanebkgd");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("folder-darkpanebkgd");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("folder-darkpanebkgd");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
@@ -597,32 +613,48 @@ var accountColorsOptions = {
 
     checkbox = document.getElementById("accountcolors-thread-blackrowfont");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("thread-blackrowfont");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("thread-blackrowfont");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
 
     checkbox = document.getElementById("accountcolors-thread-lightpanebkgd");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("thread-lightpanebkgd");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("thread-lightpanebkgd");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
 
     checkbox = document.getElementById("accountcolors-thread-whiterowfont");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("thread-whiterowfont");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("thread-whiterowfont");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
 
     checkbox = document.getElementById("accountcolors-thread-darkpanebkgd");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("thread-darkpanebkgd");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("thread-darkpanebkgd");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
@@ -921,16 +953,24 @@ var accountColorsOptions = {
 
     checkbox = document.getElementById("accountcolors-message-blackhdrlabels");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("message-blackhdrlabels");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("message-blackhdrlabels");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
 
     checkbox = document.getElementById("accountcolors-message-whitehdrlabels");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("message-whitehdrlabels");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("message-whitehdrlabels");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
@@ -1136,14 +1176,6 @@ var accountColorsOptions = {
       checkbox.checked = false;
     }
 
-    checkbox = document.getElementById("accountcolors-compose-blackhdrlabels");
-    try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("compose-blackhdrlabels");
-      checkbox.checked = checkstate;
-    } catch (e) {
-      checkbox.checked = false;
-    }
-
     checkbox = document.getElementById("accountcolors-compose-colorhdrbkgd");
     try {
       checkstate = accountColorsOptions.prefs.getBoolPref("compose-colorhdrbkgd");
@@ -1152,42 +1184,74 @@ var accountColorsOptions = {
       checkbox.checked = false;
     }
 
+    checkbox = document.getElementById("accountcolors-compose-blackhdrlabels");
+    try {
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("compose-blackhdrlabels");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
+    } catch (e) {
+      checkbox.checked = false;
+    }
+
     checkbox = document.getElementById("accountcolors-compose-whitehdrlabels");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("compose-whitehdrlabels");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("compose-whitehdrlabels");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
 
     checkbox = document.getElementById("accountcolors-compose-blackfieldfont");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("compose-blackfieldfont");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("compose-blackfieldfont");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
 
     checkbox = document.getElementById("accountcolors-compose-lightfieldbkgd");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("compose-lightfieldbkgd");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("compose-lightfieldbkgd");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
 
     checkbox = document.getElementById("accountcolors-compose-whitefieldfont");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("compose-whitefieldfont");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("compose-whitefieldfont");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
 
     checkbox = document.getElementById("accountcolors-compose-darkfieldbkgd");
     try {
-      checkstate = accountColorsOptions.prefs.getBoolPref("compose-darkfieldbkgd");
-      checkbox.checked = checkstate;
+      if (accountColorsUtilities.thunderbirdVersion.major <= 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("compose-darkfieldbkgd");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 103+, as thunderbird theme does better job
+      }
     } catch (e) {
       checkbox.checked = false;
     }
