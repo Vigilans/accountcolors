@@ -60,6 +60,7 @@ pref("extensions.accountcolors.thread-colorfont", false);
 pref("extensions.accountcolors.thread-colorbkgd", false);
 pref("extensions.accountcolors.thread-colorfrom", false);
 pref("extensions.accountcolors.thread-colorother", false);
+pref("extensions.accountcolors.thread-colorpanebkgd", false);
 pref("extensions.accountcolors.thread-blackrowfont", false);
 pref("extensions.accountcolors.thread-lightpanebkgd", false);
 pref("extensions.accountcolors.thread-whiterowfont", false);

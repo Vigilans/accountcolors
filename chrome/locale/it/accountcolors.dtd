@@ -44,6 +44,7 @@
 <!ENTITY accountcolors.thread.colorbkgd "Colora sfondo riga">
 <!ENTITY accountcolors.thread.colorfrom "Colora font Da">
 <!ENTITY accountcolors.thread.colorother "Colora Destinatario/Data/Dimensione/Account/eccetera Fonts">
+<!ENTITY accountcolors.thread.colorpanebkgd "Color Pane Background">
 <!ENTITY accountcolors.thread.blackrowfont "Black Row Fonts">
 <!ENTITY accountcolors.thread.lightpanebkgd "Light Pane Background">
 <!ENTITY accountcolors.thread.whiterowfont "White Row Fonts">
