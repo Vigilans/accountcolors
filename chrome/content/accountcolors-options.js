@@ -1176,6 +1176,18 @@ var accountColorsOptions = {
       checkbox.checked = false;
     }
 
+    checkbox = document.getElementById("accountcolors-compose-colorhdrfont");
+    try {
+      if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("compose-colorhdrfont");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 102 and below, as not implemented for legacy mail frontend
+      }
+    } catch (e) {
+      checkbox.checked = false;
+    }
+
     checkbox = document.getElementById("accountcolors-compose-colorhdrbkgd");
     try {
       checkstate = accountColorsOptions.prefs.getBoolPref("compose-colorhdrbkgd");
@@ -1431,8 +1443,9 @@ var accountColorsOptions = {
     accountColorsOptions.prefs.setBoolPref("compose-colortobkgd", document.getElementById("accountcolors-compose-colortobkgd").checked);
     accountColorsOptions.prefs.setBoolPref("compose-coloratmfont", document.getElementById("accountcolors-compose-coloratmfont").checked);
     accountColorsOptions.prefs.setBoolPref("compose-coloratmbkgd", document.getElementById("accountcolors-compose-coloratmbkgd").checked);
-    accountColorsOptions.prefs.setBoolPref("compose-blackhdrlabels", document.getElementById("accountcolors-compose-blackhdrlabels").checked);
+    accountColorsOptions.prefs.setBoolPref("compose-colorhdrfont", document.getElementById("accountcolors-compose-colorhdrfont").checked);
     accountColorsOptions.prefs.setBoolPref("compose-colorhdrbkgd", document.getElementById("accountcolors-compose-colorhdrbkgd").checked);
+    accountColorsOptions.prefs.setBoolPref("compose-blackhdrlabels", document.getElementById("accountcolors-compose-blackhdrlabels").checked);
     accountColorsOptions.prefs.setBoolPref("compose-whitehdrlabels", document.getElementById("accountcolors-compose-whitehdrlabels").checked);
     accountColorsOptions.prefs.setBoolPref("compose-blackfieldfont", document.getElementById("accountcolors-compose-blackfieldfont").checked);
     accountColorsOptions.prefs.setBoolPref("compose-lightfieldbkgd", document.getElementById("accountcolors-compose-lightfieldbkgd").checked);

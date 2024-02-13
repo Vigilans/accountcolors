@@ -85,8 +85,9 @@
 <!ENTITY accountcolors.compose.colortobkgd "Color To/Cc/Bcc Backgrounds">
 <!ENTITY accountcolors.compose.coloratmfont "Color Attachment Font">
 <!ENTITY accountcolors.compose.coloratmbkgd "Color Attachment Background">
-<!ENTITY accountcolors.compose.blackhdrlabels "Black Header Labels">
+<!ENTITY accountcolors.compose.colorhdrfont "Väritä tunnisteen fontti">
 <!ENTITY accountcolors.compose.colorhdrbkgd "Väritä tunnisteen tausta">
+<!ENTITY accountcolors.compose.blackhdrlabels "Black Header Labels">
 <!ENTITY accountcolors.compose.whitehdrlabels "White Header Labels">
 <!ENTITY accountcolors.compose.blackfieldfont "Black Field Fonts">
 <!ENTITY accountcolors.compose.lightfieldbkgd "Light Field Backgrounds (on hover or focus)">

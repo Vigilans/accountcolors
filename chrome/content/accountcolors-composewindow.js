@@ -271,32 +271,33 @@ var accountColorsCompose = {
       element.style.backgroundColor = "";
     }
 
-    /* Black/White header labels */
+    /* Color header font */
 
-    if (accountColorsCompose.prefs.getBoolPref("compose-blackhdrlabels")) {
-      document.getElementById("identityLabel").style.color = "black";
-      document.getElementById("subjectLabel").style.color = "black";
-      document.getElementById("attachmentBucketCount").style.color = "black";
-      document.getElementById("attachmentBucketSize").style.color = "black";
+    if (accountColorsCompose.prefs.getBoolPref("compose-colorhdrfont")) {
+      fontcolor = accountColorsUtilities.fontColorPref(accountidkey);
 
-      document.getElementById("msgcomposeWindow").setAttribute("ac-blackhdrlabels", "");
-      document.getElementById("msgcomposeWindow").removeAttribute("ac-whitehdrlabels");
-    } else if (accountColorsCompose.prefs.getBoolPref("compose-whitehdrlabels")) {
-      document.getElementById("identityLabel").style.color = "white";
-      document.getElementById("subjectLabel").style.color = "white";
-      document.getElementById("attachmentBucketCount").style.color = "white";
-      document.getElementById("attachmentBucketSize").style.color = "white";
-
-      document.getElementById("msgcomposeWindow").removeAttribute("ac-blackhdrlabels");
-      document.getElementById("msgcomposeWindow").setAttribute("ac-whitehdrlabels", "");
+      // msgheaderstoolbar-box replaced by MsgHeadersToolbar since TB 102.
+      element = document.getElementById("MsgHeadersToolbar") || document.getElementById("msgheaderstoolbar-box");
+      if (element != null) {
+        if (defaultbkgd) element.style.color = "";
+        else element.style.setProperty("color", fontcolor, "important");
+      }
+      element = document.getElementById("attachmentArea");
+      element = element && element.querySelector("html summary");
+      if (element != null) {
+        if (defaultbkgd) element.style.color = "";
+        else element.style.setProperty("color", fontcolor, "important");
+      }
     } else {
-      document.getElementById("identityLabel").style.color = "";
-      document.getElementById("subjectLabel").style.color = "";
-      document.getElementById("attachmentBucketCount").style.color = "";
-      document.getElementById("attachmentBucketSize").style.color = "";
-
-      document.getElementById("msgcomposeWindow").removeAttribute("ac-blackhdrlabels");
-      document.getElementById("msgcomposeWindow").removeAttribute("ac-whitehdrlabels");
+      element = document.getElementById("MsgHeadersToolbar") || document.getElementById("msgheaderstoolbar-box");
+      if (element != null) {
+        element.style.setProperty("color", "", "");
+      }
+      element = document.getElementById("attachmentArea");
+      element = element && element.querySelector("html summary");
+      if (element != null) {
+        element.style.setProperty("color", "", "");
+      }
     }
 
     /* Color header background */
@@ -326,6 +327,34 @@ var accountColorsCompose = {
       if (element != null) {
         element.style.setProperty("background-color", "", "");
       }
+    }
+
+    /* Black/White header labels */
+
+    if (accountColorsCompose.prefs.getBoolPref("compose-blackhdrlabels")) {
+      document.getElementById("identityLabel").style.color = "black";
+      document.getElementById("subjectLabel").style.color = "black";
+      document.getElementById("attachmentBucketCount").style.color = "black";
+      document.getElementById("attachmentBucketSize").style.color = "black";
+
+      document.getElementById("msgcomposeWindow").setAttribute("ac-blackhdrlabels", "");
+      document.getElementById("msgcomposeWindow").removeAttribute("ac-whitehdrlabels");
+    } else if (accountColorsCompose.prefs.getBoolPref("compose-whitehdrlabels")) {
+      document.getElementById("identityLabel").style.color = "white";
+      document.getElementById("subjectLabel").style.color = "white";
+      document.getElementById("attachmentBucketCount").style.color = "white";
+      document.getElementById("attachmentBucketSize").style.color = "white";
+
+      document.getElementById("msgcomposeWindow").removeAttribute("ac-blackhdrlabels");
+      document.getElementById("msgcomposeWindow").setAttribute("ac-whitehdrlabels", "");
+    } else {
+      document.getElementById("identityLabel").style.color = "";
+      document.getElementById("subjectLabel").style.color = "";
+      document.getElementById("attachmentBucketCount").style.color = "";
+      document.getElementById("attachmentBucketSize").style.color = "";
+
+      document.getElementById("msgcomposeWindow").removeAttribute("ac-blackhdrlabels");
+      document.getElementById("msgcomposeWindow").removeAttribute("ac-whitehdrlabels");
     }
 
     /* Black/White field fonts */

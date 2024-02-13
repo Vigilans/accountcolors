@@ -84,8 +84,9 @@
 <!ENTITY accountcolors.compose.colortobkgd "收件人/抄送/密送 字体背景色">
 <!ENTITY accountcolors.compose.coloratmfont "Color Attachment Font">
 <!ENTITY accountcolors.compose.coloratmbkgd "附件背景色">
-<!ENTITY accountcolors.compose.blackhdrlabels "Black Header Labels">
+<!ENTITY accountcolors.compose.colorhdrfont "Color Header Font">
 <!ENTITY accountcolors.compose.colorhdrbkgd "标头背景色">
+<!ENTITY accountcolors.compose.blackhdrlabels "Black Header Labels">
 <!ENTITY accountcolors.compose.whitehdrlabels "White Header Labels">
 <!ENTITY accountcolors.compose.blackfieldfont "Black Field Fonts">
 <!ENTITY accountcolors.compose.lightfieldbkgd "Light Field Backgrounds (on hover or focus)">
