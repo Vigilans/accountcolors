@@ -471,6 +471,18 @@ var accountColorsOptions = {
       checkbox.checked = false;
     }
 
+    checkbox = document.getElementById("accountcolors-folder-colorbkgd-gradient");
+    try {
+      if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("folder-colorbkgd-gradient");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 102 and below, as not implemented for legacy mail frontend
+      }
+    } catch (e) {
+      checkbox.checked = false;
+    }
+
     checkbox = document.getElementById("accountcolors-folder-colorbkgd-account-icon");
     try {
       if (accountColorsUtilities.thunderbirdVersion.major > 102) {
@@ -739,6 +751,18 @@ var accountColorsOptions = {
       checkbox.checked = false;
     }
 
+    checkbox = document.getElementById("accountcolors-thread-colorbkgd-gradient");
+    try {
+      if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("thread-colorbkgd-gradient");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 102 and below, as not implemented for legacy mail frontend
+      }
+    } catch (e) {
+      checkbox.checked = false;
+    }
+
     checkbox = document.getElementById("accountcolors-thread-colorbkgd-row-label");
     try {
       if (accountColorsUtilities.thunderbirdVersion.major > 102) {
@@ -1002,6 +1026,18 @@ var accountColorsOptions = {
     // } catch (e) {
     //   checkbox.checked = false;
     // }
+
+    checkbox = document.getElementById("accountcolors-message-colorbkgd-gradient");
+    try {
+      if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("message-colorbkgd-gradient");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 102 and below, as not implemented for legacy mail frontend
+      }
+    } catch (e) {
+      checkbox.checked = false;
+    }
 
     checkbox = document.getElementById("accountcolors-message-colorbkgd-header-label");
     try {
@@ -1300,6 +1336,18 @@ var accountColorsOptions = {
       checkbox.checked = false;
     }
 
+    checkbox = document.getElementById("accountcolors-compose-colorbkgd-gradient");
+    try {
+      if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+        checkstate = accountColorsOptions.prefs.getBoolPref("compose-colorbkgd-gradient");
+        checkbox.checked = checkstate;
+      } else {
+        checkbox.style.display = "none"; // Hide option for thunderbird 102 and below, as not implemented for legacy mail frontend
+      }
+    } catch (e) {
+      checkbox.checked = false;
+    }
+
     checkbox = document.getElementById("accountcolors-compose-colorbkgd-idmenu-label");
     try {
       if (accountColorsUtilities.thunderbirdVersion.major > 102) {
@@ -1381,6 +1429,7 @@ var accountColorsOptions = {
     accountColorsOptions.prefs.setBoolPref("folder-darkerbar", document.getElementById("accountcolors-folder-darkerbar").checked);
     accountColorsOptions.prefs.setBoolPref("folder-incspacing", document.getElementById("accountcolors-folder-incspacing").checked);
     accountColorsOptions.prefs.setBoolPref("folder-hoverselect", document.getElementById("accountcolors-folder-hoverselect").checked);
+    accountColorsOptions.prefs.setBoolPref("folder-colorbkgd-gradient", document.getElementById("accountcolors-folder-colorbkgd-gradient").checked);
     accountColorsOptions.prefs.setBoolPref("folder-colorbkgd-account-icon", document.getElementById("accountcolors-folder-colorbkgd-account-icon").checked);
     accountColorsOptions.prefs.setBoolPref("folder-colorbkgd-folder-icon", document.getElementById("accountcolors-folder-colorbkgd-folder-icon").checked);
 
@@ -1410,6 +1459,7 @@ var accountColorsOptions = {
     accountColorsOptions.prefs.setBoolPref("thread-darkerbar", document.getElementById("accountcolors-thread-darkerbar").checked);
     accountColorsOptions.prefs.setBoolPref("thread-incspacing", document.getElementById("accountcolors-thread-incspacing").checked);
     accountColorsOptions.prefs.setBoolPref("thread-hoverselect", document.getElementById("accountcolors-thread-hoverselect").checked);
+    accountColorsOptions.prefs.setBoolPref("thread-colorbkgd-gradient", document.getElementById("accountcolors-thread-colorbkgd-gradient").checked);
     accountColorsOptions.prefs.setBoolPref("thread-colorbkgd-row-label", document.getElementById("accountcolors-thread-colorbkgd-row-label").checked);
     accountColorsOptions.prefs.setIntPref("thread-row-label-position", document.getElementById("accountcolors-thread-row-label-position").value);
     accountColorsOptions.prefs.setIntPref("thread-row-label-width", document.getElementById("accountcolors-thread-row-label-width").value);
@@ -1435,6 +1485,7 @@ var accountColorsOptions = {
     accountColorsOptions.prefs.setBoolPref("message-whitehdrlabels", document.getElementById("accountcolors-message-whitehdrlabels").checked);
     // accountColorsOptions.prefs.setBoolPref("message-defaultbkgd", document.getElementById("accountcolors-message-defaultbkgd").checked);
     accountColorsOptions.prefs.setBoolPref("message-hdraccount", document.getElementById("accountcolors-message-hdraccount").checked);
+    accountColorsOptions.prefs.setBoolPref("message-colorbkgd-gradient", document.getElementById("accountcolors-message-colorbkgd-gradient").checked);
     accountColorsOptions.prefs.setBoolPref("message-colorbkgd-header-label", document.getElementById("accountcolors-message-colorbkgd-header-label").checked);
     accountColorsOptions.prefs.setIntPref("message-header-label-width", document.getElementById("accountcolors-message-header-label-width").value);
 
@@ -1466,6 +1517,7 @@ var accountColorsOptions = {
     accountColorsOptions.prefs.setBoolPref("compose-darkfieldbkgd", document.getElementById("accountcolors-compose-darkfieldbkgd").checked);
     // accountColorsOptions.prefs.setBoolPref("compose-defaultbkgd", document.getElementById("accountcolors-compose-defaultbkgd").checked);
     accountColorsOptions.prefs.setBoolPref("compose-hoverfrom", document.getElementById("accountcolors-compose-hoverfrom").checked);
+    accountColorsOptions.prefs.setBoolPref("compose-colorbkgd-gradient", document.getElementById("accountcolors-compose-colorbkgd-gradient").checked);
     accountColorsOptions.prefs.setBoolPref("compose-colorbkgd-idmenu-label", document.getElementById("accountcolors-compose-colorbkgd-idmenu-label").checked);
     accountColorsOptions.prefs.setIntPref("compose-idmenu-label-width", document.getElementById("accountcolors-compose-idmenu-label-width").value);
   },

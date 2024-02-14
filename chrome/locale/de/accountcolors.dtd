@@ -33,6 +33,7 @@
 <!ENTITY accountcolors.folder.darkerbar "Dunklere Auswahlleiste">
 <!ENTITY accountcolors.folder.incspacing "Zeilenabstand an die Schriftgröße der Konten-Bezeichnung anpassen">
 <!ENTITY accountcolors.folder.hoverselect "Reinstate default hover and select styles">
+<!ENTITY accountcolors.folder.colorbkgd.gradient "Color Background as Gradient">
 <!ENTITY accountcolors.folder.colorbkgd.account.icon "Render Account Background Color as Icon Color">
 <!ENTITY accountcolors.folder.colorbkgd.folder.icon "Render Folder Background Color as Icon Color">
 
@@ -57,6 +58,7 @@
 <!ENTITY accountcolors.thread.darkerbar "Dunklere Farben für nicht-fokussierte Auswahlleiste">
 <!ENTITY accountcolors.thread.incspacing "Zeilenabstand an die Schriftgröße der Betreffzeile anpassen">
 <!ENTITY accountcolors.thread.hoverselect "Reinstate default hover and select styles">
+<!ENTITY accountcolors.thread.colorbkgd.gradient "Color Background as Gradient">
 <!ENTITY accountcolors.thread.colorbkgd.row.label    "Color Row Background as Label in Table View on">
 <!ENTITY accountcolors.thread.colorbkgd.card.label   "Color Row Background as Label in Card View with">
 <!ENTITY accountcolors.thread.color.unified.only "Only Color in Unified Folder">
@@ -72,6 +74,7 @@
 <!ENTITY accountcolors.message.whitehdrlabels   "White Header Labels">
 <!ENTITY accountcolors.message.hdraccount "Farben je nach Empfängerkonto anders">
 <!ENTITY accountcolors.message.defaultbkgd "Retain default light/dark background if White selected">
+<!ENTITY accountcolors.message.colorbkgd.gradient "Color Background as Gradient">
 <!ENTITY accountcolors.message.colorbkgd.header.label "Color Header Background as Label">
 
 <!ENTITY accountcolors.compose.setfontstyle "Betreffzeilen-Schriftstil:">
@@ -96,6 +99,7 @@
 <!ENTITY accountcolors.compose.darkfieldbkgd "Dark Field Backgrounds (on hover or focus)">
 <!ENTITY accountcolors.compose.defaultbkgd "Retain default light/dark background if White selected">
 <!ENTITY accountcolors.compose.hoverfrom "Reinstate default hover style (on From menu)">
+<!ENTITY accountcolors.compose.colorbkgd.gradient "Color Background as Gradient">
 <!ENTITY accountcolors.compose.colorbkgd.idmenu.label "Color Identity Background in From Menu as Label">
 
 <!ENTITY accountcolors.picker.fonttitle "Farbauswahl-Text">

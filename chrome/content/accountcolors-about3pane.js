@@ -1124,6 +1124,16 @@ var accountColorsAbout3Pane_115 = {
   folderPane() {
     var element, fontsize;
 
+    /* Color background as gradient */
+
+    if (accountColorsAbout3Pane.prefs.getBoolPref("folder-colorbkgd-gradient")) {
+      element = accountColorsAbout3Pane.folderTree;
+      element.setAttribute("ac-bkgdasgradient", "");
+    } else {
+      element = accountColorsAbout3Pane.folderTree;
+      element.removeAttribute("ac-bkgdasgradient");
+    }
+
     /* Black/White row fonts */
 
     if (accountColorsAbout3Pane.prefs.getBoolPref("folder-blackrowfont")) {
@@ -1658,6 +1668,16 @@ var accountColorsAbout3Pane_115 = {
       element.removeAttribute("ac-hoverselect");
     }
 
+    /* Color background as gradient */
+
+    if (accountColorsAbout3Pane.prefs.getBoolPref("thread-colorbkgd-gradient")) {
+      element = accountColorsUtilities.thunderbirdVersion.major > 102 ? document.getElementById("threadPane") : accountColorsAbout3Pane.threadTree;
+      element.setAttribute("ac-bkgdasgradient", "");
+    } else {
+      element = accountColorsUtilities.thunderbirdVersion.major > 102 ? document.getElementById("threadPane") : accountColorsAbout3Pane.threadTree;
+      element.removeAttribute("ac-bkgdasgradient");
+    }
+
     /* Color row background as label */
 
     if (accountColorsAbout3Pane.prefs.getBoolPref("thread-colorbkgd-row-label")) {
@@ -1676,6 +1696,8 @@ var accountColorsAbout3Pane_115 = {
       element.removeAttribute("ac-bkgdaslabel-row");
       element.style.removeProperty("--ac-row-label-width");
     }
+
+    /* Color card background as label */
 
     if (accountColorsAbout3Pane.prefs.getBoolPref("thread-colorbkgd-card-label")) {
       element = accountColorsAbout3Pane.threadTree;

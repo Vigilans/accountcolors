@@ -51,7 +51,7 @@
     color: var(--ac-font-color, var(--new-folder-color));
 }
 
-#folderTree li[is="folder-tree-row"] .container {
+#folderTree li[is="folder-tree-row"] > .container {
     background-color: var(--ac-bkgd-color);
 }
 
@@ -67,6 +67,17 @@
 
 #folderTree li[is="folder-tree-row"] .folder-size {
     color: var(--ac-font-color, var(--layout-color-3));
+}
+
+#folderTree[ac-bkgdasgradient] li[is="folder-tree-row"]:not(.selected) > .container {
+    background-image: linear-gradient(to right,
+        var(--ac-bkgd-color),
+        color-mix(in srgb, var(--ac-bkgd-color) 80%, transparent) 4%,
+        color-mix(in srgb, var(--ac-bkgd-color) 60%, transparent) 8%,
+        color-mix(in srgb, var(--ac-bkgd-color) 40%, transparent) 16%,
+        color-mix(in srgb, var(--ac-bkgd-color) 20%, transparent) 32%,
+        transparent 100%);
+    background-color: unset;
 }
 
 /* Folder Pane - Font Style / Font Weight */
@@ -214,6 +225,16 @@
 
 #threadPane[ac-colorpanebkgd] > #threadTree {
     background-color: var(--ac-bkgd-color, var(--tree-view-bg));
+}
+
+#threadPane[ac-bkgdasgradient] tr:not(.selected) {
+    background-image: linear-gradient(to right, var(--ac-bkgd-color), transparent 100%);
+    background-color: unset;
+}
+
+#threadPane[ac-colorpanebkgd][ac-bkgdasgradient] > #threadTree {
+    background-image: linear-gradient(to right, var(--ac-bkgd-color, var(--tree-view-bg)), transparent 100%);
+    background-color: var(--tree-view-bg);
 }
 
 /* Thread Pane - Font Style / Font Weight */

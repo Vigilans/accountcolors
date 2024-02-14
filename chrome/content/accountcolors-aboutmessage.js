@@ -210,6 +210,12 @@ var accountColorsAboutMessage = {
           element.style.backgroundImage = "linear-gradient(to right, " + bkgdcolor + ", " + bkgdcolor + " " + width + ", transparent " + width + ", transparent 100%)";
           element.style.backgroundColor = "";
         }
+      } else if (accountColorsAboutMessage.prefs.getBoolPref("message-colorbkgd-gradient")) {
+        element = document.getElementById("messageHeader");
+        if (element != null) {
+          element.style.backgroundImage = "linear-gradient(to right, " + bkgdcolor + " 0%, transparent 100%)";
+          element.style.backgroundColor = "";
+        }
       } else {
         element = document.getElementById("expandedHeaderView"); // Removed since TB 102+
         if (element != null) element.style.backgroundColor = bkgdcolor;
