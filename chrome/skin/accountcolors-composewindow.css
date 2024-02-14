@@ -210,6 +210,16 @@
     background-color: var(--ac-colortobkgd);
 }
 
+:root[ac-colortobkgd-asgradient] #addressingWidget textbox
+{
+    background-image: linear-gradient(to right, var(--ac-colortobkgd), transparent 100%);
+}
+
+:root[ac-colortobkgd-asgradient] #recipientsContainer .input-container
+{
+    background-image: linear-gradient(to right, var(--ac-colortobkgd), transparent 100%);
+}
+
 /* Attachment font color */
 
 :root[ac-coloratmfont] #attachmentBucket attachmentitem

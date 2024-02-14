@@ -33,6 +33,7 @@
 <!ENTITY accountcolors.folder.darkerbar "暗色选择栏">
 <!ENTITY accountcolors.folder.incspacing "基于帐户字体大小增加行间距（即使帐户字体大小未勾选）">
 <!ENTITY accountcolors.folder.hoverselect "Reinstate default hover and select styles">
+<!ENTITY accountcolors.folder.colorbkgd.gradient "Color Background as Gradient">
 <!ENTITY accountcolors.folder.colorbkgd.account.icon "Render Account Background Color as Icon Color">
 <!ENTITY accountcolors.folder.colorbkgd.folder.icon "Render Folder Background Color as Icon Color">
 
@@ -57,6 +58,7 @@
 <!ENTITY accountcolors.thread.darkerbar "暗色选择栏">
 <!ENTITY accountcolors.thread.incspacing "基于话题字体大小增加行间距（即使话题字体大小未勾选）">
 <!ENTITY accountcolors.thread.hoverselect "Reinstate default hover and select styles">
+<!ENTITY accountcolors.thread.colorbkgd.gradient "Color Background as Gradient">
 <!ENTITY accountcolors.thread.colorbkgd.row.label    "Color Row Background as Label in Table View on">
 <!ENTITY accountcolors.thread.colorbkgd.card.label   "Color Row Background as Label in Card View with">
 <!ENTITY accountcolors.thread.color.unified.only "Only Color in Unified Folder">
@@ -71,6 +73,7 @@
 <!ENTITY accountcolors.message.whitehdrlabels "White Header Labels">
 <!ENTITY accountcolors.message.hdraccount "基于消息标头帐户的颜色（文件夹帐户的替代）">
 <!ENTITY accountcolors.message.defaultbkgd "Retain default light/dark background if White selected">
+<!ENTITY accountcolors.message.colorbkgd.gradient "Color Background as Gradient">
 <!ENTITY accountcolors.message.colorbkgd.header.label "Color Header Background as Label">
 
 <!ENTITY accountcolors.compose.setfontstyle "话题字体样式">
@@ -95,6 +98,7 @@
 <!ENTITY accountcolors.compose.darkfieldbkgd "Dark Field Backgrounds (on hover or focus)">
 <!ENTITY accountcolors.compose.defaultbkgd "Retain default light/dark background if White selected">
 <!ENTITY accountcolors.compose.hoverfrom "Reinstate default hover style (on From menu)">
+<!ENTITY accountcolors.compose.colorbkgd.gradient "Color Background as Gradient">
 <!ENTITY accountcolors.compose.colorbkgd.idmenu.label "Color Identity Background in From Menu as Label">
 
 <!ENTITY accountcolors.picker.fonttitle "字体颜色选择器">

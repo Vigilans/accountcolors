@@ -33,6 +33,7 @@
 <!ENTITY accountcolors.folder.darkerbar "Barre de sélection plus sombre">
 <!ENTITY accountcolors.folder.incspacing "Augmenter l'espacement entre les lignes en fonction de la taille de la police des comptes (même si cette taille n'est pas sélectionnée)">
 <!ENTITY accountcolors.folder.hoverselect "Reinstate default hover and select styles">
+<!ENTITY accountcolors.folder.colorbkgd.gradient "Color Background as Gradient">
 <!ENTITY accountcolors.folder.colorbkgd.account.icon "Render Account Background Color as Icon Color">
 <!ENTITY accountcolors.folder.colorbkgd.folder.icon "Render Folder Background Color as Icon Color">
 
@@ -57,6 +58,7 @@
 <!ENTITY accountcolors.thread.darkerbar "Barre de sélection plus sombre">
 <!ENTITY accountcolors.thread.incspacing "Augmenter l'espacement entre les lignes en fonction de la taille de la police du sujet (même si cette taille n'est pas sélectionnée)">
 <!ENTITY accountcolors.thread.hoverselect "Reinstate default hover and select styles">
+<!ENTITY accountcolors.thread.colorbkgd.gradient "Color Background as Gradient">
 <!ENTITY accountcolors.thread.colorbkgd.row.label    "Color Row Background as Label in Table View on">
 <!ENTITY accountcolors.thread.colorbkgd.card.label   "Color Row Background as Label in Card View with">
 <!ENTITY accountcolors.thread.color.unified.only "Only Color in Unified Folder">
@@ -72,6 +74,7 @@
 <!ENTITY accountcolors.message.whitehdrlabels "White Header Labels">
 <!ENTITY accountcolors.message.hdraccount "Couleur basée sur l'en-tête du message et non le dossier du compte">
 <!ENTITY accountcolors.message.defaultbkgd "Retain default light/dark background if White selected">
+<!ENTITY accountcolors.message.colorbkgd.gradient "Color Background as Gradient">
 <!ENTITY accountcolors.message.colorbkgd.header.label "Color Header Background as Label">
 
 <!ENTITY accountcolors.compose.setfontstyle "Style de la police du sujet">
@@ -96,6 +99,7 @@
 <!ENTITY accountcolors.compose.darkfieldbkgd "Dark Field Backgrounds (on hover or focus)">
 <!ENTITY accountcolors.compose.defaultbkgd "Retain default light/dark background if White selected">
 <!ENTITY accountcolors.compose.hoverfrom "Reinstate default hover style (on From menu)">
+<!ENTITY accountcolors.compose.colorbkgd.gradient "Color Background as Gradient">
 <!ENTITY accountcolors.compose.colorbkgd.idmenu.label "Color Identity Background in From Menu as Label">
 
 <!ENTITY accountcolors.picker.fonttitle "Palette de couleurs de la police">

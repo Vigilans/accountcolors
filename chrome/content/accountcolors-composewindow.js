@@ -107,11 +107,17 @@ var accountColorsCompose = {
       bkgdcolor = accountColorsUtilities.bkgdColorPref(accountidkey) || "var(--toolbar-bgcolor)";
 
       element = document.getElementById("msgSubject");
-      if (defaultbkgd) element.style.backgroundColor = "";
-      else element.style.backgroundColor = bkgdcolor;
+      if (defaultbkgd) {
+        element.style.backgroundColor = "";
+      } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
+        element.style.setProperty("background-image", "linear-gradient(to right, " + bkgdcolor + ", transparent 100%", "important");
+      } else {
+        element.style.setProperty("background-color", bkgdcolor, "important");
+      }
     } else {
       element = document.getElementById("msgSubject");
-      element.style.backgroundColor = "";
+      element.style.setProperty("background-color", "", "");
+      element.style.setProperty("background-image", "", "");
     }
 
     /* Color from font */
@@ -170,9 +176,14 @@ var accountColorsCompose = {
       if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-idmenu-label")) { // Do not render background color of selected identity box in label mode
         menulist = document.getElementById("msgIdentity");
         menulist.style.backgroundColor = "";
+        menulist.style.backgroundImage = "";
+      } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
+        menulist.style.backgroundImage = "linear-gradient(to right, " + bkgdcolor + ", transparent 100%)";
+        menulist.style.backgroundColor = "";
       } else if (defaultbkgd) {
         menulist = document.getElementById("msgIdentity");
         menulist.style.backgroundColor = "";
+        menulist.style.backgroundImage = "";
       } else {
         menulist = document.getElementById("msgIdentity");
         menulist.style.backgroundColor = bkgdcolor;
@@ -193,6 +204,10 @@ var accountColorsCompose = {
             menuitem.style.backgroundImage = "linear-gradient(to right, " + bkgdcolor + ", " + bkgdcolor + " " + width + ", transparent " + width + ", transparent 100%)";
             menuitem.style.backgroundColor = "";
             menuitem.style.setProperty("border-radius", "0", "");
+          } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
+            menuitem.style.backgroundImage = "linear-gradient(to right, " + bkgdcolor + ", transparent 100%)";
+            menuitem.style.backgroundColor = "";
+            menuitem.style.removeProperty("border-radius");
           } else {
             menuitem.style.backgroundColor = bkgdcolor;
             menuitem.style.backgroundImage = "";
@@ -203,6 +218,7 @@ var accountColorsCompose = {
     } else {
       menulist = document.getElementById("msgIdentity");
       menulist.style.backgroundColor = "";
+      menulist.style.backgroundImage = "";
 
       menupopup = document.getElementById("msgIdentityPopup");
 
@@ -237,6 +253,10 @@ var accountColorsCompose = {
       if (defaultbkgd) {
         document.documentElement.style.removeProperty("--ac-colortobkgd");
         document.getElementById("msgcomposeWindow").removeAttribute("ac-colortobkgd");
+        document.getElementById("msgcomposeWindow").removeAttribute("ac-colortobkgd-asgradient");
+      } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
+        document.documentElement.style.setProperty("--ac-colortobkgd", bkgdcolor, "");
+        document.getElementById("msgcomposeWindow").setAttribute("ac-colortobkgd-asgradient", "");
       } else {
         document.documentElement.style.setProperty("--ac-colortobkgd", bkgdcolor, "");
         document.getElementById("msgcomposeWindow").setAttribute("ac-colortobkgd", "");
@@ -244,6 +264,7 @@ var accountColorsCompose = {
     } else {
       document.documentElement.style.removeProperty("--ac-colortobkgd");
       document.getElementById("msgcomposeWindow").removeAttribute("ac-colortobkgd");
+      document.getElementById("msgcomposeWindow").removeAttribute("ac-colortobkgd-asgradient");
     }
 
     /* Color attachment font */
@@ -264,11 +285,17 @@ var accountColorsCompose = {
       bkgdcolor = accountColorsUtilities.bkgdColorPref(accountidkey);
 
       element = document.getElementById("attachmentBucket");
-      if (defaultbkgd) element.style.backgroundColor = "";
-      else element.style.backgroundColor = bkgdcolor;
+      if (defaultbkgd) {
+        element.style.backgroundColor = "";
+      } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
+        element.style.setProperty("background-image", "linear-gradient(to right, " + bkgdcolor + ", transparent 100%", "important");
+      } else {
+        element.style.setProperty("background-color", bkgdcolor, "important");
+      }
     } else {
       element = document.getElementById("attachmentBucket");
-      element.style.backgroundColor = "";
+      element.style.setProperty("background-color", "", "");
+      element.style.setProperty("background-image", "", "");
     }
 
     /* Color header font */
@@ -308,24 +335,36 @@ var accountColorsCompose = {
       // msgheaderstoolbar-box replaced by MsgHeadersToolbar since TB 102.
       element = document.getElementById("MsgHeadersToolbar") || document.getElementById("msgheaderstoolbar-box");
       if (element != null) {
-        if (defaultbkgd) element.style.backgroundColor = "";
-        else element.style.setProperty("background-color", bkgdcolor, "important");
+        if (defaultbkgd) {
+          element.style.backgroundColor = "";
+        } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
+          element.style.setProperty("background-image", "linear-gradient(to right, " + bkgdcolor + ", transparent 100%", "important");
+        } else {
+          element.style.setProperty("background-color", bkgdcolor, "important");
+        }
       }
       element = document.getElementById("attachmentArea");
       element = element && element.querySelector("html summary");
       if (element != null) {
-        if (defaultbkgd) element.style.backgroundColor = "";
-        else element.style.setProperty("background-color", bkgdcolor, "important");
+        if (defaultbkgd) {
+          element.style.backgroundColor = "";
+        } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
+          element.style.setProperty("background-image", "linear-gradient(to right, " + bkgdcolor + ", transparent 100%", "important");
+        } else {
+          element.style.setProperty("background-color", bkgdcolor, "important");
+        }
       }
     } else {
       element = document.getElementById("MsgHeadersToolbar") || document.getElementById("msgheaderstoolbar-box");
       if (element != null) {
         element.style.setProperty("background-color", "", "");
+        element.style.setProperty("background-image", "", "");
       }
       element = document.getElementById("attachmentArea");
       element = element && element.querySelector("html summary");
       if (element != null) {
         element.style.setProperty("background-color", "", "");
+        element.style.setProperty("background-image", "", "");
       }
     }
 
