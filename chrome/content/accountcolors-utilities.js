@@ -79,13 +79,13 @@ var accountColorsUtilities = {
     var identities, matches, header, ccList;
     var identityMap = new Map();
 
-    if (msgHdr.accountKey != "") {
-      return msgHdr.accountKey;
-    }
-
     msgFolder = msgHdr.folder;
     msgServer = msgFolder.server;
-    msgAccount = accountColorsUtilities.accountManager.FindAccountForServer(msgServer);
+    if (msgHdr.accountKey != "") {
+      msgAccount = accountColorsUtilities.accountManager.getAccount(msgHdr.accountKey)
+    } else {
+      msgAccount = accountColorsUtilities.accountManager.FindAccountForServer(msgServer);
+    }
 
     /* If searchAllAccounts = false, the result account / identity will only come from message's folder account */
 
