@@ -84,7 +84,7 @@ var accountColorsUtilities = {
     if (msgHdr.accountKey != "") {
       msgAccount = accountColorsUtilities.accountManager.getAccount(msgHdr.accountKey)
     } else {
-      msgAccount = accountColorsUtilities.accountManager.FindAccountForServer(msgServer);
+      msgAccount = accountColorsUtilities.findAccountForServer(msgServer);
     }
 
     /* If searchAllAccounts = false, the result account / identity will only come from message's folder account */
@@ -158,7 +158,7 @@ var accountColorsUtilities = {
 
   resolveAccountIdentityKeyForFolder: function (folder) {
     var server = folder.server;
-    var account = accountColorsAbout3Pane.accountManager.FindAccountForServer(server);
+    var account = accountColorsUtilities.findAccountForServer(server);
     var identities = account.identities || [];
     var identity, currentFolder;
 
@@ -235,6 +235,17 @@ var accountColorsUtilities = {
     }
 
     return accountkey;
+  },
+
+  /* Find account for server */
+
+  findAccountForServer(server) {
+    // See https://developer.thunderbird.net/add-ons/updating/tb128#mailservices.accounts.findaccountforserver
+    if (accountColorsUtilities.thunderbirdVersion.major >= 121) {
+      return accountColorsUtilities.accountManager.findAccountForServer(server);
+    } else {
+      return accountColorsUtilities.accountManager.FindAccountForServer(server);
+    }
   },
 
   /* Get font color for account/identity */

@@ -316,7 +316,7 @@ var accountColorsAbout3Pane_102 = {
         accountidkey = accountColorsUtilities.resolveAccountIdentityKeyForFolder(gFolderTreeView._rowMap[row]._folder);
       } else {
         server = gFolderTreeView._rowMap[row]._folder.server;
-        account = accountColorsAbout3Pane.accountManager.FindAccountForServer(server);
+        account = accountColorsUtilities.findAccountForServer(server);
 
         if (account.defaultIdentity == null) accountidkey = account.key;
         else accountidkey = account.defaultIdentity.key;
@@ -375,7 +375,7 @@ var accountColorsAbout3Pane_102 = {
         accountidkey = accountColorsUtilities.resolveAccountIdentityKeyForFolder(gFolderTreeView._rowMap[row]._folder);
       } else {
         server = gFolderTreeView._rowMap[row]._folder.server;
-        account = accountColorsAbout3Pane.accountManager.FindAccountForServer(server);
+        account = accountColorsUtilities.findAccountForServer(server);
 
         if (account.defaultIdentity == null) accountidkey = account.key;
         else accountidkey = account.defaultIdentity.key;
@@ -574,7 +574,7 @@ var accountColorsAbout3Pane_102 = {
             } /* color using account in which folder is located */ else {
               folder = msgHdr.folder;
               server = folder.server;
-              account = accountColorsAbout3Pane.accountManager.FindAccountForServer(server);
+              account = accountColorsUtilities.findAccountForServer(server);
 
               if (account.defaultIdentity == null) accountidkey = account.key;
               else accountidkey = account.defaultIdentity.key;
@@ -642,7 +642,7 @@ var accountColorsAbout3Pane_102 = {
             } /* color using account in which folder is located */ else {
               folder = msgHdr.folder;
               server = folder.server;
-              account = accountColorsAbout3Pane.accountManager.FindAccountForServer(server);
+              account = accountColorsUtilities.findAccountForServer(server);
 
               if (account.defaultIdentity == null) accountidkey = account.key;
               else accountidkey = account.defaultIdentity.key;

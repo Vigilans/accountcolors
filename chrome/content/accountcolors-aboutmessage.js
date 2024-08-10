@@ -164,7 +164,7 @@ var accountColorsAboutMessage = {
       } /* color using account in which folder is located */ else {
         folder = msgHdr.folder;
         server = folder.server;
-        account = accountColorsAboutMessage.accountManager.FindAccountForServer(server);
+        account = accountColorsUtilities.findAccountForServer(server);
 
         if (account.defaultIdentity == null) accountidkey = account.key;
         else accountidkey = account.defaultIdentity.key;
