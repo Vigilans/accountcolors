@@ -1,5 +1,6 @@
 // Import any needed modules.
-var { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+var Services = globalThis.Services ||
+  ChromeUtils.import("resource://gre/modules/Services.jsm").Services;
 
 // Load an additional JavaScript file.
 Services.scriptloader.loadSubScript("chrome://accountcolors/content/accountcolors-aboutmessage.js", window, "UTF-8");
