@@ -198,6 +198,10 @@
     background-color: var(--ac-bkgd-color);
 }
 
+#threadTree:not([ac-bkgdaslabel-row]) tr[is="thread-row"].selected {
+    background-color: var(--listbox-selected-bg);
+}
+
 #threadTree[ac-bkgdaslabel-row="subjectCol"] tr[is="thread-row"] td.subjectcol-column .thread-container {
     background-image: linear-gradient(to right, var(--ac-bkgd-color), var(--ac-bkgd-color) var(--ac-row-label-width), transparent var(--ac-row-label-width), transparent 100%);
     margin-top: 1px;
@@ -213,6 +217,10 @@
 
 #threadTree:not([ac-bkgdaslabel-card]) tr[is="thread-card"] {
     background-color: var(--ac-bkgd-color);
+}
+
+#threadTree:not([ac-bkgdaslabel-card]) tr[is="thread-card"].selected {
+    background-color: var(--listbox-selected-bg);
 }
 
 #threadTree[ac-bkgdaslabel-card="noindent"] tr[is="thread-card"] {
