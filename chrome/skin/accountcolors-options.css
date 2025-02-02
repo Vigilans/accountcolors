@@ -378,4 +378,9 @@ div[role="button"] {
 
 menulist {
   margin: 0;
+  background-color: unset !important;
+}
+
+tab:where([visuallyselected]:not(:-moz-window-inactive)) {
+  color: unset !important;
 }
