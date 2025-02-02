@@ -1219,22 +1219,30 @@ var accountColorsAbout3Pane_115 = {
   },
 
   threadPaneManager: {
-    originalThreadRowIndexSetter: null,
+    originalUpdateThreadRow: null,
 
-    originalThreadCardIndexSetter: null,
+    originalUpdateThreadCard: null,
 
     onUnload: function() {
       var classThreadRow = customElements.get("thread-row");
       var classThreadCard = customElements.get("thread-card");
 
-      if (accountColorsAbout3Pane.threadPaneManager.originalThreadRowIndexSetter) {
-        Object.defineProperty(classThreadRow.prototype, "index", { set: accountColorsAbout3Pane.threadPaneManager.originalThreadRowIndexSetter });
-        delete accountColorsAbout3Pane.threadPaneManager.originalThreadRowIndexSetter;
+      if (accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow) {
+        if (classThreadRow.prototype._fillRow) {
+          classThreadRow.prototype._fillRow = accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow;
+        } else {
+          Object.defineProperty(classThreadRow.prototype, "index", { set: accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow });
+        }
+        delete accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow;
       }
 
-      if (accountColorsAbout3Pane.threadPaneManager.originalThreadCardIndexSetter) {
-        Object.defineProperty(classThreadCard.prototype, "index", { set: accountColorsAbout3Pane.threadPaneManager.originalThreadCardIndexSetter });
-        delete accountColorsAbout3Pane.threadPaneManager.originalThreadCardIndexSetter;
+      if (accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard) {
+        if (classThreadCard.prototype._fillRow) {
+          classThreadCard.prototype._fillRow = accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard;
+        } else {
+          Object.defineProperty(classThreadCard.prototype, "index", { set: accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard });
+        }
+        delete accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard;
       }
     },
 
@@ -1244,16 +1252,26 @@ var accountColorsAbout3Pane_115 = {
 
       /* Detour ThreadRow.prototype.index setter */
 
-      if (!accountColorsAbout3Pane.threadPaneManager.originalThreadRowIndexSetter) {
-        accountColorsAbout3Pane.threadPaneManager.originalThreadRowIndexSetter = Object.getOwnPropertyDescriptor(classThreadRow.prototype, "index").set;
-        Object.defineProperty(classThreadRow.prototype, "index", { set: accountColorsAbout3Pane.threadPaneManager.threadRowIndexSetter });
+      if (!accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow) {
+        if (classThreadRow.prototype._fillRow) { // Introduced after releases-comm-central commit f1f5234eb1438002b42bf51c8ec20ecd95e3ec97
+          accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow = classThreadRow.prototype._fillRow;
+          classThreadRow.prototype._fillRow = accountColorsAbout3Pane.threadPaneManager.threadRowFillRow;
+        } else if (classThreadRow.prototype.hasOwnProperty("index")) {
+          accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow = Object.getOwnPropertyDescriptor(classThreadRow.prototype, "index").set;
+          Object.defineProperty(classThreadRow.prototype, "index", { set: accountColorsAbout3Pane.threadPaneManager.threadRowIndexSetter });
+        }
       }
 
       /* Detour ThreadCard.prototype.index setter */
 
-      if (!accountColorsAbout3Pane.threadPaneManager.originalThreadCardIndexSetter) {
-        accountColorsAbout3Pane.threadPaneManager.originalThreadCardIndexSetter = Object.getOwnPropertyDescriptor(classThreadCard.prototype, "index").set;
-        Object.defineProperty(classThreadCard.prototype, "index", { set: accountColorsAbout3Pane.threadPaneManager.threadCardIndexSetter });
+      if (!accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard) {
+        if (classThreadCard.prototype._fillRow) { // Introduced after releases-comm-central commit f1f5234eb1438002b42bf51c8ec20ecd95e3ec97
+          accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard = classThreadCard.prototype._fillRow;
+          classThreadCard.prototype._fillRow = accountColorsAbout3Pane.threadPaneManager.threadCardFillRow;
+        } else if (classThreadCard.prototype.hasOwnProperty("index")) {
+          accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard = Object.getOwnPropertyDescriptor(classThreadCard.prototype, "index").set;
+          Object.defineProperty(classThreadCard.prototype, "index", { set: accountColorsAbout3Pane.threadPaneManager.threadCardIndexSetter });
+        }
       }
     },
 
@@ -1261,19 +1279,69 @@ var accountColorsAbout3Pane_115 = {
       accountColorsAbout3Pane.threadTree.reset();
     },
 
+    /* Detour ThreadRow.prototype._fillRow */
+
+    threadRowFillRow: function() {
+      /* Call original function */
+
+      if (accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow) {
+        accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow.call(this);
+      }
+
+      /* Call accountcolors addon's updateThreadRow function */
+
+      accountColorsAbout3Pane.threadPaneManager.updateThreadRow.call(this, this._index)
+    },
+
+    /* Detour ThreadCard.prototype._fillRow */
+
+    threadCardFillRow: function() {
+      /* Call original function */
+
+      if (accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard) {
+        accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard.call(this);
+      }
+
+      /* Call accountcolors addon's updateThreadCard function */
+
+      accountColorsAbout3Pane.threadPaneManager.updateThreadCard.call(this, this._index);
+    },
+
     /* Detour ThreadRow.prototype.index setter */
 
     threadRowIndexSetter: function(row) {
+      /* Call original function */
+
+      if (accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow) {
+        accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow.call(this, row);
+      }
+
+      /* Call accountcolors addon's updateThreadRow function */
+
+      accountColorsAbout3Pane.threadPaneManager.updateThreadRow.call(this, row);
+    },
+
+    /* Detour ThreadCard.prototype.index setter */
+
+    threadCardIndexSetter: function(row) {
+      /* Call original function */
+
+      if (accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard) {
+        accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard.call(this, row);
+      }
+
+      /* Call accountcolors addon's updateThreadCard function */
+
+      accountColorsAbout3Pane.threadPaneManager.updateThreadCard.call(this, row);
+    },
+
+    /* Update thread row with accountcolor's */
+
+    updateThreadRow: function(row) {
       var msgHdr, account, accountidkey, element;
       var fontcolor, bkgdcolor, fontstyle, fontsize;
       var coloringDisabled = false;
       var nonHiddenColumnFound = false;
-
-      /* Call original function */
-
-      if (accountColorsAbout3Pane.threadPaneManager.originalThreadRowIndexSetter) {
-        accountColorsAbout3Pane.threadPaneManager.originalThreadRowIndexSetter.call(this, row);
-      }
 
       msgHdr = gDBView.getMsgHdrAt(row);
       accountidkey = accountColorsUtilities.resolveAccountIdentityKeyForMessage(msgHdr, accountColorsAbout3Pane.prefs.getBoolPref("thread-hdraccount"));
@@ -1443,18 +1511,10 @@ var accountColorsAbout3Pane_115 = {
       }
     },
 
-    /* Detour ThreadCard.prototype.index setter */
-
-    threadCardIndexSetter: function(row) {
+    updateThreadCard: function(row) {
       var msgHdr, accountidkey, element;
       var fontcolor, bkgdcolor, fontstyle, fontsize;
       var coloringDisabled = false;
-
-      /* Call original function */
-
-      if (accountColorsAbout3Pane.threadPaneManager.originalThreadCardIndexSetter) {
-        accountColorsAbout3Pane.threadPaneManager.originalThreadCardIndexSetter.call(this, row);
-      }
 
       msgHdr = gDBView.getMsgHdrAt(row);
       accountidkey = accountColorsUtilities.resolveAccountIdentityKeyForMessage(msgHdr, accountColorsAbout3Pane.prefs.getBoolPref("thread-hdraccount"));
