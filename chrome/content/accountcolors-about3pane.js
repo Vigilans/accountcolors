@@ -1761,13 +1761,17 @@ var accountColorsAbout3Pane_115 = {
 
     if (accountColorsAbout3Pane.prefs.getBoolPref("thread-colorbkgd-card-label")) {
       element = accountColorsAbout3Pane.threadTree;
-      switch (accountColorsAbout3Pane.prefs.getIntPref("thread-card-label-position")) {
-        case 0: /* No Indent */
-          element.setAttribute("ac-bkgdaslabel-card", "noindent");
-          break;
-        case 1: /* Indent */
-          element.setAttribute("ac-bkgdaslabel-card", "indent");
-          break;
+      if (accountColorsUtilities.thunderbirdVersion.major >= 128) {
+        element.setAttribute("ac-bkgdaslabel-card", "noindent"); // Force selection of "No Indent"
+      } else {
+        switch (accountColorsAbout3Pane.prefs.getIntPref("thread-card-label-position")) {
+          case 0: /* No Indent */
+            element.setAttribute("ac-bkgdaslabel-card", "noindent");
+            break;
+          case 1: /* Indent */
+            element.setAttribute("ac-bkgdaslabel-card", "indent");
+            break;
+        }
       }
       element.style.setProperty("--ac-card-label-width", accountColorsAbout3Pane.prefs.getIntPref("thread-card-label-width") + "px");
     } else {
