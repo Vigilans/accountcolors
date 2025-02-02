@@ -1,0 +1,353 @@
+/************************************************************************/
+/*                                                                      */
+/*      Account Colors  -  Thunderbird Extension  -  about:3pane Window */
+/*                                                                      */
+/*      CSS for about:3pane Window overlay                              */
+/*                                                                      */
+/*      Copyright (C) 2014-2018  by  DW-dev                             */
+/*      Copyright (C) 2022-2022  by  MrMelon54                          */
+/*                                                                      */
+/*      Last Edit  -  15 Jul 2022                                       */
+/*                                                                      */
+/************************************************************************/
+
+/************************************************************************/
+/*                                                                      */
+/* Notes on CSS Specificity:                                            */
+/*                                                                      */
+/*  - The specificity of a CSS rule is not affected by the number of    */
+/*    properties (in round brackets) after the treechildren element.    */
+/*                                                                      */
+/*  - If two or more rules have equal specificity, then the last rule   */
+/*    defined takes priority, irrespective of the number of properties. */
+/*                                                                      */
+/************************************************************************/
+
+/**********************************************************************************************************************/
+
+/* Folder Pane - Font Colors / Background Colors */
+
+#folderTree li[is="folder-tree-row"] .name {
+    color: var(--ac-font-color, currentColor);
+}
+
+#folderTree li[is="folder-tree-row"].new-messages > .container > .name {
+    color: var(--ac-font-color, var(--new-folder-color));
+}
+
+#folderTree li[is="folder-tree-row"]:not(.selected) > .container {
+    background-color: var(--ac-bkgd-color);
+}
+
+#folderTree li[is="folder-tree-row"].unread:not(.new-messages) > .container > .unread-count {
+    color: var(--ac-font-color, var(--folderpane-unread-count-text));
+    background-color: var(--ac-badge-bkgd-color, var(--folderpane-unread-count-background));
+}
+
+#folderTree li[is="folder-tree-row"] .total-count {
+    color: var(--ac-font-color, var(--folderpane-total-count-text));
+    background-color: var(--ac-badge-bkgd-color, var(--folderpane-total-count-background));
+}
+
+#folderTree li[is="folder-tree-row"] .folder-size {
+    color: var(--ac-font-color, var(--layout-color-3));
+}
+
+#folderTree[ac-bkgdasgradient] li[is="folder-tree-row"]:not(.selected) > .container {
+    background-image: linear-gradient(to right,
+        var(--ac-bkgd-color),
+        color-mix(in srgb, var(--ac-bkgd-color) 80%, transparent) 4%,
+        color-mix(in srgb, var(--ac-bkgd-color) 60%, transparent) 8%,
+        color-mix(in srgb, var(--ac-bkgd-color) 40%, transparent) 16%,
+        color-mix(in srgb, var(--ac-bkgd-color) 20%, transparent) 32%,
+        transparent 100%);
+    background-color: unset;
+}
+
+/* Folder Pane - Font Style / Font Weight */
+
+#folderTree li[is="folder-tree-row"][ac-fsw="normal"] { font-style: normal; font-weight:normal; }
+#folderTree li[is="folder-tree-row"][ac-fsw="italic"] { font-style: italic; font-weight:normal; }
+#folderTree li[is="folder-tree-row"][ac-fsw="bold"] { font-style: normal; font-weight:bold; }
+#folderTree li[is="folder-tree-row"][ac-fsw="bolditalic"] { font-style: italic; font-weight:bold; }
+
+/**********************************************************************************************************************/
+
+/* Folder Pane - Account Name Font Sizes */
+
+#folderTree li > .container > .name[ac-fs="10"] { font-size: 10px; }
+#folderTree li > .container > .name[ac-fs="11"] { font-size: 11px; margin-top: -1px; }
+#folderTree li > .container > .name[ac-fs="12"] { font-size: 12px; }
+#folderTree li > .container > .name[ac-fs="13"] { font-size: 13px; margin-top: -1px; }
+#folderTree li > .container > .name[ac-fs="14"] { font-size: 14px; margin-top: -2px; }
+#folderTree li > .container > .name[ac-fs="15"] { font-size: 15px; margin-top: -1px; }
+#folderTree li > .container > .name[ac-fs="16"] { font-size: 16px; margin-top: -2px; }
+#folderTree li > .container > .name[ac-fs="17"] { font-size: 17px; margin-top: -3px; }
+#folderTree li > .container > .name[ac-fs="18"] { font-size: 18px; margin-top: -3px; }
+
+/**********************************************************************************************************************/
+
+/* Folder Pane - Account Name Font Sizes (with increase row spacing) */
+
+#folderTree li > .container > .name[ac-fs="10-is"] { font-size: 10px; }
+#folderTree li > .container > .name[ac-fs="11-is"] { font-size: 11px; margin-top: -1px; }
+#folderTree li > .container > .name[ac-fs="12-is"] { font-size: 12px; }
+#folderTree li > .container > .name[ac-fs="13-is"] { font-size: 13px; margin-top: -1px; }
+#folderTree li > .container > .name[ac-fs="14-is"] { font-size: 14px; margin-top: -2px; }
+#folderTree li > .container > .name[ac-fs="15-is"] { font-size: 15px; margin-top: -1px; }
+#folderTree li > .container > .name[ac-fs="16-is"] { font-size: 16px; margin-top: -2px; }
+#folderTree li > .container > .name[ac-fs="17-is"] { font-size: 17px; margin-top: -3px; }
+#folderTree li > .container > .name[ac-fs="18-is"] { font-size: 18px; margin-top: -1px; }
+
+/**********************************************************************************************************************/
+
+/* Folder Pane - Increase Row Spacing */
+
+#folderTree[ac-is="10"] li > .container { height: 18px; }
+#folderTree[ac-is="11"] li > .container { height: 20px; }
+#folderTree[ac-is="12"] li > .container { height: 22px; }
+#folderTree[ac-is="13"] li > .container { height: 24px; }
+#folderTree[ac-is="14"] li > .container { height: 24px; }
+#folderTree[ac-is="15"] li > .container { height: 26px; }
+#folderTree[ac-is="16"] li > .container { height: 26px; }
+#folderTree[ac-is="17"] li > .container { height: 28px; }
+#folderTree[ac-is="18"] li > .container { height: 28px; }
+
+/**********************************************************************************************************************/
+
+/* Folder Pane - Black/White Row Fonts */
+
+#folderTree[ac-whiterowfont] { color: white; }
+#folderTree[ac-blackrowfont] { color: black; }
+
+/**********************************************************************************************************************/
+
+/* Folder Pane - Light/Dark Pane Background */
+
+#folderPane[ac-lightpanebkgd], #folderPane[ac-lightpanebkgd] > #folderPaneHeaderBar, #folderPane[ac-lightpanebkgd] > #folderTree { background-color: white; }
+#folderPane[ac-darkpanebkgd], #folderPane[ac-darkpanebkgd] > #folderPaneHeaderBar, #folderPane[ac-darkpanebkgd] > #folderTree { background-color: #383838; }
+
+/**********************************************************************************************************************/
+
+/* Folder Pane - No Bold on Unread Messages in Folders */
+
+#folderTree .unread > .container > .name[ac-noboldunread], #folderTree .new-messages > .container > .name[ac-noboldunread] {
+    font-weight: normal;
+}
+
+/**********************************************************************************************************************/
+
+/* Folder Pane - Bold on New Mail in Accounts/Inboxes */
+
+#folderTree[ac-boldnewmail] .new-messages > .container > .name {
+    font-weight: bold !important;
+}
+
+/**********************************************************************************************************************/
+
+/* Folder Pane - Underline on New Mail in Accounts/Inboxes */
+
+#folderTree[ac-undernewmail] .new-messages > .container > .name {
+    text-decoration: underline !important;
+}
+
+/**********************************************************************************************************************/
+
+/* Thread Pane - Font Colors / Background Colors */
+
+#threadTree tr[is="thread-row"] > td, #threadTree tr[is="thread-card"] .subject {
+    color: var(--tag-color, var(--ac-font-color, currentColor));
+}
+
+#threadTree tr[is="thread-card"] :is(.sender, .date) {
+    color: var(--ac-font-color, currentColor);
+}
+
+#threadTree:not([ac-bkgdaslabel-row]) tr[is="thread-row"] {
+    background-color: var(--ac-bkgd-color);
+}
+
+#threadTree:not([ac-bkgdaslabel-row]) tr[is="thread-row"].selected {
+    background-color: var(--listbox-selected-bg);
+}
+
+#threadTree[ac-bkgdaslabel-row="subjectCol"] tr[is="thread-row"] td.subjectcol-column .thread-container {
+    background-image: linear-gradient(to right, var(--ac-bkgd-color), var(--ac-bkgd-color) var(--ac-row-label-width), transparent var(--ac-row-label-width), transparent 100%);
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+#threadTree[ac-bkgdaslabel-row="firstCol"] tr[is="thread-row"] td.ac-first-non-hidden-column {
+    background-image: linear-gradient(to right, var(--ac-bkgd-color), var(--ac-bkgd-color) var(--ac-row-label-width), transparent var(--ac-row-label-width), transparent 100%);
+    background-clip: content-box;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+#threadTree:not([ac-bkgdaslabel-card]) tr[is="thread-card"] .card-container {
+    background-color: var(--ac-bkgd-color);
+}
+
+#threadTree:not([ac-bkgdaslabel-card]) tr[is="thread-card"].selected .card-container {
+    background-color: var(--tree-card-background);
+}
+
+#threadTree[ac-bkgdaslabel-card="noindent"] tr[is="thread-card"] .card-container {
+    background-image: linear-gradient(to right, var(--ac-bkgd-color), var(--ac-bkgd-color) var(--ac-card-label-width), transparent var(--ac-card-label-width), transparent 100%);
+}
+
+#threadTree[ac-bkgdaslabel-card="noindent"] tr[is="thread-card"] .card-container > div.thread-card-column:first-child {
+    margin-left: calc(var(--ac-card-label-width) / 2);
+    margin-right: calc(var(--ac-card-label-width) / -2);
+}
+
+#threadPane[ac-colorpanebkgd] > #threadTree {
+    background-color: var(--ac-bkgd-color, var(--tree-view-bg));
+}
+
+#threadPane[ac-bkgdasgradient] tr:not(.selected) .card-container {
+    background-image: linear-gradient(to right, var(--ac-bkgd-color), transparent 100%);
+    background-color: unset;
+}
+
+#threadPane[ac-colorpanebkgd][ac-bkgdasgradient] > #threadTree {
+    background-image: linear-gradient(to right, var(--ac-bkgd-color, var(--tree-view-bg)), transparent 100%);
+    background-color: var(--tree-view-bg);
+}
+
+/* Thread Pane - Font Style / Font Weight */
+
+#threadTree tr[is="thread-row"] > td[ac-fsw="normal"] { font-style: normal; font-weight:normal; }
+#threadTree tr[is="thread-row"] > td[ac-fsw="italic"] { font-style: italic; font-weight:normal; }
+#threadTree tr[is="thread-row"] > td[ac-fsw="bold"] { font-style: normal; font-weight:bold; }
+#threadTree tr[is="thread-row"] > td[ac-fsw="bolditalic"] { font-style: italic; font-weight:bold; }
+
+#threadTree tr[is="thread-card"] :is(.subject, .sender, .date)[ac-fsw="normal"] { font-style: normal; font-weight:normal; }
+#threadTree tr[is="thread-card"] :is(.subject, .sender, .date)[ac-fsw="italic"] { font-style: italic; font-weight:normal; }
+#threadTree tr[is="thread-card"] :is(.subject, .sender, .date)[ac-fsw="bold"] { font-style: normal; font-weight:bold; }
+#threadTree tr[is="thread-card"] :is(.subject, .sender, .date)[ac-fsw="bolditalic"] { font-style: italic; font-weight:bold; }
+
+/**********************************************************************************************************************/
+
+/* Thread Pane - Subject & From Font Sizes */
+
+#threadTree tr *[ac-fs="10"] { font-size: 10px; }
+#threadTree tr *[ac-fs="11"] { font-size: 11px; margin-top: -1px; }
+#threadTree tr *[ac-fs="12"] { font-size: 12px; }
+#threadTree tr *[ac-fs="13"] { font-size: 13px; margin-top: -1px; }
+#threadTree tr *[ac-fs="14"] { font-size: 14px; margin-top: -2px; }
+#threadTree tr *[ac-fs="15"] { font-size: 15px; margin-top: -1px; }
+#threadTree tr *[ac-fs="16"] { font-size: 16px; margin-top: -2px; }
+#threadTree tr *[ac-fs="17"] { font-size: 17px; margin-top: -3px; }
+#threadTree tr *[ac-fs="18"] { font-size: 18px; margin-top: -3px; }
+
+/**********************************************************************************************************************/
+
+/* Thread Pane - Subject & From Font Sizes (with increase row spacing) */
+
+#threadTree tr *[ac-fs="10-is"] { font-size: 10px; }
+#threadTree tr *[ac-fs="11-is"] { font-size: 11px; margin-top: -1px; }
+#threadTree tr *[ac-fs="12-is"] { font-size: 12px; }
+#threadTree tr *[ac-fs="13-is"] { font-size: 13px; margin-top: -1px; }
+#threadTree tr *[ac-fs="14-is"] { font-size: 14px; margin-top: -2px; }
+#threadTree tr *[ac-fs="15-is"] { font-size: 15px; margin-top: -1px; }
+#threadTree tr *[ac-fs="16-is"] { font-size: 16px; margin-top: -2px; }
+#threadTree tr *[ac-fs="17-is"] { font-size: 17px; margin-top: -3px; }
+#threadTree tr *[ac-fs="18-is"] { font-size: 18px; margin-top: -1px; }
+
+/**********************************************************************************************************************/
+
+/* Thread Pane - Increase Row Spacing */
+
+#threadTree[ac-is="10"] tr[is="thread-row"] { height: 18px !important; }
+#threadTree[ac-is="11"] tr[is="thread-row"] { height: 20px !important; }
+#threadTree[ac-is="12"] tr[is="thread-row"] { height: 22px !important; }
+#threadTree[ac-is="13"] tr[is="thread-row"] { height: 24px !important; }
+#threadTree[ac-is="14"] tr[is="thread-row"] { height: 24px !important; }
+#threadTree[ac-is="15"] tr[is="thread-row"] { height: 26px !important; }
+#threadTree[ac-is="16"] tr[is="thread-row"] { height: 26px !important; }
+#threadTree[ac-is="17"] tr[is="thread-row"] { height: 28px !important; }
+#threadTree[ac-is="18"] tr[is="thread-row"] { height: 28px !important; }
+
+#threadTree[ac-is="10"] tr[is="thread-card"] { height: 40px !important; }
+#threadTree[ac-is="11"] tr[is="thread-card"] { height: 42px !important; }
+#threadTree[ac-is="12"] tr[is="thread-card"] { height: 44px !important; }
+#threadTree[ac-is="13"] tr[is="thread-card"] { height: 46px !important; }
+#threadTree[ac-is="14"] tr[is="thread-card"] { height: 48px !important; }
+#threadTree[ac-is="15"] tr[is="thread-card"] { height: 50px !important; }
+#threadTree[ac-is="16"] tr[is="thread-card"] { height: 52px !important; }
+#threadTree[ac-is="17"] tr[is="thread-card"] { height: 54px !important; }
+#threadTree[ac-is="18"] tr[is="thread-card"] { height: 56px !important; }
+
+/**********************************************************************************************************************/
+
+/* Thread Pane - Black/White Row Fonts */
+
+#threadPane[ac-whiterowfont] { color: white; }
+#threadPane[ac-blackrowfont] { color: black; }
+
+#threadPane[ac-whiterowfont] > #threadPaneHeaderBar, #threadPane[ac-whiterowfont] > #threadTree { color: inherit !important }
+#threadPane[ac-blackrowfont] > #threadPaneHeaderBar, #threadPane[ac-blackrowfont] > #threadTree { color: inherit !important }
+
+#threadPane[ac-whiterowfont] > #threadTree > table[is="tree-view-table"] { color: inherit !important }
+#threadPane[ac-blackrowfont] > #threadTree > table[is="tree-view-table"] { color: inherit !important }
+
+#threadPane[ac-whiterowfont] > #threadTree th[is="tree-view-table-header-cell"] img { color: inherit !important }
+#threadPane[ac-blackrowfont] > #threadTree th[is="tree-view-table-header-cell"] img { color: inherit !important }
+
+#threadPane[ac-whiterowfont] > #threadTree tr[is="thread-row"] > td { color: inherit }
+#threadPane[ac-blackrowfont] > #threadTree tr[is="thread-row"] > td { color: inherit }
+
+#threadPane[ac-whiterowfont] > #threadTree tr[is="thread-row"] > td button, #threadPane[ac-whiterowfont] > #threadTree tr[is="thread-row"] > td img { color: inherit !important }
+#threadPane[ac-blackrowfont] > #threadTree tr[is="thread-row"] > td button, #threadPane[ac-blackrowfont] > #threadTree tr[is="thread-row"] > td img { color: inherit !important }
+
+#threadPane[ac-whiterowfont] > #threadTree tr[is="thread-card"] > td button, #threadPane[ac-whiterowfont] > #threadTree tr[is="thread-card"] > td img { color: inherit !important }
+#threadPane[ac-blackrowfont] > #threadTree tr[is="thread-card"] > td button, #threadPane[ac-blackrowfont] > #threadTree tr[is="thread-card"] > td img { color: inherit !important }
+
+/**********************************************************************************************************************/
+
+/* Thread Pane - Light/Dark Pane Background */
+
+#threadPane[ac-lightpanebkgd], #threadPane[ac-lightpanebkgd] > #threadTree { background-color: white; }
+#threadPane[ac-darkpanebkgd], #threadPane[ac-darkpanebkgd] > #threadTree { background-color: #383838; }
+
+#threadPane[ac-lightpanebkgd] > #threadPaneHeaderBar { background-color: #FAFAFA; }
+#threadPane[ac-darkpanebkgd] > #threadPaneHeaderBar { background-color: #333333; }
+
+#threadPane[ac-lightpanebkgd] > #threadTree > table[is="tree-view-table"] { background-color: inherit; }
+#threadPane[ac-darkpanebkgd] > #threadTree > table[is="tree-view-table"] { background-color: inherit; }
+
+#threadPane[ac-lightpanebkgd] > #threadTree > table[is="tree-view-table"] > thead { background-color: inherit; }
+#threadPane[ac-darkpanebkgd] > #threadTree > table[is="tree-view-table"] > thead { background-color: inherit; }
+
+#threadPane[ac-lightpanebkgd] .tree-table-header th { background-color: inherit; }
+#threadPane[ac-darkpanebkgd] .tree-table-header th { background-color: inherit; }
+
+/**********************************************************************************************************************/
+
+/* Thread Pane - Subject & From Font Style */
+
+/* Ensure bold font on subject / from columns even their styles are set to normal/italic */
+
+#threadTree:not([ac-boldsubjectfrom]) tbody > tr[data-properties~="unread"][is="thread-row"] > td,
+#threadTree:not([ac-boldsubjectfrom]) tbody > tr[data-properties~="unread"][is="thread-card"] :is(.subject, .sender, .date) {
+    font-weight: bold !important;
+}
+
+/* Thread Pane - Bold Subject and/or Bold From */
+
+/* If either Bold Subject or Bold From set, all columns are unbold by default  */
+
+#threadTree[ac-boldsubjectfrom] tbody > tr[data-properties~="unread"][is="thread-row"] > td,
+#threadTree[ac-boldsubjectfrom] tbody > tr[data-properties~="unread"][is="thread-card"] :is(.subject, .sender, .date) {
+    font-weight: normal;
+}
+
+/* Bold Subject and/or Bold From as specified */
+
+#threadTree[ac-boldsubjectfrom] tbody > tr[data-properties~="unread"] *[ac-boldsubject],
+#threadTree[ac-boldsubjectfrom] tbody > tr[data-properties~="unread"] *[ac-boldfrom] {
+    font-weight: bold !important;
+}
+
+/**********************************************************************************************************************/

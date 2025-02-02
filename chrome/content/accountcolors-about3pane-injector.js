@@ -7,7 +7,11 @@ Services.scriptloader.loadSubScript("chrome://accountcolors/content/accountcolor
 Services.scriptloader.loadSubScript("chrome://accountcolors/content/accountcolors-about3pane.js", window, "UTF-8");
 
 function onLoad(activatedWhileWindowOpen) {
-  WL.injectCSS("chrome://accountcolors-skin/content/accountcolors-about3pane.css");
+  if (window.accountColorsUtilities.thunderbirdVersion.major >= 128) {
+    WL.injectCSS("chrome://accountcolors-skin/content/accountcolors-about3pane-128.css");
+  } else {
+    WL.injectCSS("chrome://accountcolors-skin/content/accountcolors-about3pane-115.css");
+  }
 
   window.accountColorsAbout3Pane.onLoad();
 }
