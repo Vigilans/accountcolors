@@ -287,12 +287,12 @@ separator.section {
   background-color: #f0f0f0;
 }
 
-#accountcolors-picker-r-value,
-#accountcolors-picker-g-value,
-#accountcolors-picker-b-value,
-#accountcolors-picker-h-value,
-#accountcolors-picker-s-value,
-#accountcolors-picker-v-value {
+input[type="number"]#accountcolors-picker-r-value,
+input[type="number"]#accountcolors-picker-g-value,
+input[type="number"]#accountcolors-picker-b-value,
+input[type="number"]#accountcolors-picker-h-value,
+input[type="number"]#accountcolors-picker-s-value,
+input[type="number"]#accountcolors-picker-v-value {
   width: 40px;
   margin-left: 6px;
   margin-right: 6px;
