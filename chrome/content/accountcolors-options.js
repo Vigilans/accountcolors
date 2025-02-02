@@ -832,7 +832,10 @@ var accountColorsOptions = {
     menulist.appendItem("No Indent", 0);
     menulist.appendItem("Indent", 1);
     try {
-      if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+      if (accountColorsUtilities.thunderbirdVersion.major >= 128) {
+        menulist.style.display = "none"; // Hide option for thunderbird 128+, as thread card is already indented
+        menulist.selectedIndex = 0; // Force selection of "No Indent"
+      } else if (accountColorsUtilities.thunderbirdVersion.major > 102) {
         value = accountColorsOptions.prefs.getIntPref("thread-card-label-position");
         menulist.selectedIndex = value;
       } else {
