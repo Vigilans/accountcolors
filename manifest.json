@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Account Colors",
-  "version": "13.6",
+  "version": "15.0",
 
   "description": "Associates colors with account names and identities. Applies colors to folder tree, message list and message headers.",
   "icons": {
@@ -11,7 +11,7 @@
   "applications": {
     "gecko": {
       "id": "accountcolors@gazhay",
-      "strict_min_version": "68.0"
+      "strict_min_version": "102.0"
     }
   },
 
