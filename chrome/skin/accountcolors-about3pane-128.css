@@ -155,7 +155,7 @@
 
 /* Thread Pane - Font Colors / Background Colors */
 
-#threadTree tr[is="thread-row"] > td, #threadTree tr[is="thread-card"] .subject {
+#threadTree tr[is="thread-row"]:not(.selected) > td, #threadTree tr[is="thread-card"]:not(.selected) .subject {
     color: var(--tag-color, var(--ac-font-color, currentColor));
 }
 
