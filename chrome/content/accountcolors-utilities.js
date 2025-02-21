@@ -208,6 +208,12 @@ var accountColorsUtilities = {
 
     email = email.replace(/\+[^)]*@/, "@");
 
+    /* If using gmail, remove dots in identifier part */
+
+    if (email.endsWith("@gmail.com")) {
+      email = email.replace(/\.(?=.*@)/g, "");
+    }
+
     return email;
   },
 
