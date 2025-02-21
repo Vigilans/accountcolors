@@ -75,7 +75,7 @@ var accountColorsUtilities = {
 
   resolveAccountIdentityKeyForMessage: function (msgHdr, searchAllAccounts) {
     var msgFolder, msgServer, msgAccount;
-    var account, identity, address;
+    var account, identity, address, email;
     var identities, matches, header, ccList;
     var identityMap = new Map();
 
@@ -91,10 +91,11 @@ var accountColorsUtilities = {
 
     for (account of searchAllAccounts ? accountColorsUtilities.accountManager.accounts : [msgAccount]) {
       for (identity of account.identities || []) {
-        identities = identityMap.get(identity.email);
+        email = identity.email.toLowerCase();
+        identities = identityMap.get(email);
         if (!identities) {
           identities = []
-          identityMap.set(identity.email, identities);
+          identityMap.set(email, identities);
         }
         if (account.incomingServer.type == msgServer.type) {
           identities.unshift(identity); // Prefer identity that has same server type as message
@@ -107,7 +108,7 @@ var accountColorsUtilities = {
     /* Search Recipient list first */
 
     for (address of accountColorsUtilities.headerParser.parseDecodedHeader(msgHdr.mime2DecodedRecipients)) {
-      identities = identityMap.get(address.email);
+      identities = identityMap.get(address.email.toLowerCase());
       if (identities && identities.length > 0) {
         return identities[0].key; // Use first identity (as it is preferred)
       }
@@ -118,7 +119,7 @@ var accountColorsUtilities = {
     header = msgHdr.getStringProperty("received");
     if (header) {
       matches = header.match(/for\s+<([^>]+)>/);
-      identities = matches && identityMap.get(matches[1]);
+      identities = matches && identityMap.get(matches[1].toLowerCase());
       if (identities && identities.length > 0) {
         return identities[0].key;
       }
@@ -129,7 +130,7 @@ var accountColorsUtilities = {
     ccList = msgHdr.ccList && msgHdr.bccList ? `${msgHdr.ccList}, ${msgHdr.bccList}` : msgHdr.ccList || msgHdr.bccList;
     if (ccList) {
       for (address of accountColorsUtilities.headerParser.parseDecodedHeader(ccList)) {
-        identities = identityMap.get(address.email);
+        identities = identityMap.get(address.email.toLowerCase());
         if (identities && identities.length > 0) {
           return identities[0].key;
         }
@@ -139,7 +140,7 @@ var accountColorsUtilities = {
     /* Search for Author (Message could be a sent message) */
 
     for (address of accountColorsUtilities.headerParser.parseDecodedHeader(msgHdr.mime2DecodedAuthor)) {
-      identities = identityMap.get(address.email);
+      identities = identityMap.get(address.email.toLowerCase());
       if (identities && identities.length > 0) {
         return identities[0].key;
       }
