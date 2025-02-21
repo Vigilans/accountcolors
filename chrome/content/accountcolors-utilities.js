@@ -91,7 +91,7 @@ var accountColorsUtilities = {
 
     for (account of searchAllAccounts ? accountColorsUtilities.accountManager.accounts : [msgAccount]) {
       for (identity of account.identities || []) {
-        email = identity.email.toLowerCase();
+        email = accountColorsUtilities.canonicalizeEmail(identity.email);
         identities = identityMap.get(email);
         if (!identities) {
           identities = []
@@ -108,7 +108,7 @@ var accountColorsUtilities = {
     /* Search Recipient list first */
 
     for (address of accountColorsUtilities.headerParser.parseDecodedHeader(msgHdr.mime2DecodedRecipients)) {
-      identities = identityMap.get(address.email.toLowerCase());
+      identities = identityMap.get(accountColorsUtilities.canonicalizeEmail(address.email));
       if (identities && identities.length > 0) {
         return identities[0].key; // Use first identity (as it is preferred)
       }
@@ -119,7 +119,7 @@ var accountColorsUtilities = {
     header = msgHdr.getStringProperty("received");
     if (header) {
       matches = header.match(/for\s+<([^>]+)>/);
-      identities = matches && identityMap.get(matches[1].toLowerCase());
+      identities = matches && identityMap.get(accountColorsUtilities.canonicalizeEmail(matches[1]));
       if (identities && identities.length > 0) {
         return identities[0].key;
       }
@@ -130,7 +130,7 @@ var accountColorsUtilities = {
     ccList = msgHdr.ccList && msgHdr.bccList ? `${msgHdr.ccList}, ${msgHdr.bccList}` : msgHdr.ccList || msgHdr.bccList;
     if (ccList) {
       for (address of accountColorsUtilities.headerParser.parseDecodedHeader(ccList)) {
-        identities = identityMap.get(address.email.toLowerCase());
+        identities = identityMap.get(accountColorsUtilities.canonicalizeEmail(address.email));
         if (identities && identities.length > 0) {
           return identities[0].key;
         }
@@ -140,7 +140,7 @@ var accountColorsUtilities = {
     /* Search for Author (Message could be a sent message) */
 
     for (address of accountColorsUtilities.headerParser.parseDecodedHeader(msgHdr.mime2DecodedAuthor)) {
-      identities = identityMap.get(address.email.toLowerCase());
+      identities = identityMap.get(accountColorsUtilities.canonicalizeEmail(address.email));
       if (identities && identities.length > 0) {
         return identities[0].key;
       }
@@ -194,6 +194,21 @@ var accountColorsUtilities = {
     }
 
     return account.key;
+  },
+
+  /* Canonicalize email address */
+
+  canonicalizeEmail: function (email) {
+
+    /* Lowercase & Remove whitespace */
+
+    email = email.trim().toLowerCase();
+
+    /* Remove plus addressing + */
+
+    email = email.replace(/\+[^)]*@/, "@");
+
+    return email;
   },
 
   /* Find account key for message recipient */
