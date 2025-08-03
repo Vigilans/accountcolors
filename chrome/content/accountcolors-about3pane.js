@@ -1228,7 +1228,9 @@ var accountColorsAbout3Pane_115 = {
       var classThreadCard = customElements.get("thread-card");
 
       if (accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow) {
-        if (classThreadRow.prototype._fillRow) {
+        if (classThreadRow.prototype.fillRow) {
+          classThreadRow.prototype.fillRow = accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow;
+        } else if (classThreadRow.prototype._fillRow) {
           classThreadRow.prototype._fillRow = accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow;
         } else {
           Object.defineProperty(classThreadRow.prototype, "index", { set: accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow });
@@ -1237,7 +1239,9 @@ var accountColorsAbout3Pane_115 = {
       }
 
       if (accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard) {
-        if (classThreadCard.prototype._fillRow) {
+        if (classThreadCard.prototype.fillRow) {
+          classThreadCard.prototype.fillRow = accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard;
+        } else if (classThreadCard.prototype._fillRow) {
           classThreadCard.prototype._fillRow = accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard;
         } else {
           Object.defineProperty(classThreadCard.prototype, "index", { set: accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard });
@@ -1253,7 +1257,10 @@ var accountColorsAbout3Pane_115 = {
       /* Detour ThreadRow.prototype.index setter */
 
       if (!accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow) {
-        if (classThreadRow.prototype._fillRow) { // Introduced after releases-comm-central commit f1f5234eb1438002b42bf51c8ec20ecd95e3ec97
+        if (classThreadRow.prototype.fillRow) {
+          accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow = classThreadRow.prototype.fillRow;
+          classThreadRow.prototype.fillRow = accountColorsAbout3Pane.threadPaneManager.threadRowFillRow;
+        } else if (classThreadRow.prototype._fillRow) { // Introduced after releases-comm-central commit f1f5234eb1438002b42bf51c8ec20ecd95e3ec97
           accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadRow = classThreadRow.prototype._fillRow;
           classThreadRow.prototype._fillRow = accountColorsAbout3Pane.threadPaneManager.threadRowFillRow;
         } else if (classThreadRow.prototype.hasOwnProperty("index")) {
@@ -1265,7 +1272,10 @@ var accountColorsAbout3Pane_115 = {
       /* Detour ThreadCard.prototype.index setter */
 
       if (!accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard) {
-        if (classThreadCard.prototype._fillRow) { // Introduced after releases-comm-central commit f1f5234eb1438002b42bf51c8ec20ecd95e3ec97
+        if (classThreadCard.prototype.fillRow) { // Introduced after release-comm-central commit 4188aff018ce8bfa0d67fcf663fa7045e04b4633
+          accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard = classThreadCard.prototype.fillRow;
+          classThreadCard.prototype.fillRow = accountColorsAbout3Pane.threadPaneManager.threadCardFillRow;
+        } else if (classThreadCard.prototype._fillRow) { // Introduced after releases-comm-central commit f1f5234eb1438002b42bf51c8ec20ecd95e3ec97
           accountColorsAbout3Pane.threadPaneManager.originalUpdateThreadCard = classThreadCard.prototype._fillRow;
           classThreadCard.prototype._fillRow = accountColorsAbout3Pane.threadPaneManager.threadCardFillRow;
         } else if (classThreadCard.prototype.hasOwnProperty("index")) {
@@ -1279,7 +1289,7 @@ var accountColorsAbout3Pane_115 = {
       accountColorsAbout3Pane.threadTree.reset();
     },
 
-    /* Detour ThreadRow.prototype._fillRow */
+    /* Detour ThreadRow.prototype.fillRow */
 
     threadRowFillRow: function() {
       /* Call original function */
@@ -1293,7 +1303,7 @@ var accountColorsAbout3Pane_115 = {
       accountColorsAbout3Pane.threadPaneManager.updateThreadRow.call(this, this._index)
     },
 
-    /* Detour ThreadCard.prototype._fillRow */
+    /* Detour ThreadCard.prototype.fillRow */
 
     threadCardFillRow: function() {
       /* Call original function */
