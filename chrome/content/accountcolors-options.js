@@ -1541,7 +1541,7 @@ var accountColorsOptions = {
   },
 
   updateFontColor: function (index) {
-    var i, length;
+    var i, length, color;
 
     if (accountColorsOptions.prefs.getBoolPref("picker-autobkgd")) {
       accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, accountColorsOptions.autoBkgdColor(accountColorsOptions.pickerGetColor("accountcolors-fontpicker" + index)));
@@ -1573,7 +1573,7 @@ var accountColorsOptions = {
   },
 
   updateBkgdColor: function (index) {
-    var i, length;
+    var i, length, color;
 
     document.getElementById("accountcolors-accountname" + index).style.backgroundColor = accountColorsOptions.pickerGetColor("accountcolors-bkgdpicker" + index);
 
