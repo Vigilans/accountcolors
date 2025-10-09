@@ -13,6 +13,7 @@
 <!ENTITY accountcolors.account.identity "Identité">
 <!ENTITY accountcolors.account.font "Police">
 <!ENTITY accountcolors.account.bkgd "Fond">
+<!ENTITY accountcolors.account.reset "Réinitialiser">
 <!ENTITY accountcolors.folder.setfontstyle "Style de police pour le compte">
 <!ENTITY accountcolors.folder.setfontsize "Taille de la police du compte">
 <!ENTITY accountcolors.folder.colorfont "Couleur de la police des comptes">

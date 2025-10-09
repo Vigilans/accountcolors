@@ -13,6 +13,7 @@
 <!ENTITY accountcolors.account.identity "身份">
 <!ENTITY accountcolors.account.font "字体">
 <!ENTITY accountcolors.account.bkgd "背景">
+<!ENTITY accountcolors.account.reset "重置">
 <!ENTITY accountcolors.folder.setfontstyle "帐户字体样式">
 <!ENTITY accountcolors.folder.setfontsize "帐户字体大小">
 <!ENTITY accountcolors.folder.colorfont "帐户字体颜色">

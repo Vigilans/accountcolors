@@ -13,6 +13,7 @@
 <!ENTITY accountcolors.account.identity "Identität">
 <!ENTITY accountcolors.account.font "Text">
 <!ENTITY accountcolors.account.bkgd "Hintergrund">
+<!ENTITY accountcolors.account.reset "Zurücksetzen">
 <!ENTITY accountcolors.folder.setfontstyle "Schriftstil für Konten-Bezeichnung:">
 <!ENTITY accountcolors.folder.setfontsize "Schriftgröße für Konten-Bezeichnung:">
 <!ENTITY accountcolors.folder.colorfont "Konten-Bezeichnung kolorieren">

@@ -13,6 +13,7 @@
 <!ENTITY accountcolors.account.identity "Identità">
 <!ENTITY accountcolors.account.font "Font">
 <!ENTITY accountcolors.account.bkgd "Sfondo">
+<!ENTITY accountcolors.account.reset "Reimposta">
 <!ENTITY accountcolors.folder.setfontstyle "Stile font Account">
 <!ENTITY accountcolors.folder.setfontsize "Dimensioni font Account">
 <!ENTITY accountcolors.folder.colorfont "Colora font Account">

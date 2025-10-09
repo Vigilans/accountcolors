@@ -17,6 +17,7 @@
 <!ENTITY accountcolors.account.identity         "Identity">
 <!ENTITY accountcolors.account.font             "Font">
 <!ENTITY accountcolors.account.bkgd             "Bkgd">
+<!ENTITY accountcolors.account.reset            "Reset">
 
 <!ENTITY accountcolors.folder.setfontstyle      "Account Font Style">
 <!ENTITY accountcolors.folder.setfontsize       "Account Font Size">

@@ -13,6 +13,7 @@
 <!ENTITY accountcolors.account.identity "Identidad">
 <!ENTITY accountcolors.account.font "Fuente">
 <!ENTITY accountcolors.account.bkgd "Bkgd">
+<!ENTITY accountcolors.account.reset "Restablecer">
 <!ENTITY accountcolors.folder.setfontstyle "Estilo de Fuente de la Cuenta">
 <!ENTITY accountcolors.folder.setfontsize "Tamaño de Fuente de la Cuenta">
 <!ENTITY accountcolors.folder.colorfont "Color de Fuente de la Cuenta">

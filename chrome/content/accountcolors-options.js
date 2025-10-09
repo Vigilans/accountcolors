@@ -1594,6 +1594,31 @@ var accountColorsOptions = {
     }
   },
 
+  /* Reset background color to account's color (first identity's color) */
+  resetBkgdColor: function (index) {
+    var type = document.getElementById("accountcolors-accountidbox" + index).getAttribute("ac-accountidtype");
+    var baseIndex = index;
+    while (baseIndex >= 0 && document.getElementById("accountcolors-accountidbox" + baseIndex).getAttribute("ac-accountidtype") == "id") baseIndex--;
+
+    var color = accountColorsOptions.pickerGetColor("accountcolors-bkgdpicker" + baseIndex);
+    color = accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, color);
+    document.getElementById("accountcolors-accountname" + index).style.backgroundColor = color;
+    if (type != "account") document.getElementById("accountcolors-identityname" + index).style.backgroundColor = color;
+  },
+
+  /* Reset font color to account's color (first identity's color) */
+  resetFontColor: function (index) {
+    var type = document.getElementById("accountcolors-accountidbox" + index).getAttribute("ac-accountidtype");
+    var baseIndex = index;
+    while (baseIndex >= 0 && document.getElementById("accountcolors-accountidbox" + baseIndex).getAttribute("ac-accountidtype") == "id") baseIndex--;
+
+    var color = accountColorsOptions.pickerGetColor("accountcolors-fontpicker" + baseIndex);
+    color = accountColorsOptions.pickerSetColor("accountcolors-fontpicker" + index, color);
+    document.getElementById("accountcolors-accountname" + index).style.color = color;
+    if (type != "account") document.getElementById("accountcolors-identityname" + index).style.color = color;
+  },
+
+
   /********************************************************************/
 
   /* Color picker functions */
@@ -1976,6 +2001,23 @@ var accountColorsOptions = {
 
     if (pickerbutton.id.indexOf("font") >= 0) accountColorsOptions.updateFontColor(Number(pickerbutton.id.substr(24)));
     else accountColorsOptions.updateBkgdColor(Number(pickerbutton.id.substr(24)));
+
+    document.getElementById("accountcolors-picker-panel").hidePopup();
+
+    window.removeEventListener("keypress", accountColorsOptions.pickerReturn, true);
+  },
+
+  pickerReset: function () {
+    var pickerbutton, hexstr;
+
+    pickerbutton = accountColorsOptions.pickerButton;
+
+    hexstr = document.getElementById("accountcolors-picker-hexstr").value;
+
+    accountColorsOptions.pickerSetColor(pickerbutton.id, "#" + hexstr);
+
+    if (pickerbutton.id.indexOf("font") >= 0) accountColorsOptions.resetFontColor(Number(pickerbutton.id.substr(24)));
+    else accountColorsOptions.resetBkgdColor(Number(pickerbutton.id.substr(24)));
 
     document.getElementById("accountcolors-picker-panel").hidePopup();
 
