@@ -13,6 +13,7 @@
 <!ENTITY accountcolors.account.identity "Identitet">
 <!ENTITY accountcolors.account.font "Typsnitt">
 <!ENTITY accountcolors.account.bkgd "Bkgr">
+<!ENTITY accountcolors.account.reset "Återställ">
 <!ENTITY accountcolors.folder.setfontstyle "Teckenstil för konto">
 <!ENTITY accountcolors.folder.setfontsize "Teckenstorlek för konto">
 <!ENTITY accountcolors.folder.colorfont "Färga kontons typsnitt">

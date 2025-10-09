@@ -13,6 +13,7 @@
 <!ENTITY accountcolors.account.identity "Identiteetti">
 <!ENTITY accountcolors.account.font "Fontti">
 <!ENTITY accountcolors.account.bkgd "Tausta">
+<!ENTITY accountcolors.account.reset "Palauta">
 <!ENTITY accountcolors.folder.setfontstyle "Tilin fonttityyli">
 <!ENTITY accountcolors.folder.setfontsize "Tilin fontin koko">
 <!ENTITY accountcolors.folder.colorfont "Väritä tilin fontti">
