@@ -94,8 +94,13 @@ var accountColorsOptions = {
 
     /* Add listeners for click on font/background palette panels */
 
-    document.getElementById("accountcolors-picker-fontpalette-panel").addEventListener("click", accountColorsOptions.pickerPaletteChange, false);
-    document.getElementById("accountcolors-picker-bkgdpalette-panel").addEventListener("click", accountColorsOptions.pickerPaletteChange, false);
+    if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+      document.getElementById("accountcolors-picker-fontpalette-native").addEventListener("input", accountColorsOptions.pickerPaletteChange, false);
+      document.getElementById("accountcolors-picker-bkgdpalette-native").addEventListener("input", accountColorsOptions.pickerPaletteChange, false);
+    } else {
+      document.getElementById("accountcolors-picker-fontpalette-panel").addEventListener("click", accountColorsOptions.pickerPaletteChange, false);
+      document.getElementById("accountcolors-picker-bkgdpalette-panel").addEventListener("click", accountColorsOptions.pickerPaletteChange, false);
+    }
 
     /* Color scheme for dialogs page */
     document.getElementById("accountcolors-options").style.setProperty("color-scheme", accountColorsOptions.theme.properties.color_scheme);
@@ -1648,32 +1653,53 @@ var accountColorsOptions = {
       document.getElementById("accountcolors-picker-fonttitle").hidden = false;
       document.getElementById("accountcolors-picker-bkgdtitle").hidden = true;
 
-      document.getElementById("accountcolors-picker-fontpalette").hidden = false;
-      document.getElementById("accountcolors-picker-bkgdpalette").hidden = true;
+      if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+        document.getElementById("accountcolors-picker-fontpalette").hidden = true;
+        document.getElementById("accountcolors-picker-bkgdpalette").hidden = true;
+        document.getElementById("accountcolors-picker-fontpalette-native").hidden = false;
+        document.getElementById("accountcolors-picker-bkgdpalette-native").hidden = true;
+
+        document.getElementById("accountcolors-picker-fontpalette-native").value = "#" + hexstr;
+      } else {
+        document.getElementById("accountcolors-picker-fontpalette").hidden = false;
+        document.getElementById("accountcolors-picker-bkgdpalette").hidden = true;
+        document.getElementById("accountcolors-picker-fontpalette-native").hidden = true;
+        document.getElementById("accountcolors-picker-bkgdpalette-native").hidden = true;
+
+        element = document
+          .getElementById("accountcolors-picker-fontpalette-panel")
+          .getElementsByAttribute("color", "#" + hexstr)
+          .item(0);
+        if (element != null) document.getElementById("accountcolors-picker-fontpalette").children[0].style.setProperty("background-color", "#" + hexstr, "");
+        else document.getElementById("accountcolors-picker-fontpalette").children[0].style.setProperty("background-color", "#E1E1E1");
+      }
 
       document.getElementById("accountcolors-picker-autobkgd-box").hidden = false;
-
-      element = document
-        .getElementById("accountcolors-picker-fontpalette-panel")
-        .getElementsByAttribute("color", "#" + hexstr)
-        .item(0);
-      if (element != null) document.getElementById("accountcolors-picker-fontpalette").children[0].style.setProperty("background-color", "#" + hexstr, "");
-      else document.getElementById("accountcolors-picker-fontpalette").children[0].style.setProperty("background-color", "#E1E1E1");
     } else {
       document.getElementById("accountcolors-picker-fonttitle").hidden = true;
       document.getElementById("accountcolors-picker-bkgdtitle").hidden = false;
 
-      document.getElementById("accountcolors-picker-fontpalette").hidden = true;
-      document.getElementById("accountcolors-picker-bkgdpalette").hidden = false;
+      if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+        document.getElementById("accountcolors-picker-fontpalette").hidden = true;
+        document.getElementById("accountcolors-picker-bkgdpalette").hidden = true;
+        document.getElementById("accountcolors-picker-fontpalette-native").hidden = true;
+        document.getElementById("accountcolors-picker-bkgdpalette-native").hidden = false;
 
+        document.getElementById("accountcolors-picker-bkgdpalette-native").value = "#" + hexstr;
+      } else {
+        document.getElementById("accountcolors-picker-fontpalette").hidden = true;
+        document.getElementById("accountcolors-picker-bkgdpalette").hidden = false;
+        document.getElementById("accountcolors-picker-fontpalette-native").hidden = true;
+        document.getElementById("accountcolors-picker-bkgdpalette-native").hidden = true;
+
+        element = document
+          .getElementById("accountcolors-picker-bkgdpalette-panel")
+          .getElementsByAttribute("color", "#" + hexstr)
+          .item(0);
+        if (element != null) document.getElementById("accountcolors-picker-bkgdpalette").children[0].style.setProperty("background-color", "#" + hexstr, "");
+        else document.getElementById("accountcolors-picker-bkgdpalette").children[0].style.setProperty("background-color", "#E1E1E1");
+      }
       document.getElementById("accountcolors-picker-autobkgd-box").hidden = true;
-
-      element = document
-        .getElementById("accountcolors-picker-bkgdpalette-panel")
-        .getElementsByAttribute("color", "#" + hexstr)
-        .item(0);
-      if (element != null) document.getElementById("accountcolors-picker-bkgdpalette").children[0].style.setProperty("background-color", "#" + hexstr, "");
-      else document.getElementById("accountcolors-picker-bkgdpalette").children[0].style.setProperty("background-color", "#E1E1E1");
     }
 
     document.getElementById("accountcolors-picker-autobkgd").checked = accountColorsOptions.prefs.getBoolPref("picker-autobkgd");
@@ -1840,18 +1866,26 @@ var accountColorsOptions = {
 
     pickerbutton = accountColorsOptions.pickerButton;
 
-    if (pickerbutton.id.indexOf("font") >= 0) {
-      hexstr = event.target.getAttribute("color").substr(1);
-
-      document.getElementById("accountcolors-picker-fontpalette").children[0].style.setProperty("background-color", "#" + hexstr, "");
-
-      document.getElementById("accountcolors-picker-fontpalette-panel").hidePopup();
+    if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+      if (pickerbutton.id.indexOf("font") >= 0) {
+        hexstr = event.target.value.substr(1);
+      } else {
+        hexstr = event.target.value.substr(1);
+      }
     } else {
-      hexstr = event.target.getAttribute("color").substr(1);
+      if (pickerbutton.id.indexOf("font") >= 0) {
+        hexstr = event.target.getAttribute("color").substr(1);
 
-      document.getElementById("accountcolors-picker-bkgdpalette").children[0].style.setProperty("background-color", "#" + hexstr, "");
+        document.getElementById("accountcolors-picker-fontpalette").children[0].style.setProperty("background-color", "#" + hexstr, "");
 
-      document.getElementById("accountcolors-picker-bkgdpalette-panel").hidePopup();
+        document.getElementById("accountcolors-picker-fontpalette-panel").hidePopup();
+      } else {
+        hexstr = event.target.getAttribute("color").substr(1);
+
+        document.getElementById("accountcolors-picker-bkgdpalette").children[0].style.setProperty("background-color", "#" + hexstr, "");
+
+        document.getElementById("accountcolors-picker-bkgdpalette-panel").hidePopup();
+      }
     }
 
     value = parseInt(hexstr, 16);

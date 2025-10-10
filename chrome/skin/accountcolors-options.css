@@ -146,6 +146,7 @@
 .accountcolors-picker {
   min-width: 40px;
   width: 40px;
+  max-height: 22.5px;
   margin: 0px 3px;
   padding: 2px;
 }
