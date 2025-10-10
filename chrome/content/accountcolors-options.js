@@ -147,13 +147,13 @@ var accountColorsOptions = {
         document.getElementById("accountcolors-accountname" + index).value = account.incomingServer.prettyName;
 
         try {
-          color = accountColorsOptions.pickerSetColor("accountcolors-fontpicker" + index, accountColorsOptions.prefs.getCharPref(account.key + "-fontcolor"));
+          color = accountColorsOptions.pickerSetColor("accountcolors-fontpicker" + index, accountColorsUtilities.fontColorPref(account.key));
           document.getElementById("accountcolors-accountname" + index).style.color = color;
         } catch (e) {
           if (account.incomingServer == accountColorsOptions.accountManager.localFoldersServer) {
             try {
               /* compatibility with Version 3.0 */
-              color = accountColorsOptions.pickerSetColor("accountcolors-fontpicker" + index, accountColorsOptions.prefs.getCharPref("idLF" + "-fontcolor"));
+              color = accountColorsOptions.pickerSetColor("accountcolors-fontpicker" + index, accountColorsUtilities.fontColorPref("idLF"));
               document.getElementById("accountcolors-accountname" + index).style.color = color;
             } catch (e) {
               color = accountColorsOptions.pickerSetColor("accountcolors-fontpicker" + index, "");
@@ -166,13 +166,13 @@ var accountColorsOptions = {
         }
 
         try {
-          color = accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, accountColorsOptions.prefs.getCharPref(account.key + "-bkgdcolor"));
+          color = accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, accountColorsUtilities.bkgdColorPref(account.key));
           document.getElementById("accountcolors-accountname" + index).style.backgroundColor = color;
         } catch (e) {
           if (account.incomingServer == accountColorsOptions.accountManager.localFoldersServer) {
             try {
               /* compatibility with Version 3.0 */
-              color = accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, accountColorsOptions.prefs.getCharPref("idLF" + "-bkgdcolor"));
+              color = accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, accountColorsUtilities.bkgdColorPref("idLF"));
               document.getElementById("accountcolors-accountname" + index).style.backgroundColor = color;
             } catch (e) {
               color = accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, "");
@@ -214,13 +214,13 @@ var accountColorsOptions = {
           document.getElementById("accountcolors-identityname" + index).value = identity.identityName;
 
           try {
-            color = accountColorsOptions.pickerSetColor("accountcolors-fontpicker" + index, accountColorsOptions.prefs.getCharPref(identity.key + "-fontcolor"));
+            color = accountColorsOptions.pickerSetColor("accountcolors-fontpicker" + index, accountColorsUtilities.fontColorPref(identity.key));
             document.getElementById("accountcolors-accountname" + index).style.color = color;
             document.getElementById("accountcolors-identityname" + index).style.color = color;
           } catch (e) {
             try {
               /* compatibility with Version 2.0 */
-              color = accountColorsOptions.pickerSetColor("accountcolors-fontpicker" + index, accountColorsOptions.prefs.getCharPref(account.key + "-fontcolor"));
+              color = accountColorsOptions.pickerSetColor("accountcolors-fontpicker" + index, accountColorsUtilities.fontColorPref(account.key));
               document.getElementById("accountcolors-accountname" + index).style.color = color;
               document.getElementById("accountcolors-identityname" + index).style.color = color;
             } catch (e) {
@@ -232,13 +232,13 @@ var accountColorsOptions = {
           }
 
           try {
-            color = accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, accountColorsOptions.prefs.getCharPref(identity.key + "-bkgdcolor"));
+            color = accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, accountColorsUtilities.bkgdColorPref(identity.key));
             document.getElementById("accountcolors-accountname" + index).style.backgroundColor = color;
             document.getElementById("accountcolors-identityname" + index).style.backgroundColor = color;
           } catch (e) {
             try {
               /* compatibility with Version 2.0 */
-              color = accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, accountColorsOptions.prefs.getCharPref(account.key + "-bkgdcolor"));
+              color = accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, accountColorsUtilities.bkgdColorPref(account.key));
               document.getElementById("accountcolors-accountname" + index).style.backgroundColor = color;
               document.getElementById("accountcolors-identityname" + index).style.backgroundColor = color;
             } catch (e) {
@@ -1605,10 +1605,31 @@ var accountColorsOptions = {
     var baseIndex = index;
     while (baseIndex >= 0 && document.getElementById("accountcolors-accountidbox" + baseIndex).getAttribute("ac-accountidtype") == "id") baseIndex--;
 
-    var color = accountColorsOptions.pickerGetColor("accountcolors-bkgdpicker" + baseIndex);
-    color = accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, color);
-    document.getElementById("accountcolors-accountname" + index).style.backgroundColor = color;
-    if (type != "account") document.getElementById("accountcolors-identityname" + index).style.backgroundColor = color;
+    var color;
+    if (baseIndex != index) { // Reset identity's color to account's color
+      color = accountColorsOptions.pickerGetColor("accountcolors-bkgdpicker" + baseIndex);
+      color = accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, color);
+      document.getElementById("accountcolors-identityname" + index).style.backgroundColor = color;
+    } else if (accountColorsUtilities.thunderbirdVersion.major >= 128) { // Reset account's color to thunderbird 128+'s account color
+      var accountidkey = document.getElementById("accountcolors-accountidbox" + index).getAttribute("ac-accountidkey");
+      var identity, server, account;
+      if (accountidkey.startsWith("id")) {
+        identity = accountColorsUtilities.accountManager.getIdentity(accountidkey);
+        server = accountColorsUtilities.accountManager.getServersForIdentity(identity)[0];
+        account = accountColorsUtilities.accountManager.findAccountForServer(server);
+      } else {
+        account = accountColorsUtilities.accountManager.getAccount(accountidkey);
+        server = account.incomingServer;
+      }
+      color = FolderTreeProperties.getColor(server.rootFolder.URI) || "";
+      color = accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, color);
+      document.getElementById("accountcolors-accountname" + index).style.backgroundColor = color;
+      document.getElementById("accountcolors-identityname" + index).style.backgroundColor = color;
+    } else {
+      accountColorsOptions.pickerSetColor("accountcolors-bkgdpicker" + index, "");
+      document.getElementById("accountcolors-accountname" + index).style.backgroundColor = "";
+      document.getElementById("accountcolors-identityname" + index).style.backgroundColor = "";
+    }
   },
 
   /* Reset font color to account's color (first identity's color) */
