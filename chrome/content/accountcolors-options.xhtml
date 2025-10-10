@@ -368,6 +368,8 @@
       <hbox id="accountcolors-picker-overview">
         <button id="accountcolors-picker-fontpalette" class="accountcolors-picker" oncommand="accountColorsOptions.pickerPaletteOpen(this);" />
         <button id="accountcolors-picker-bkgdpalette" class="accountcolors-picker" oncommand="accountColorsOptions.pickerPaletteOpen(this);" />
+        <html:input type="color" id="accountcolors-picker-fontpalette-native" class="accountcolors-picker" oninput="accountColorsOptions.pickerHexStrChange()" />
+        <html:input type="color" id="accountcolors-picker-bkgdpalette-native" class="accountcolors-picker" oninput="accountColorsOptions.pickerHexStrChange()" />
         <label id="accountcolors-picker-sample" flex="1" value="&accountcolors.picker.sample;" />
         <html:input type="string" id="accountcolors-picker-hexstr" oninput="accountColorsOptions.pickerHexStrChange()" />
       </hbox>
