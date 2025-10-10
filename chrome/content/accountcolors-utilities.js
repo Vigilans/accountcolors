@@ -26,6 +26,12 @@ function getThunderbirdVersion() {
   }
 }
 
+if (getThunderbirdVersion().major >= 128) {
+  var { FolderTreeProperties } = ChromeUtils.importESModule(
+    "resource:///modules/FolderTreeProperties.sys.mjs"
+  );
+}
+
 var accountColorsUtilities = {
   thunderbirdVersion: getThunderbirdVersion(),
 
@@ -288,11 +294,33 @@ var accountColorsUtilities = {
 
   bkgdColorPref: function (accountidkey) {
     var bkgdcolor;
+    var account, identity, server;
 
     try {
       bkgdcolor = accountColorsUtilities.prefs.getCharPref(accountidkey + "-bkgdcolor");
     } catch (e) {
       bkgdcolor = "";
+    }
+
+    if (!bkgdcolor) {
+      if (accountidkey.startsWith("id")) {
+        identity = accountColorsUtilities.accountManager.getIdentity(accountidkey);
+        server = accountColorsUtilities.accountManager.getServersForIdentity(identity)[0];
+        account = accountColorsUtilities.accountManager.findAccountForServer(server);
+        try { // Try to get bkgdcolor from account when identity color not set
+          bkgdcolor = accountColorsUtilities.prefs.getCharPref(account.key + "-bkgdcolor");
+        } catch (e) {
+          bkgdcolor = "";
+        }
+      } else {
+        account = accountColorsUtilities.accountManager.getAccount(accountidkey);
+        server = account.incomingServer;
+      }
+
+      // Try use thunderbird 128+ feature to get bkgdcolor as fallback
+      if (!bkgdcolor && accountColorsUtilities.thunderbirdVersion.major >= 128) {
+        bkgdcolor = FolderTreeProperties.getColor(server.rootFolder.URI);
+      }
     }
 
     return bkgdcolor;
