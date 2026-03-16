@@ -1,0 +1,175 @@
+/* Options page styles */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  margin: 0;
+  padding: 8px;
+  color: var(--text-color, #333);
+  background: var(--bg-color, #fff);
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    --text-color: #e0e0e0;
+    --bg-color: #2b2b2b;
+    --border-color: #555;
+    --tab-bg: #333;
+    --tab-active-bg: #444;
+    --input-bg: #3a3a3a;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    --text-color: #333;
+    --bg-color: #fff;
+    --border-color: #ccc;
+    --tab-bg: #e8e8e8;
+    --tab-active-bg: #fff;
+    --input-bg: #fff;
+  }
+}
+#options-container {
+  max-width: 700px;
+}
+.tabs {
+  display: flex;
+  gap: 2px;
+  border-bottom: 1px solid var(--border-color, #ccc);
+  margin-bottom: 8px;
+}
+.tab {
+  padding: 6px 12px;
+  border: 1px solid var(--border-color, #ccc);
+  border-bottom: none;
+  background: var(--tab-bg, #e8e8e8);
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 4px 4px 0 0;
+}
+.tab.active {
+  background: var(--tab-active-bg, #fff);
+  font-weight: bold;
+}
+.tabpanel {
+  display: none;
+  padding: 8px 0;
+}
+.tabpanel.active {
+  display: block;
+}
+.option-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  padding: 2px 0;
+}
+.option-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.option-row select {
+  padding: 2px 4px;
+  font-size: 12px;
+  background: var(--input-bg, #fff);
+  color: var(--text-color, #333);
+  border: 1px solid var(--border-color, #ccc);
+}
+
+/* Font style/size grid — 4 columns: [checkbox+label] [select] [checkbox+label] [select] */
+.style-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 10px;
+  row-gap: 4px;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 4px;
+  padding: 2px 0;
+}
+.style-grid label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.style-grid select {
+  padding: 2px 4px;
+  font-size: 12px;
+  background: var(--input-bg, #fff);
+  color: var(--text-color, #333);
+  border: 1px solid var(--border-color, #ccc);
+  min-width: 80px;
+}
+.style-grid select[id$="fontsize"],
+.style-grid select[id$="fromsize"] {
+  min-width: 50px;
+}
+.section-separator {
+  border: none;
+  border-top: 1px solid var(--border-color, #ccc);
+  margin: 8px 0;
+}
+/* Account/Identity Colors Tab */
+.accountidbox-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 50px 50px 50px;
+  gap: 4px;
+  font-weight: bold;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border-color, #ccc);
+  margin-bottom: 4px;
+}
+.accountid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 50px 50px 50px;
+  gap: 4px;
+  align-items: center;
+  padding: 2px 0;
+  border-bottom: 1px solid var(--border-color, #eee);
+}
+.accountid-row .account-name,
+.accountid-row .identity-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 2px 4px;
+}
+.accountid-row .identity-name {
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 2px;
+}
+.accountid-row input[type="color"] {
+  width: 36px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid var(--border-color, #ccc);
+  cursor: pointer;
+}
+.accountid-row .reset-btn {
+  font-size: 11px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+.picker-options {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.buttons {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.buttons button {
+  padding: 6px 16px;
+  font-size: 13px;
+  cursor: pointer;
+}

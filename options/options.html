@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title data-i18n-content="accountcolors_optionstitle"></title>
+  <link rel="stylesheet" href="options.css">
+  <script src="accountcolors-defaults.js"></script>
+</head>
+<body>
+  <div id="options-container">
+    <div class="tabs">
+      <button class="tab active" data-tab="account" data-i18n-content="accountcolors_accountcolors"></button>
+      <button class="tab" data-tab="folder" data-i18n-content="accountcolors_folderpane"></button>
+      <button class="tab" data-tab="thread" data-i18n-content="accountcolors_threadpane"></button>
+      <button class="tab" data-tab="message" data-i18n-content="accountcolors_messagepane"></button>
+      <button class="tab" data-tab="compose" data-i18n-content="accountcolors_composewindow"></button>
+    </div>
+
+    <!-- Account/Identity Colors Tab -->
+    <div class="tabpanel active" id="panel-account">
+      <div class="accountidbox-header">
+        <span data-i18n-content="accountcolors_account_account"></span>
+        <span data-i18n-content="accountcolors_account_identity"></span>
+        <span data-i18n-content="accountcolors_account_font"></span>
+        <span data-i18n-content="accountcolors_account_bkgd"></span>
+        <span data-i18n-content="accountcolors_account_reset"></span>
+      </div>
+      <div id="accountidbox-container"></div>
+      <div class="picker-options">
+        <label><input type="checkbox" id="picker-autobkgd"> <span data-i18n-content="accountcolors_picker_autobkgd"></span></label>
+        <label><input type="checkbox" id="picker-applyall"> <span data-i18n-content="accountcolors_picker_applyall"></span></label>
+      </div>
+    </div>
+
+    <!-- Folder Pane Tab -->
+    <div class="tabpanel" id="panel-folder">
+      <div class="style-grid">
+        <label><input type="checkbox" id="folder-setfontstyle" data-pref="folder-setfontstyle" data-type="bool"> <span data-i18n-content="accountcolors_folder_setfontstyle"></span></label>
+        <select id="folder-fontstyle" data-pref="folder-fontstyle" data-type="int"><option value="0">Normal</option><option value="1">Italic</option><option value="2">Bold</option><option value="3">Bold Italic</option></select>
+        <label><input type="checkbox" id="folder-setfontsize" data-pref="folder-setfontsize" data-type="bool"> <span data-i18n-content="accountcolors_folder_setfontsize"></span></label>
+        <select id="folder-fontsize" data-pref="folder-fontsize" data-type="int"></select>
+      </div>
+      <hr class="section-separator">
+      <div class="option-row">
+        <label><input type="checkbox" id="folder-colorfont" data-pref="folder-colorfont" data-type="bool"> <span data-i18n-content="accountcolors_folder_colorfont"></span></label>
+        <label><input type="checkbox" id="folder-colorbkgd" data-pref="folder-colorbkgd" data-type="bool"> <span data-i18n-content="accountcolors_folder_colorbkgd"></span></label>
+      </div>
+      <div class="option-row">
+        <label><input type="checkbox" id="folder-colorbkgd-gradient" data-pref="folder-colorbkgd-gradient" data-type="bool"> <span data-i18n-content="accountcolors_folder_colorbkgd_gradient"></span></label>
+      </div>
+    </div>
+
+    <!-- Thread Pane Tab -->
+    <div class="tabpanel" id="panel-thread">
+      <div class="style-grid">
+        <label><input type="checkbox" id="thread-setfontstyle" data-pref="thread-setfontstyle" data-type="bool"> <span data-i18n-content="accountcolors_thread_setfontstyle"></span></label>
+        <select id="thread-fontstyle" data-pref="thread-fontstyle" data-type="int"><option value="0">Normal</option><option value="1">Italic</option><option value="2">Bold</option><option value="3">Bold Italic</option></select>
+        <label><input type="checkbox" id="thread-setfontsize" data-pref="thread-setfontsize" data-type="bool"> <span data-i18n-content="accountcolors_thread_setfontsize"></span></label>
+        <select id="thread-fontsize" data-pref="thread-fontsize" data-type="int"></select>
+
+        <label><input type="checkbox" id="thread-setunreadfontstyle" data-pref="thread-setunreadfontstyle" data-type="bool"> <span data-i18n-content="accountcolors_thread_setunreadfontstyle"></span></label>
+        <select id="thread-unreadfontstyle" data-pref="thread-unreadfontstyle" data-type="int"><option value="0">Normal</option><option value="1">Italic</option><option value="2">Bold</option><option value="3">Bold Italic</option></select>
+        <label><input type="checkbox" id="thread-setunreadfontsize" data-pref="thread-setunreadfontsize" data-type="bool"> <span data-i18n-content="accountcolors_thread_setunreadfontsize"></span></label>
+        <select id="thread-unreadfontsize" data-pref="thread-unreadfontsize" data-type="int"></select>
+
+        <label><input type="checkbox" id="thread-setfromstyle" data-pref="thread-setfromstyle" data-type="bool"> <span data-i18n-content="accountcolors_thread_setfromstyle"></span></label>
+        <select id="thread-fromstyle" data-pref="thread-fromstyle" data-type="int"><option value="0">Normal</option><option value="1">Italic</option><option value="2">Bold</option><option value="3">Bold Italic</option></select>
+        <label><input type="checkbox" id="thread-setfromsize" data-pref="thread-setfromsize" data-type="bool"> <span data-i18n-content="accountcolors_thread_setfromsize"></span></label>
+        <select id="thread-fromsize" data-pref="thread-fromsize" data-type="int"></select>
+
+        <label><input type="checkbox" id="thread-setunreadfromstyle" data-pref="thread-setunreadfromstyle" data-type="bool"> <span data-i18n-content="accountcolors_thread_setunreadfromstyle"></span></label>
+        <select id="thread-unreadfromstyle" data-pref="thread-unreadfromstyle" data-type="int"><option value="0">Normal</option><option value="1">Italic</option><option value="2">Bold</option><option value="3">Bold Italic</option></select>
+        <label><input type="checkbox" id="thread-setunreadfromsize" data-pref="thread-setunreadfromsize" data-type="bool"> <span data-i18n-content="accountcolors_thread_setunreadfromsize"></span></label>
+        <select id="thread-unreadfromsize" data-pref="thread-unreadfromsize" data-type="int"></select>
+      </div>
+      <hr class="section-separator">
+      <div class="option-row">
+        <label><input type="checkbox" id="thread-colorfont" data-pref="thread-colorfont" data-type="bool"> <span data-i18n-content="accountcolors_thread_colorfont"></span></label>
+        <label><input type="checkbox" id="thread-colorbkgd" data-pref="thread-colorbkgd" data-type="bool"> <span data-i18n-content="accountcolors_thread_colorbkgd"></span></label>
+      </div>
+      <div class="option-row">
+        <label><input type="checkbox" id="thread-colorfrom" data-pref="thread-colorfrom" data-type="bool"> <span data-i18n-content="accountcolors_thread_colorfrom"></span></label>
+        <label><input type="checkbox" id="thread-colorother" data-pref="thread-colorother" data-type="bool"> <span data-i18n-content="accountcolors_thread_colorother"></span></label>
+      </div>
+      <div class="option-row">
+        <label><input type="checkbox" id="thread-colorbkgd-gradient" data-pref="thread-colorbkgd-gradient" data-type="bool"> <span data-i18n-content="accountcolors_thread_colorbkgd_gradient"></span></label>
+      </div>
+      <div class="option-row">
+        <label><input type="checkbox" id="thread-colorbkgd-row-label" data-pref="thread-colorbkgd-row-label" data-type="bool"> <span data-i18n-content="accountcolors_thread_colorbkgd_row_label"></span></label>
+        <select id="thread-row-label-position" data-pref="thread-row-label-position" data-type="int"><option value="0">Subject Column</option><option value="1">First Column</option></select>
+        <select id="thread-row-label-width" data-pref="thread-row-label-width" data-type="int"><option value="1">Width: 1</option><option value="2">Width: 2</option><option value="3">Width: 3</option><option value="4">Width: 4</option><option value="5">Width: 5</option><option value="6">Width: 6</option><option value="7">Width: 7</option><option value="8">Width: 8</option><option value="9">Width: 9</option><option value="10">Width: 10</option><option value="11">Width: 11</option><option value="12">Width: 12</option></select>
+      </div>
+      <div class="option-row">
+        <label><input type="checkbox" id="thread-colorbkgd-card-label" data-pref="thread-colorbkgd-card-label" data-type="bool"> <span data-i18n-content="accountcolors_thread_colorbkgd_card_label"></span></label>
+        <select id="thread-card-label-width" data-pref="thread-card-label-width" data-type="int"><option value="1">Width: 1</option><option value="2">Width: 2</option><option value="3">Width: 3</option><option value="4">Width: 4</option><option value="5">Width: 5</option><option value="6">Width: 6</option><option value="7">Width: 7</option><option value="8">Width: 8</option><option value="9">Width: 9</option><option value="10">Width: 10</option><option value="11">Width: 11</option><option value="12">Width: 12</option></select>
+      </div>
+    </div>
+
+    <!-- Message Pane Tab -->
+    <div class="tabpanel" id="panel-message">
+      <div class="style-grid">
+        <label><input type="checkbox" id="message-setfontstyle" data-pref="message-setfontstyle" data-type="bool"> <span data-i18n-content="accountcolors_message_setfontstyle"></span></label>
+        <select id="message-fontstyle" data-pref="message-fontstyle" data-type="int"><option value="0">Normal</option><option value="1">Italic</option><option value="2">Bold</option><option value="3">Bold Italic</option></select>
+        <label><input type="checkbox" id="message-setfontsize" data-pref="message-setfontsize" data-type="bool"> <span data-i18n-content="accountcolors_message_setfontsize"></span></label>
+        <select id="message-fontsize" data-pref="message-fontsize" data-type="int"></select>
+
+        <label><input type="checkbox" id="message-setfromstyle" data-pref="message-setfromstyle" data-type="bool"> <span data-i18n-content="accountcolors_message_setfromstyle"></span></label>
+        <select id="message-fromstyle" data-pref="message-fromstyle" data-type="int"><option value="0">Normal</option><option value="1">Italic</option><option value="2">Bold</option><option value="3">Bold Italic</option></select>
+        <label><input type="checkbox" id="message-setfromsize" data-pref="message-setfromsize" data-type="bool"> <span data-i18n-content="accountcolors_message_setfromsize"></span></label>
+        <select id="message-fromsize" data-pref="message-fromsize" data-type="int"></select>
+      </div>
+      <hr class="section-separator">
+      <div class="option-row">
+        <label><input type="checkbox" id="message-colorfont" data-pref="message-colorfont" data-type="bool"> <span data-i18n-content="accountcolors_message_colorfont"></span></label>
+        <label><input type="checkbox" id="message-colorbkgd" data-pref="message-colorbkgd" data-type="bool"> <span data-i18n-content="accountcolors_message_colorbkgd"></span></label>
+      </div>
+      <div class="option-row">
+        <label><input type="checkbox" id="message-colorfrom" data-pref="message-colorfrom" data-type="bool"> <span data-i18n-content="accountcolors_message_colorfrom"></span></label>
+      </div>
+      <div class="option-row">
+        <label><input type="checkbox" id="message-colorbkgd-gradient" data-pref="message-colorbkgd-gradient" data-type="bool"> <span data-i18n-content="accountcolors_message_colorbkgd_gradient"></span></label>
+      </div>
+      <div class="option-row">
+        <label><input type="checkbox" id="message-colorbkgd-header-label" data-pref="message-colorbkgd-header-label" data-type="bool"> <span data-i18n-content="accountcolors_message_colorbkgd_header_label"></span></label>
+        <select id="message-header-label-width" data-pref="message-header-label-width" data-type="int"><option value="1">Width: 1</option><option value="2">Width: 2</option><option value="3">Width: 3</option><option value="4">Width: 4</option><option value="5">Width: 5</option><option value="6">Width: 6</option><option value="7">Width: 7</option><option value="8">Width: 8</option><option value="9">Width: 9</option><option value="10">Width: 10</option><option value="11">Width: 11</option><option value="12">Width: 12</option></select>
+      </div>
+    </div>
+
+    <!-- Compose Window Tab -->
+    <div class="tabpanel" id="panel-compose">
+      <div class="style-grid">
+        <label><input type="checkbox" id="compose-setfontstyle" data-pref="compose-setfontstyle" data-type="bool"> <span data-i18n-content="accountcolors_compose_setfontstyle"></span></label>
+        <select id="compose-fontstyle" data-pref="compose-fontstyle" data-type="int"><option value="0">Normal</option><option value="1">Italic</option><option value="2">Bold</option><option value="3">Bold Italic</option></select>
+        <label><input type="checkbox" id="compose-setfontsize" data-pref="compose-setfontsize" data-type="bool"> <span data-i18n-content="accountcolors_compose_setfontsize"></span></label>
+        <select id="compose-fontsize" data-pref="compose-fontsize" data-type="int"></select>
+      </div>
+      <hr class="section-separator">
+      <div class="option-row">
+        <label><input type="checkbox" id="compose-colorfont" data-pref="compose-colorfont" data-type="bool"> <span data-i18n-content="accountcolors_compose_colorfont"></span></label>
+        <label><input type="checkbox" id="compose-colorbkgd" data-pref="compose-colorbkgd" data-type="bool"> <span data-i18n-content="accountcolors_compose_colorbkgd"></span></label>
+      </div>
+      <div class="option-row">
+        <label><input type="checkbox" id="compose-colorbkgd-gradient" data-pref="compose-colorbkgd-gradient" data-type="bool"> <span data-i18n-content="accountcolors_compose_colorbkgd_gradient"></span></label>
+      </div>
+      <div class="option-row">
+        <label><input type="checkbox" id="compose-colorbkgd-idmenu-label" data-pref="compose-colorbkgd-idmenu-label" data-type="bool"> <span data-i18n-content="accountcolors_compose_colorbkgd_idmenu_label"></span></label>
+        <select id="compose-idmenu-label-width" data-pref="compose-idmenu-label-width" data-type="int"><option value="1">Width: 1</option><option value="2">Width: 2</option><option value="3">Width: 3</option><option value="4">Width: 4</option><option value="5">Width: 5</option><option value="6">Width: 6</option><option value="7">Width: 7</option><option value="8">Width: 8</option><option value="9">Width: 9</option><option value="10">Width: 10</option><option value="11">Width: 11</option><option value="12">Width: 12</option></select>
+      </div>
+    </div>
+
+
+  </div>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

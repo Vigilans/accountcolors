@@ -1,0 +1,225 @@
+[
+  {
+    "namespace": "messageStyles",
+    "description": "A generic API for applying declarative styling rules to messages and folders in Thunderbird's UI. Rules consist of predicate conditions that match against message or folder properties, and style properties to apply when matched. Multiple rules can match simultaneously; styles are merged with higher-priority rules taking precedence per-property.",
+    "types": [
+      {
+        "id": "StyleCondition",
+        "type": "object",
+        "description": "A predicate condition. Leaf conditions have 'property', 'op', and optionally 'value'. Logical combinators use 'all' (AND array), 'any' (OR array), or 'not' (negated condition). Operators: 'equals', 'notEquals', 'contains' (substring or array-member), 'notContains', 'matches' (regex), 'startsWith', 'endsWith', 'gt', 'lt', 'gte', 'lte', 'in' (value in array), 'exists', 'notExists'. Message properties (threadPane, messageHeader): account, identity, folder, folderPath, folderType (inbox/sent/drafts/trash/junk/templates/archive), serverType (imap/pop3/nntp/rss/none), serverHostName, from, to, cc, subject, date (ms epoch), age (days), size (bytes), isRead, isFlagged, isReplied, isForwarded, hasAttachments, keywords (space-delimited tags), priority (0-5), junkScore. Folder properties (folderPane): account, identity, folderName, folderPath, folderType, serverType, serverHostName. Compose properties (composeWindow): account, identity.",
+        "additionalProperties": true
+      },
+      {
+        "id": "ColumnStyleProperties",
+        "type": "object",
+        "description": "Style properties for a specific thread pane column.",
+        "properties": {
+          "fontColor": {
+            "type": "string",
+            "optional": true,
+            "description": "CSS color value for text."
+          },
+          "fontWeight": {
+            "type": "string",
+            "optional": true,
+            "description": "'normal' or 'bold'."
+          },
+          "fontStyle": {
+            "type": "string",
+            "optional": true,
+            "description": "'normal' or 'italic'."
+          },
+          "fontSize": {
+            "type": "integer",
+            "optional": true,
+            "minimum": 8,
+            "maximum": 24,
+            "description": "Font size in pixels."
+          }
+        },
+        "additionalProperties": false
+      },
+      {
+        "id": "StyleProperties",
+        "type": "object",
+        "description": "Style properties to apply when a rule matches.",
+        "properties": {
+          "fontColor": {
+            "type": "string",
+            "optional": true,
+            "description": "CSS color value for text. Applies to all columns unless overridden."
+          },
+          "backgroundColor": {
+            "type": "string",
+            "optional": true,
+            "description": "CSS color value for row/header background."
+          },
+          "fontWeight": {
+            "type": "string",
+            "optional": true,
+            "description": "'normal' or 'bold'. Applies to all columns unless overridden."
+          },
+          "fontStyle": {
+            "type": "string",
+            "optional": true,
+            "description": "'normal' or 'italic'. Applies to all columns unless overridden."
+          },
+          "fontSize": {
+            "type": "integer",
+            "optional": true,
+            "minimum": 8,
+            "maximum": 24,
+            "description": "Font size in pixels. Applies to all columns unless overridden."
+          },
+          "backgroundStyle": {
+            "type": "string",
+            "optional": true,
+            "description": "'solid' (default) or 'gradient' (fade from left to transparent)."
+          },
+          "rowLabelWidth": {
+            "type": "integer",
+            "optional": true,
+            "minimum": 1,
+            "maximum": 12,
+            "description": "When set, table-view background renders as a narrow label stripe of this width in pixels."
+          },
+          "rowLabelPosition": {
+            "type": "string",
+            "optional": true,
+            "description": "'subject' (on the subject column, default) or 'first' (on the first visible column)."
+          },
+          "cardLabelWidth": {
+            "type": "integer",
+            "optional": true,
+            "minimum": 1,
+            "maximum": 12,
+            "description": "When set, card-view background renders as a narrow label stripe of this width in pixels."
+          },
+          "labelColor": {
+            "type": "string",
+            "optional": true,
+            "description": "CSS color for the label stripe. Defaults to fontColor if not specified."
+          },
+          "headerLabelWidth": {
+            "type": "integer",
+            "optional": true,
+            "minimum": 1,
+            "maximum": 12,
+            "description": "When set, message header background renders as a narrow label stripe of this width in pixels."
+          },
+          "idmenuLabelWidth": {
+            "type": "integer",
+            "optional": true,
+            "minimum": 1,
+            "maximum": 12,
+            "description": "When set, compose identity/header background renders as a narrow label stripe of this width in pixels."
+          },
+          "columns": {
+            "type": "object",
+            "optional": true,
+            "description": "Per-column style overrides for threadPane context. Keys are column IDs ('subjectCol', 'senderCol', 'correspondentCol', 'dateCol', 'sizeCol', 'accountCol') or aliases ('subject', 'from', 'date', 'size', 'other'). Values are ColumnStyleProperties objects.",
+            "additionalProperties": {
+              "$ref": "ColumnStyleProperties"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      {
+        "id": "StylingRule",
+        "type": "object",
+        "description": "A styling rule binding predicate conditions to visual styles.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for this rule."
+          },
+          "priority": {
+            "type": "integer",
+            "optional": true,
+            "description": "Rule priority. When multiple rules match, styles merge with higher-priority properties taking precedence. Default is 0."
+          },
+          "contexts": {
+            "type": "array",
+            "description": "UI contexts where this rule applies.",
+            "items": {
+              "type": "string",
+              "enum": ["threadPane", "folderPane", "messageHeader", "composeWindow"]
+            }
+          },
+          "conditions": {
+            "$ref": "StyleCondition",
+            "description": "Predicate conditions to test against message/folder properties."
+          },
+          "style": {
+            "$ref": "StyleProperties",
+            "description": "Styles to apply when conditions match."
+          }
+        }
+      }
+    ],
+    "functions": [
+      {
+        "name": "startup",
+        "type": "function",
+        "async": true,
+        "description": "Initialize the API. Registers chrome URLs and window listeners. Must be called once at startup before adding rules.",
+        "parameters": []
+      },
+      {
+        "name": "addRule",
+        "type": "function",
+        "async": true,
+        "description": "Register a styling rule. If a rule with the same ID already exists (from the same extension), it is replaced. Rules take effect immediately in all open windows. Rules are scoped per extension — each extension manages its own set of rules independently.",
+        "parameters": [
+          {
+            "name": "rule",
+            "$ref": "StylingRule",
+            "description": "The styling rule to register."
+          }
+        ]
+      },
+      {
+        "name": "removeRule",
+        "type": "function",
+        "async": true,
+        "description": "Remove a styling rule previously registered by this extension.",
+        "parameters": [
+          {
+            "name": "ruleId",
+            "type": "string",
+            "description": "The ID of the rule to remove."
+          }
+        ]
+      },
+      {
+        "name": "getRules",
+        "type": "function",
+        "async": true,
+        "description": "Get all styling rules registered by this extension.",
+        "parameters": []
+      },
+      {
+        "name": "clearRules",
+        "type": "function",
+        "async": true,
+        "description": "Remove all styling rules registered by this extension. Rules from other extensions are not affected.",
+        "parameters": []
+      },
+      {
+        "name": "setRules",
+        "type": "function",
+        "async": true,
+        "description": "Atomically replace this extension's styling rules. Clears only the calling extension's existing rules, adds the provided rules, and broadcasts once. Rules from other extensions are not affected.",
+        "parameters": [
+          {
+            "name": "rules",
+            "type": "array",
+            "items": { "$ref": "StylingRule" },
+            "description": "The complete set of styling rules to register."
+          }
+        ]
+      }
+    ]
+  }
+]

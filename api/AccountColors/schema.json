@@ -1,0 +1,15 @@
+[
+  {
+    "namespace": "AccountColors",
+    "description": "AccountColors-specific helpers. Provides access to legacy Services.prefs for one-time preference migration.",
+    "functions": [
+      {
+        "name": "migratePrefsFromBranch",
+        "type": "function",
+        "async": true,
+        "description": "Read user-set preferences from the legacy extensions.accountcolors.* Services.prefs branch. Returns an object mapping pref names (without the branch prefix) to their values. Intended for one-time migration to browser.storage.local.",
+        "parameters": []
+      }
+    ]
+  }
+]

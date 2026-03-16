@@ -1,0 +1,338 @@
+{
+  "accountcolors_options": {
+    "message": "Account Colors - Einstellungen…"
+  },
+  "accountcolors_options_ak": {
+    "message": "i"
+  },
+  "accountcolors_optionstitle": {
+    "message": "Account Colors -  Einstellungen"
+  },
+  "accountcolors_applyprefs": {
+    "message": "Anwenden"
+  },
+  "accountcolors_accountcolors": {
+    "message": "Konten-/Identitätsfarben"
+  },
+  "accountcolors_folderpane": {
+    "message": "Ordnerleiste"
+  },
+  "accountcolors_threadpane": {
+    "message": "Themenleiste"
+  },
+  "accountcolors_messagepane": {
+    "message": "Nachrichtenleiste/Tab/Fenster"
+  },
+  "accountcolors_composewindow": {
+    "message": "Verfassen-Fenster"
+  },
+  "accountcolors_account_account": {
+    "message": "Konto"
+  },
+  "accountcolors_account_identity": {
+    "message": "Identität"
+  },
+  "accountcolors_account_font": {
+    "message": "Text"
+  },
+  "accountcolors_account_bkgd": {
+    "message": "Hintergrund"
+  },
+  "accountcolors_account_reset": {
+    "message": "Zurücksetzen"
+  },
+  "accountcolors_folder_setfontstyle": {
+    "message": "Schriftstil für Konten-Bezeichnung:"
+  },
+  "accountcolors_folder_setfontsize": {
+    "message": "Schriftgröße für Konten-Bezeichnung:"
+  },
+  "accountcolors_folder_colorfont": {
+    "message": "Konten-Bezeichnung kolorieren"
+  },
+  "accountcolors_folder_colorbkgd": {
+    "message": "Kontenfeld-Hintergrund kolorieren"
+  },
+  "accountcolors_folder_colorfldfont": {
+    "message": "Ordnertext kolorieren"
+  },
+  "accountcolors_folder_colorfldbkgd": {
+    "message": "Ordner-Hintergrund kolorieren"
+  },
+  "accountcolors_folder_colorother": {
+    "message": "Color Unread/Total/Size Fonts"
+  },
+  "accountcolors_folder_colorotherbkgd": {
+    "message": "Color Unread/Total Background"
+  },
+  "accountcolors_folder_blackrowfont": {
+    "message": "Black Row Fonts"
+  },
+  "accountcolors_folder_lightpanebkgd": {
+    "message": "Light Pane Background"
+  },
+  "accountcolors_folder_whiterowfont": {
+    "message": "White Row Fonts"
+  },
+  "accountcolors_folder_darkpanebkgd": {
+    "message": "Dark Pane Background"
+  },
+  "accountcolors_folder_defaultbkgd": {
+    "message": "Retain default light/dark background if White selected"
+  },
+  "accountcolors_folder_boldnewmail": {
+    "message": "Konten/Ordner mit neuen Nachrichten in Fettschrift"
+  },
+  "accountcolors_folder_undernewmail": {
+    "message": "Konten/Ordner mit neuen Nachrichten unterstreichen"
+  },
+  "accountcolors_folder_noboldunread": {
+    "message": "Keine Fettschrift für Ordner mit ungelesenen Nachrichten"
+  },
+  "accountcolors_folder_showlines": {
+    "message": "Linien in der Baumansicht anzeigen"
+  },
+  "accountcolors_folder_darkerbar": {
+    "message": "Dunklere Auswahlleiste"
+  },
+  "accountcolors_folder_incspacing": {
+    "message": "Zeilenabstand an die Schriftgröße der Konten-Bezeichnung anpassen"
+  },
+  "accountcolors_folder_hoverselect": {
+    "message": "Reinstate default hover and select styles"
+  },
+  "accountcolors_folder_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_folder_colorbkgd_account_icon": {
+    "message": "Render Account Background Color as Icon Color"
+  },
+  "accountcolors_folder_colorbkgd_folder_icon": {
+    "message": "Render Folder Background Color as Icon Color"
+  },
+  "accountcolors_thread_setfontstyle": {
+    "message": "Betreffzeilen-Schriftstil:"
+  },
+  "accountcolors_thread_setfontsize": {
+    "message": "Betreffzeilen-Schriftgröße:"
+  },
+  "accountcolors_thread_setfromstyle": {
+    "message": "Von-Zeilen-Schriftstil:"
+  },
+  "accountcolors_thread_setfromsize": {
+    "message": "Von-Zeilen-Schriftgröße:"
+  },
+  "accountcolors_thread_colorfont": {
+    "message": "Betreffzeilen-Text kolorieren"
+  },
+  "accountcolors_thread_colorbkgd": {
+    "message": "Zeilen-Hintergrund kolorieren"
+  },
+  "accountcolors_thread_colorfrom": {
+    "message": "Von-Zeilen-Text kolorieren"
+  },
+  "accountcolors_thread_colorother": {
+    "message": "Text von Empfänger/Datum/Größe/Konto/etc kolorieren"
+  },
+  "accountcolors_thread_colorpanebkgd": {
+    "message": "Color Pane Background"
+  },
+  "accountcolors_thread_blackrowfont": {
+    "message": "Black Row Fonts"
+  },
+  "accountcolors_thread_lightpanebkgd": {
+    "message": "Light Pane Background"
+  },
+  "accountcolors_thread_whiterowfont": {
+    "message": "White Row Fonts"
+  },
+  "accountcolors_thread_darkpanebkgd": {
+    "message": "Dark Pane Background"
+  },
+  "accountcolors_thread_hdraccount": {
+    "message": "Farben je nach Empfängerkonto anders"
+  },
+  "accountcolors_thread_boldsubject": {
+    "message": "Betreffzeile in Fettschrift bei ungelesenen Nachrichten"
+  },
+  "accountcolors_thread_boldfrom": {
+    "message": "Von-Zeile in Fettschrift bei ungelesenen Nachrichten"
+  },
+  "accountcolors_thread_hidestripes": {
+    "message": "Zeilenlinien ausblenden"
+  },
+  "accountcolors_thread_showstripes": {
+    "message": "Zeilenlinien einblenden"
+  },
+  "accountcolors_thread_darkerbar": {
+    "message": "Dunklere Farben für nicht-fokussierte Auswahlleiste"
+  },
+  "accountcolors_thread_incspacing": {
+    "message": "Zeilenabstand an die Schriftgröße der Betreffzeile anpassen"
+  },
+  "accountcolors_thread_hoverselect": {
+    "message": "Reinstate default hover and select styles"
+  },
+  "accountcolors_thread_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_thread_colorbkgd_row_label": {
+    "message": "Color Row Background as Label in Table View on"
+  },
+  "accountcolors_thread_colorbkgd_card_label": {
+    "message": "Color Row Background as Label in Card View with"
+  },
+  "accountcolors_thread_color_unified_only": {
+    "message": "Only Color in Unified Folder"
+  },
+  "accountcolors_message_setfontstyle": {
+    "message": "Betreffzeilen-Schriftstil:"
+  },
+  "accountcolors_message_setfontsize": {
+    "message": "Betreffzeilen-Schriftgröße:"
+  },
+  "accountcolors_message_setfromstyle": {
+    "message": "From Font Style"
+  },
+  "accountcolors_message_setfromsize": {
+    "message": "From Font Size"
+  },
+  "accountcolors_message_colorfont": {
+    "message": "Betreffzeilen-Text kolorieren"
+  },
+  "accountcolors_message_colorbkgd": {
+    "message": "Nachrichtenkopf-Hintergrund kolorieren"
+  },
+  "accountcolors_message_colorfrom": {
+    "message": "Color From Font"
+  },
+  "accountcolors_message_blackhdrlabels": {
+    "message": "Black Header Labels"
+  },
+  "accountcolors_message_whitehdrlabels": {
+    "message": "White Header Labels"
+  },
+  "accountcolors_message_hdraccount": {
+    "message": "Farben je nach Empfängerkonto anders"
+  },
+  "accountcolors_message_defaultbkgd": {
+    "message": "Retain default light/dark background if White selected"
+  },
+  "accountcolors_message_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_message_colorbkgd_header_label": {
+    "message": "Color Header Background as Label"
+  },
+  "accountcolors_compose_setfontstyle": {
+    "message": "Betreffzeilen-Schriftstil:"
+  },
+  "accountcolors_compose_setfontsize": {
+    "message": "Betreffzeilen-Schriftgröße:"
+  },
+  "accountcolors_compose_setidfontstyle": {
+    "message": "Von-Zeilen-Schriftstil:"
+  },
+  "accountcolors_compose_setidfontsize": {
+    "message": "Von-Zeilen-Schriftgröße:"
+  },
+  "accountcolors_compose_colorfont": {
+    "message": "Betreffzeilen-Text kolorieren"
+  },
+  "accountcolors_compose_colorbkgd": {
+    "message": "Betreffzeilen-Hintergrund kolorieren"
+  },
+  "accountcolors_compose_colorfromfont": {
+    "message": "Von-Zeilen-Text kolorieren"
+  },
+  "accountcolors_compose_colorfrombkgd": {
+    "message": "Von-Zeilen-Hintergrund kolorieren"
+  },
+  "accountcolors_compose_colortofont": {
+    "message": "Color To/Cc/Bcc Fonts"
+  },
+  "accountcolors_compose_colortobkgd": {
+    "message": "An/Cc/Bcc-Hintergrund kolorieren"
+  },
+  "accountcolors_compose_coloratmfont": {
+    "message": "Color Attachment Font"
+  },
+  "accountcolors_compose_coloratmbkgd": {
+    "message": "Anhangfeld-Hintergrund kolorieren"
+  },
+  "accountcolors_compose_colorhdrfont": {
+    "message": "Color Header Font"
+  },
+  "accountcolors_compose_colorhdrbkgd": {
+    "message": "Nachrichtenkopf-Hintergrund kolorieren"
+  },
+  "accountcolors_compose_blackhdrlabels": {
+    "message": "Black Header Labels"
+  },
+  "accountcolors_compose_whitehdrlabels": {
+    "message": "White Header Labels"
+  },
+  "accountcolors_compose_blackfieldfont": {
+    "message": "Black Field Fonts"
+  },
+  "accountcolors_compose_lightfieldbkgd": {
+    "message": "Light Field Backgrounds (on hover or focus)"
+  },
+  "accountcolors_compose_whitefieldfont": {
+    "message": "White Field Fonts"
+  },
+  "accountcolors_compose_darkfieldbkgd": {
+    "message": "Dark Field Backgrounds (on hover or focus)"
+  },
+  "accountcolors_compose_defaultbkgd": {
+    "message": "Retain default light/dark background if White selected"
+  },
+  "accountcolors_compose_hoverfrom": {
+    "message": "Reinstate default hover style (on From menu)"
+  },
+  "accountcolors_compose_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_compose_colorbkgd_idmenu_label": {
+    "message": "Color Identity Background in From Menu as Label"
+  },
+  "accountcolors_picker_fonttitle": {
+    "message": "Farbauswahl-Text"
+  },
+  "accountcolors_picker_bkgdtitle": {
+    "message": "Farbauswahl-Hintergrund"
+  },
+  "accountcolors_picker_sample": {
+    "message": "Vorschau"
+  },
+  "accountcolors_picker_red": {
+    "message": "R:"
+  },
+  "accountcolors_picker_green": {
+    "message": "G:"
+  },
+  "accountcolors_picker_blue": {
+    "message": "B:"
+  },
+  "accountcolors_picker_hue": {
+    "message": "H:"
+  },
+  "accountcolors_picker_saturation": {
+    "message": "S:"
+  },
+  "accountcolors_picker_value": {
+    "message": "V:"
+  },
+  "accountcolors_picker_autobkgd": {
+    "message": "Hintergrundfarbe automatisch anpassen"
+  },
+  "accountcolors_picker_applyall": {
+    "message": "Apply color to all identities"
+  },
+  "accountcolors_picker_okay": {
+    "message": "OK"
+  },
+  "accountcolors_picker_cancel": {
+    "message": "Abbrechen"
+  }
+}

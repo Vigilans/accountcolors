@@ -1,33 +1,55 @@
 {
   "manifest_version": 2,
   "name": "Account Colors",
-  "version": "15.0",
+  "version": "16.0",
 
   "description": "Associates colors with account names and identities. Applies colors to folder tree, message list and message headers.",
   "icons": {
-    "32": "chrome/skin/accountcolors-icon.png"
+    "32": "icons/accountcolors-icon.png"
   },
 
-  "applications": {
+  "default_locale": "en",
+
+  "browser_specific_settings": {
     "gecko": {
       "id": "accountcolors@gazhay",
-      "strict_min_version": "102.0",
+      "strict_min_version": "115.0",
       "strict_max_version": "150.*"
     }
   },
 
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+
+  "permissions": [
+    "accountsRead",
+    "menus",
+    "storage"
+  ],
+
   "experiment_apis": {
-    "WindowListener": {
-      "schema": "api/WindowListener/schema.json",
+    "messageStyles": {
+      "schema": "api/MessageStyles/schema.json",
       "parent": {
         "scopes": ["addon_parent"],
-        "paths": [["WindowListener"]],
-        "script": "api/WindowListener/implementation.js"
+        "paths": [["messageStyles"]],
+        "script": "api/MessageStyles/implementation.js",
+        "events": ["startup"]
+      }
+    },
+    "AccountColors": {
+      "schema": "api/AccountColors/schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "paths": [["AccountColors"]],
+        "script": "api/AccountColors/implementation.js"
       }
     }
   },
 
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["options/accountcolors-defaults.js", "background.js"]
   }
 }

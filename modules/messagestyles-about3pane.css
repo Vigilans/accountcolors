@@ -1,0 +1,166 @@
+/*
+ * messageStyles — about:3pane CSS
+ *
+ * Consumes --ms-* custom properties set by the JS engine.
+ * Properties are only set on elements that match a rule, so
+ * unset vars fall back harmlessly to inherited / initial values.
+ *
+ * License: MPL-2.0
+ */
+
+/* ── Folder Pane ──────────────────────────────────────────────────── */
+
+/* Folder name text color */
+#folderTree li[is="folder-tree-row"] .name {
+    color: var(--ms-font-color, currentColor);
+}
+
+/* Preserve new-messages accent when no override */
+#folderTree li[is="folder-tree-row"].new-messages > .container > .name {
+    color: var(--ms-font-color, var(--new-folder-color));
+}
+
+/* Row background (not when selected — let TB selection color show) */
+#folderTree li[is="folder-tree-row"]:not(.selected) > .container {
+    background-color: var(--ms-bkgd-color);
+}
+
+/* Gradient background variant */
+#folderTree li[is="folder-tree-row"][ms-gradient]:not(.selected) > .container {
+    background-image: linear-gradient(to right,
+        var(--ms-bkgd-color),
+        color-mix(in srgb, var(--ms-bkgd-color) 80%, transparent) 4%,
+        color-mix(in srgb, var(--ms-bkgd-color) 60%, transparent) 8%,
+        color-mix(in srgb, var(--ms-bkgd-color) 40%, transparent) 16%,
+        color-mix(in srgb, var(--ms-bkgd-color) 20%, transparent) 32%,
+        transparent 100%);
+    background-color: unset;
+}
+
+/* Font weight / style on folder row */
+#folderTree li[is="folder-tree-row"] {
+    font-weight: var(--ms-font-weight);
+    font-style: var(--ms-font-style);
+}
+
+/* Font size on folder name */
+#folderTree li > .container > .name {
+    font-size: var(--ms-font-size);
+}
+
+/* Unread / total count badges */
+#folderTree li[is="folder-tree-row"] .unread-count {
+    color: var(--ms-font-color, var(--folderpane-unread-count-text));
+    background-color: var(--ms-badge-bkgd-color, var(--folderpane-unread-count-background));
+}
+#folderTree li[is="folder-tree-row"] .total-count {
+    color: var(--ms-font-color, var(--folderpane-total-count-text));
+    background-color: var(--ms-badge-bkgd-color, var(--folderpane-total-count-background));
+}
+
+/* Folder size text */
+#folderTree li[is="folder-tree-row"] .folder-size {
+    color: var(--ms-font-color, var(--layout-color-3));
+}
+
+
+/* ── Thread Pane (table view) ─────────────────────────────────────── */
+
+/* Row background (skip selected rows and label mode so TB selection styling wins) */
+#threadTree tr[is="thread-row"]:not(.selected):not([ms-row-label]) {
+    background-color: var(--ms-bkgd-color);
+}
+
+/* Gradient row background (not in label mode) */
+#threadTree tr[is="thread-row"][ms-gradient]:not(.selected):not([ms-row-label]) {
+    background-image: linear-gradient(to right,
+        var(--ms-bkgd-color),
+        color-mix(in srgb, var(--ms-bkgd-color) 80%, transparent) 4%,
+        color-mix(in srgb, var(--ms-bkgd-color) 60%, transparent) 8%,
+        color-mix(in srgb, var(--ms-bkgd-color) 40%, transparent) 16%,
+        color-mix(in srgb, var(--ms-bkgd-color) 20%, transparent) 32%,
+        transparent 100%);
+    background-color: unset;
+}
+
+/* Row label on subject column */
+#threadTree tr[is="thread-row"][ms-row-label="subject"]:not(.selected) td.subjectcol-column .thread-container {
+    background-image: linear-gradient(to right,
+        var(--ms-label-color), var(--ms-label-color) var(--ms-label-width),
+        transparent var(--ms-label-width), transparent 100%);
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+/* Row label on first visible column */
+#threadTree tr[is="thread-row"][ms-row-label="first"]:not(.selected) td.ms-first-visible {
+    background-image: linear-gradient(to right,
+        var(--ms-label-color), var(--ms-label-color) var(--ms-label-width),
+        transparent var(--ms-label-width), transparent 100%);
+    background-clip: content-box;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+/* Column text styling (skip selected rows) */
+#threadTree tr[is="thread-row"]:not(.selected) td {
+    color: var(--ms-font-color, currentColor);
+    font-weight: var(--ms-font-weight);
+    font-style: var(--ms-font-style);
+    font-size: var(--ms-font-size);
+}
+
+
+/* ── Thread Pane (card view) ──────────────────────────────────────── */
+
+/* Card background (skip selected and label mode) */
+#threadTree tr[is="thread-card"]:not(.selected):not([ms-card-label]) .card-container {
+    background-color: var(--ms-bkgd-color);
+}
+
+/* Card gradient background (not in label mode) */
+#threadTree tr[is="thread-card"][ms-gradient]:not(.selected):not([ms-card-label]) .card-container {
+    background-image: linear-gradient(to right,
+        var(--ms-bkgd-color),
+        color-mix(in srgb, var(--ms-bkgd-color) 80%, transparent) 4%,
+        color-mix(in srgb, var(--ms-bkgd-color) 60%, transparent) 8%,
+        color-mix(in srgb, var(--ms-bkgd-color) 40%, transparent) 16%,
+        color-mix(in srgb, var(--ms-bkgd-color) 20%, transparent) 32%,
+        transparent 100%);
+    background-color: unset;
+}
+
+/* Card label */
+#threadTree tr[is="thread-card"][ms-card-label]:not(.selected) .card-container {
+    background-image: linear-gradient(to right,
+        var(--ms-label-color), var(--ms-label-color) var(--ms-label-width),
+        transparent var(--ms-label-width), transparent 100%);
+}
+
+/* Offset card content to make room for label */
+#threadTree tr[is="thread-card"][ms-card-label]:not(.selected) .card-container > div.thread-card-column:first-child {
+    margin-left: calc(var(--ms-label-width) / 2);
+    margin-right: calc(var(--ms-label-width) / -2);
+}
+
+/* Card sub-elements (skip selected cards) */
+#threadTree tr[is="thread-card"]:not(.selected) .subject {
+    color: var(--ms-font-color, currentColor);
+    font-weight: var(--ms-font-weight);
+    font-style: var(--ms-font-style);
+    font-size: var(--ms-font-size);
+}
+
+#threadTree tr[is="thread-card"]:not(.selected) .sender {
+    color: var(--ms-font-color, currentColor);
+    font-weight: var(--ms-font-weight);
+    font-style: var(--ms-font-style);
+    font-size: var(--ms-font-size);
+}
+
+#threadTree tr[is="thread-card"]:not(.selected) .date {
+    color: var(--ms-font-color, currentColor);
+    font-weight: var(--ms-font-weight);
+    font-style: var(--ms-font-style);
+    font-size: var(--ms-font-size);
+}
