@@ -1,0 +1,12 @@
+/*
+ * messageStyles — compose window CSS
+ *
+ * Minimal — most styling is applied inline by the JS engine.
+ *
+ * License: MPL-2.0
+ */
+
+/* Ensure identity selector respects color override */
+#msgIdentity {
+    -moz-appearance: none;
+}

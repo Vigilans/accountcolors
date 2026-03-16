@@ -1,0 +1,338 @@
+{
+  "accountcolors_options": {
+    "message": "Account Colors 选项..."
+  },
+  "accountcolors_options_ak": {
+    "message": "p"
+  },
+  "accountcolors_optionstitle": {
+    "message": "Account Colors 选项"
+  },
+  "accountcolors_applyprefs": {
+    "message": "应用"
+  },
+  "accountcolors_accountcolors": {
+    "message": "帐户/身份颜色"
+  },
+  "accountcolors_folderpane": {
+    "message": "文件夹面板"
+  },
+  "accountcolors_threadpane": {
+    "message": "话题面板"
+  },
+  "accountcolors_messagepane": {
+    "message": "消息面板/标签/窗口"
+  },
+  "accountcolors_composewindow": {
+    "message": "编写窗口"
+  },
+  "accountcolors_account_account": {
+    "message": "帐户"
+  },
+  "accountcolors_account_identity": {
+    "message": "身份"
+  },
+  "accountcolors_account_font": {
+    "message": "字体"
+  },
+  "accountcolors_account_bkgd": {
+    "message": "背景"
+  },
+  "accountcolors_account_reset": {
+    "message": "重置"
+  },
+  "accountcolors_folder_setfontstyle": {
+    "message": "帐户字体样式"
+  },
+  "accountcolors_folder_setfontsize": {
+    "message": "帐户字体大小"
+  },
+  "accountcolors_folder_colorfont": {
+    "message": "帐户字体颜色"
+  },
+  "accountcolors_folder_colorbkgd": {
+    "message": "帐户背景色"
+  },
+  "accountcolors_folder_colorfldfont": {
+    "message": "文件夹字体颜色"
+  },
+  "accountcolors_folder_colorfldbkgd": {
+    "message": "文件夹背景色"
+  },
+  "accountcolors_folder_colorother": {
+    "message": "Color Unread/Total/Size Fonts"
+  },
+  "accountcolors_folder_colorotherbkgd": {
+    "message": "Color Unread/Total Background"
+  },
+  "accountcolors_folder_blackrowfont": {
+    "message": "Black Row Fonts"
+  },
+  "accountcolors_folder_lightpanebkgd": {
+    "message": "Light Pane Background"
+  },
+  "accountcolors_folder_whiterowfont": {
+    "message": "White Row Fonts"
+  },
+  "accountcolors_folder_darkpanebkgd": {
+    "message": "Dark Pane Background"
+  },
+  "accountcolors_folder_defaultbkgd": {
+    "message": "Retain default light/dark background if White selected"
+  },
+  "accountcolors_folder_boldnewmail": {
+    "message": "粗体显示有新邮件的帐户/文件夹"
+  },
+  "accountcolors_folder_undernewmail": {
+    "message": "下划线显示有新邮件的帐户/文件夹"
+  },
+  "accountcolors_folder_noboldunread": {
+    "message": "文件夹有未读消息时不要显示为粗体"
+  },
+  "accountcolors_folder_showlines": {
+    "message": "显示树状连线"
+  },
+  "accountcolors_folder_darkerbar": {
+    "message": "暗色选择栏"
+  },
+  "accountcolors_folder_incspacing": {
+    "message": "基于帐户字体大小增加行间距（即使帐户字体大小未勾选）"
+  },
+  "accountcolors_folder_hoverselect": {
+    "message": "Reinstate default hover and select styles"
+  },
+  "accountcolors_folder_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_folder_colorbkgd_account_icon": {
+    "message": "Render Account Background Color as Icon Color"
+  },
+  "accountcolors_folder_colorbkgd_folder_icon": {
+    "message": "Render Folder Background Color as Icon Color"
+  },
+  "accountcolors_thread_setfontstyle": {
+    "message": "话题字体样式"
+  },
+  "accountcolors_thread_setfontsize": {
+    "message": "话题字体样式"
+  },
+  "accountcolors_thread_setfromstyle": {
+    "message": "来自字体样式"
+  },
+  "accountcolors_thread_setfromsize": {
+    "message": "来自字体大小"
+  },
+  "accountcolors_thread_colorfont": {
+    "message": "话题字体颜色"
+  },
+  "accountcolors_thread_colorbkgd": {
+    "message": "行背景色"
+  },
+  "accountcolors_thread_colorfrom": {
+    "message": "来自字体颜色"
+  },
+  "accountcolors_thread_colorother": {
+    "message": "收件人/日期/大小/帐户/等字体颜色"
+  },
+  "accountcolors_thread_colorpanebkgd": {
+    "message": "Color Pane Background"
+  },
+  "accountcolors_thread_blackrowfont": {
+    "message": "Black Row Fonts"
+  },
+  "accountcolors_thread_lightpanebkgd": {
+    "message": "Light Pane Background"
+  },
+  "accountcolors_thread_whiterowfont": {
+    "message": "White Row Fonts"
+  },
+  "accountcolors_thread_darkpanebkgd": {
+    "message": "Dark Pane Background"
+  },
+  "accountcolors_thread_hdraccount": {
+    "message": "基于消息标头帐户的颜色（替代文件夹帐户）"
+  },
+  "accountcolors_thread_boldsubject": {
+    "message": "未读消息上的话题粗体化"
+  },
+  "accountcolors_thread_boldfrom": {
+    "message": "未读消息上的来自粗体化"
+  },
+  "accountcolors_thread_hidestripes": {
+    "message": "隐藏行网格线"
+  },
+  "accountcolors_thread_showstripes": {
+    "message": "显示行网格线"
+  },
+  "accountcolors_thread_darkerbar": {
+    "message": "暗色选择栏"
+  },
+  "accountcolors_thread_incspacing": {
+    "message": "基于话题字体大小增加行间距（即使话题字体大小未勾选）"
+  },
+  "accountcolors_thread_hoverselect": {
+    "message": "Reinstate default hover and select styles"
+  },
+  "accountcolors_thread_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_thread_colorbkgd_row_label": {
+    "message": "Color Row Background as Label in Table View on"
+  },
+  "accountcolors_thread_colorbkgd_card_label": {
+    "message": "Color Row Background as Label in Card View with"
+  },
+  "accountcolors_thread_color_unified_only": {
+    "message": "Only Color in Unified Folder"
+  },
+  "accountcolors_message_setfontstyle": {
+    "message": "话题字体样式"
+  },
+  "accountcolors_message_setfontsize": {
+    "message": "话题字体大小"
+  },
+  "accountcolors_message_setfromstyle": {
+    "message": "From Font Style"
+  },
+  "accountcolors_message_setfromsize": {
+    "message": "From Font Size"
+  },
+  "accountcolors_message_colorfont": {
+    "message": "话题字体颜色"
+  },
+  "accountcolors_message_colorbkgd": {
+    "message": "标头背景色"
+  },
+  "accountcolors_message_colorfrom": {
+    "message": "Color From Font"
+  },
+  "accountcolors_message_blackhdrlabels": {
+    "message": "Black Header Labels"
+  },
+  "accountcolors_message_whitehdrlabels": {
+    "message": "White Header Labels"
+  },
+  "accountcolors_message_hdraccount": {
+    "message": "基于消息标头帐户的颜色（文件夹帐户的替代）"
+  },
+  "accountcolors_message_defaultbkgd": {
+    "message": "Retain default light/dark background if White selected"
+  },
+  "accountcolors_message_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_message_colorbkgd_header_label": {
+    "message": "Color Header Background as Label"
+  },
+  "accountcolors_compose_setfontstyle": {
+    "message": "话题字体样式"
+  },
+  "accountcolors_compose_setfontsize": {
+    "message": "话题字体大小"
+  },
+  "accountcolors_compose_setidfontstyle": {
+    "message": "身份字体样式"
+  },
+  "accountcolors_compose_setidfontsize": {
+    "message": "身份字体大小"
+  },
+  "accountcolors_compose_colorfont": {
+    "message": "话题字体颜色"
+  },
+  "accountcolors_compose_colorbkgd": {
+    "message": "话题背景色"
+  },
+  "accountcolors_compose_colorfromfont": {
+    "message": "身份字体颜色"
+  },
+  "accountcolors_compose_colorfrombkgd": {
+    "message": "身份字体背景色"
+  },
+  "accountcolors_compose_colortofont": {
+    "message": "Color To/Cc/Bcc Fonts"
+  },
+  "accountcolors_compose_colortobkgd": {
+    "message": "收件人/抄送/密送 字体背景色"
+  },
+  "accountcolors_compose_coloratmfont": {
+    "message": "Color Attachment Font"
+  },
+  "accountcolors_compose_coloratmbkgd": {
+    "message": "附件背景色"
+  },
+  "accountcolors_compose_colorhdrfont": {
+    "message": "Color Header Font"
+  },
+  "accountcolors_compose_colorhdrbkgd": {
+    "message": "标头背景色"
+  },
+  "accountcolors_compose_blackhdrlabels": {
+    "message": "Black Header Labels"
+  },
+  "accountcolors_compose_whitehdrlabels": {
+    "message": "White Header Labels"
+  },
+  "accountcolors_compose_blackfieldfont": {
+    "message": "Black Field Fonts"
+  },
+  "accountcolors_compose_lightfieldbkgd": {
+    "message": "Light Field Backgrounds (on hover or focus)"
+  },
+  "accountcolors_compose_whitefieldfont": {
+    "message": "White Field Fonts"
+  },
+  "accountcolors_compose_darkfieldbkgd": {
+    "message": "Dark Field Backgrounds (on hover or focus)"
+  },
+  "accountcolors_compose_defaultbkgd": {
+    "message": "Retain default light/dark background if White selected"
+  },
+  "accountcolors_compose_hoverfrom": {
+    "message": "Reinstate default hover style (on From menu)"
+  },
+  "accountcolors_compose_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_compose_colorbkgd_idmenu_label": {
+    "message": "Color Identity Background in From Menu as Label"
+  },
+  "accountcolors_picker_fonttitle": {
+    "message": "字体颜色选择器"
+  },
+  "accountcolors_picker_bkgdtitle": {
+    "message": "背景颜色选择器"
+  },
+  "accountcolors_picker_sample": {
+    "message": "样例"
+  },
+  "accountcolors_picker_red": {
+    "message": "红:"
+  },
+  "accountcolors_picker_green": {
+    "message": "绿:"
+  },
+  "accountcolors_picker_blue": {
+    "message": "蓝:"
+  },
+  "accountcolors_picker_hue": {
+    "message": "色调:"
+  },
+  "accountcolors_picker_saturation": {
+    "message": "饱和度:"
+  },
+  "accountcolors_picker_value": {
+    "message": "明度:"
+  },
+  "accountcolors_picker_autobkgd": {
+    "message": "自动背景色"
+  },
+  "accountcolors_picker_applyall": {
+    "message": "Apply color to all identities"
+  },
+  "accountcolors_picker_okay": {
+    "message": "确定"
+  },
+  "accountcolors_picker_cancel": {
+    "message": "取消"
+  }
+}

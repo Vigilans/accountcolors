@@ -1,0 +1,13 @@
+/*
+ * messageStyles — about:message CSS
+ *
+ * Minimal — most styling is applied inline by the JS engine because
+ * the message header elements are frequently mutated by Thunderbird.
+ *
+ * License: MPL-2.0
+ */
+
+/* Keep the header area from collapsing when background is set */
+#messageHeader {
+    min-height: 1em;
+}

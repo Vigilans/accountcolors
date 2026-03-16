@@ -1,0 +1,338 @@
+{
+  "accountcolors_options": {
+    "message": "Inställningar för Account Colors"
+  },
+  "accountcolors_options_ak": {
+    "message": "p"
+  },
+  "accountcolors_optionstitle": {
+    "message": "Account Colors Options"
+  },
+  "accountcolors_applyprefs": {
+    "message": "Apply"
+  },
+  "accountcolors_accountcolors": {
+    "message": "Konto- &amp; identitetsfärger"
+  },
+  "accountcolors_folderpane": {
+    "message": "Mappanel"
+  },
+  "accountcolors_threadpane": {
+    "message": "Trådpanel"
+  },
+  "accountcolors_messagepane": {
+    "message": "Meddelandepanel/Flik/Fönster"
+  },
+  "accountcolors_composewindow": {
+    "message": "Skriv-fönster"
+  },
+  "accountcolors_account_account": {
+    "message": "Konto"
+  },
+  "accountcolors_account_identity": {
+    "message": "Identitet"
+  },
+  "accountcolors_account_font": {
+    "message": "Typsnitt"
+  },
+  "accountcolors_account_bkgd": {
+    "message": "Bkgr"
+  },
+  "accountcolors_account_reset": {
+    "message": "Återställ"
+  },
+  "accountcolors_folder_setfontstyle": {
+    "message": "Teckenstil för konto"
+  },
+  "accountcolors_folder_setfontsize": {
+    "message": "Teckenstorlek för konto"
+  },
+  "accountcolors_folder_colorfont": {
+    "message": "Färga kontons typsnitt"
+  },
+  "accountcolors_folder_colorbkgd": {
+    "message": "Färga kontons bakgrund"
+  },
+  "accountcolors_folder_colorfldfont": {
+    "message": "Färga mapp typsnitt"
+  },
+  "accountcolors_folder_colorfldbkgd": {
+    "message": "Färga mapp bakgrund"
+  },
+  "accountcolors_folder_colorother": {
+    "message": "Color Unread/Total/Size Fonts"
+  },
+  "accountcolors_folder_colorotherbkgd": {
+    "message": "Color Unread/Total Background"
+  },
+  "accountcolors_folder_blackrowfont": {
+    "message": "Black Row Fonts"
+  },
+  "accountcolors_folder_lightpanebkgd": {
+    "message": "Light Pane Background"
+  },
+  "accountcolors_folder_whiterowfont": {
+    "message": "White Row Fonts"
+  },
+  "accountcolors_folder_darkpanebkgd": {
+    "message": "Dark Pane Background"
+  },
+  "accountcolors_folder_defaultbkgd": {
+    "message": "Retain default light/dark background if White selected"
+  },
+  "accountcolors_folder_boldnewmail": {
+    "message": "Bold on Accounts/Folders with New Mail"
+  },
+  "accountcolors_folder_undernewmail": {
+    "message": "Underline on Accounts/Folders with New Mail"
+  },
+  "accountcolors_folder_noboldunread": {
+    "message": "Ingen fetstil på mappar med olästa meddelanden"
+  },
+  "accountcolors_folder_showlines": {
+    "message": "Visa linjer i trädet"
+  },
+  "accountcolors_folder_darkerbar": {
+    "message": "Mörkare färgning av markerat fält"
+  },
+  "accountcolors_folder_incspacing": {
+    "message": "Öka radavståndet baserat på teckenstorleken för konton (även om &quot;Teckenstorlek för konto&quot; inte är markerat)"
+  },
+  "accountcolors_folder_hoverselect": {
+    "message": "Reinstate default hover and select styles"
+  },
+  "accountcolors_folder_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_folder_colorbkgd_account_icon": {
+    "message": "Render Account Background Color as Icon Color"
+  },
+  "accountcolors_folder_colorbkgd_folder_icon": {
+    "message": "Render Folder Background Color as Icon Color"
+  },
+  "accountcolors_thread_setfontstyle": {
+    "message": "Teckenstil för ämnesrad"
+  },
+  "accountcolors_thread_setfontsize": {
+    "message": "Teckenstorlek för ämnesrad"
+  },
+  "accountcolors_thread_setfromstyle": {
+    "message": "From Font Style"
+  },
+  "accountcolors_thread_setfromsize": {
+    "message": "From Font Size"
+  },
+  "accountcolors_thread_colorfont": {
+    "message": "Färga ämnesraders typsnitt"
+  },
+  "accountcolors_thread_colorbkgd": {
+    "message": "Färga radbakgrunden"
+  },
+  "accountcolors_thread_colorfrom": {
+    "message": "Color From Font"
+  },
+  "accountcolors_thread_colorother": {
+    "message": "Color Recipient/Date/Size/Account/etc Fonts"
+  },
+  "accountcolors_thread_colorpanebkgd": {
+    "message": "Color Pane Background"
+  },
+  "accountcolors_thread_blackrowfont": {
+    "message": "Black Row Fonts"
+  },
+  "accountcolors_thread_lightpanebkgd": {
+    "message": "Light Pane Background"
+  },
+  "accountcolors_thread_whiterowfont": {
+    "message": "White Row Fonts"
+  },
+  "accountcolors_thread_darkpanebkgd": {
+    "message": "Dark Pane Background"
+  },
+  "accountcolors_thread_hdraccount": {
+    "message": "Färga baserat på meddelandehuvudets konto (istället för mappens konto)"
+  },
+  "accountcolors_thread_boldsubject": {
+    "message": "Ämne i fetstil för olästa meddelanden"
+  },
+  "accountcolors_thread_boldfrom": {
+    "message": "Avsändare i fetstil för olästa meddelanden"
+  },
+  "accountcolors_thread_hidestripes": {
+    "message": "Dölj radränder"
+  },
+  "accountcolors_thread_showstripes": {
+    "message": "Visa radränder"
+  },
+  "accountcolors_thread_darkerbar": {
+    "message": "Mörkare färgning av markerat fält"
+  },
+  "accountcolors_thread_incspacing": {
+    "message": "Öka radavståndet baserat på teckenstorleken för ämnesrader (även om &quot;Teckenstorlek för ämnesrad&quot; inte är markerat)"
+  },
+  "accountcolors_thread_hoverselect": {
+    "message": "Reinstate default hover and select styles"
+  },
+  "accountcolors_thread_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_thread_colorbkgd_row_label": {
+    "message": "Color Row Background as Label in Table View on"
+  },
+  "accountcolors_thread_colorbkgd_card_label": {
+    "message": "Color Row Background as Label in Card View with"
+  },
+  "accountcolors_thread_color_unified_only": {
+    "message": "Only Color in Unified Folder"
+  },
+  "accountcolors_message_setfontstyle": {
+    "message": "Teckenstil för ämnesrad"
+  },
+  "accountcolors_message_setfontsize": {
+    "message": "Teckenstorlek för ämnesrad"
+  },
+  "accountcolors_message_setfromstyle": {
+    "message": "From Font Style"
+  },
+  "accountcolors_message_setfromsize": {
+    "message": "From Font Size"
+  },
+  "accountcolors_message_colorfont": {
+    "message": "Färga ämnesradens typsnitt"
+  },
+  "accountcolors_message_colorbkgd": {
+    "message": "Färga meddelandehuvudets bakgrund"
+  },
+  "accountcolors_message_colorfrom": {
+    "message": "Color From Font"
+  },
+  "accountcolors_message_blackhdrlabels": {
+    "message": "Black Header Labels"
+  },
+  "accountcolors_message_whitehdrlabels": {
+    "message": "White Header Labels"
+  },
+  "accountcolors_message_hdraccount": {
+    "message": "Färga baserat på meddelandehuvudets konto (istället för mappens konto)"
+  },
+  "accountcolors_message_defaultbkgd": {
+    "message": "Retain default light/dark background if White selected"
+  },
+  "accountcolors_message_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_message_colorbkgd_header_label": {
+    "message": "Color Header Background as Label"
+  },
+  "accountcolors_compose_setfontstyle": {
+    "message": "Teckenstil för ämnesrad"
+  },
+  "accountcolors_compose_setfontsize": {
+    "message": "Teckenstorlek för ämnesrad"
+  },
+  "accountcolors_compose_setidfontstyle": {
+    "message": "Teckenstil för identitet"
+  },
+  "accountcolors_compose_setidfontsize": {
+    "message": "Teckenstorlek för identitet"
+  },
+  "accountcolors_compose_colorfont": {
+    "message": "Färga ämnesradens typsnitt"
+  },
+  "accountcolors_compose_colorbkgd": {
+    "message": "Färga ämnesradens bakgrund"
+  },
+  "accountcolors_compose_colorfromfont": {
+    "message": "Color From Font"
+  },
+  "accountcolors_compose_colorfrombkgd": {
+    "message": "Color From Background"
+  },
+  "accountcolors_compose_colortofont": {
+    "message": "Color To/Cc/Bcc Fonts"
+  },
+  "accountcolors_compose_colortobkgd": {
+    "message": "Color To/Cc/Bcc Backgrounds"
+  },
+  "accountcolors_compose_coloratmfont": {
+    "message": "Color Attachment Font"
+  },
+  "accountcolors_compose_coloratmbkgd": {
+    "message": "Color Attachment Background"
+  },
+  "accountcolors_compose_colorhdrfont": {
+    "message": "Färga meddelandehuvudets typsnitt"
+  },
+  "accountcolors_compose_colorhdrbkgd": {
+    "message": "Färga meddelandehuvudets bakgrund"
+  },
+  "accountcolors_compose_blackhdrlabels": {
+    "message": "Black Header Labels"
+  },
+  "accountcolors_compose_whitehdrlabels": {
+    "message": "White Header Labels"
+  },
+  "accountcolors_compose_blackfieldfont": {
+    "message": "Black Field Fonts"
+  },
+  "accountcolors_compose_lightfieldbkgd": {
+    "message": "Light Field Backgrounds (on hover or focus)"
+  },
+  "accountcolors_compose_whitefieldfont": {
+    "message": "White Field Fonts"
+  },
+  "accountcolors_compose_darkfieldbkgd": {
+    "message": "Dark Field Backgrounds (on hover or focus)"
+  },
+  "accountcolors_compose_defaultbkgd": {
+    "message": "Retain default light/dark background if White selected"
+  },
+  "accountcolors_compose_hoverfrom": {
+    "message": "Reinstate default hover style (on From menu)"
+  },
+  "accountcolors_compose_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_compose_colorbkgd_idmenu_label": {
+    "message": "Color Identity Background in From Menu as Label"
+  },
+  "accountcolors_picker_fonttitle": {
+    "message": "Font Color Picker"
+  },
+  "accountcolors_picker_bkgdtitle": {
+    "message": "Background Color Picker"
+  },
+  "accountcolors_picker_sample": {
+    "message": "Sample"
+  },
+  "accountcolors_picker_red": {
+    "message": "R:"
+  },
+  "accountcolors_picker_green": {
+    "message": "G:"
+  },
+  "accountcolors_picker_blue": {
+    "message": "B:"
+  },
+  "accountcolors_picker_hue": {
+    "message": "H:"
+  },
+  "accountcolors_picker_saturation": {
+    "message": "S:"
+  },
+  "accountcolors_picker_value": {
+    "message": "V:"
+  },
+  "accountcolors_picker_autobkgd": {
+    "message": "Automatic background color"
+  },
+  "accountcolors_picker_applyall": {
+    "message": "Apply color to all identities"
+  },
+  "accountcolors_picker_okay": {
+    "message": "OK"
+  },
+  "accountcolors_picker_cancel": {
+    "message": "Cancel"
+  }
+}

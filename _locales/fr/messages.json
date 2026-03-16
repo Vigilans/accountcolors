@@ -1,0 +1,338 @@
+{
+  "accountcolors_options": {
+    "message": "Options de Account Colors"
+  },
+  "accountcolors_options_ak": {
+    "message": "p"
+  },
+  "accountcolors_optionstitle": {
+    "message": "Options de Account Colors"
+  },
+  "accountcolors_applyprefs": {
+    "message": "Appliquer"
+  },
+  "accountcolors_accountcolors": {
+    "message": "Couleurs du compte / de l'identité"
+  },
+  "accountcolors_folderpane": {
+    "message": "Panneau des dossiers"
+  },
+  "accountcolors_threadpane": {
+    "message": "Panneau des sujets"
+  },
+  "accountcolors_messagepane": {
+    "message": "Fenêtre / onglet / panneau des messages"
+  },
+  "accountcolors_composewindow": {
+    "message": "Fenêtre de rédaction"
+  },
+  "accountcolors_account_account": {
+    "message": "Compte"
+  },
+  "accountcolors_account_identity": {
+    "message": "Identité"
+  },
+  "accountcolors_account_font": {
+    "message": "Police"
+  },
+  "accountcolors_account_bkgd": {
+    "message": "Fond"
+  },
+  "accountcolors_account_reset": {
+    "message": "Réinitialiser"
+  },
+  "accountcolors_folder_setfontstyle": {
+    "message": "Style de police pour le compte"
+  },
+  "accountcolors_folder_setfontsize": {
+    "message": "Taille de la police du compte"
+  },
+  "accountcolors_folder_colorfont": {
+    "message": "Couleur de la police des comptes"
+  },
+  "accountcolors_folder_colorbkgd": {
+    "message": "Couleur de fond des comptes"
+  },
+  "accountcolors_folder_colorfldfont": {
+    "message": "Couleur de la police des dossier"
+  },
+  "accountcolors_folder_colorfldbkgd": {
+    "message": "Couleur de fond des dossier"
+  },
+  "accountcolors_folder_colorother": {
+    "message": "Color Unread/Total/Size Fonts"
+  },
+  "accountcolors_folder_colorotherbkgd": {
+    "message": "Color Unread/Total Background"
+  },
+  "accountcolors_folder_blackrowfont": {
+    "message": "Black Row Fonts"
+  },
+  "accountcolors_folder_lightpanebkgd": {
+    "message": "Light Pane Background"
+  },
+  "accountcolors_folder_whiterowfont": {
+    "message": "White Row Fonts"
+  },
+  "accountcolors_folder_darkpanebkgd": {
+    "message": "Dark Pane Background"
+  },
+  "accountcolors_folder_defaultbkgd": {
+    "message": "Retain default light/dark background if White selected"
+  },
+  "accountcolors_folder_boldnewmail": {
+    "message": "Mettre en gras les comptes/dossiers avec un nouveau message"
+  },
+  "accountcolors_folder_undernewmail": {
+    "message": "Souligner les comptes/dossiers avec un nouveau message"
+  },
+  "accountcolors_folder_noboldunread": {
+    "message": "Ne pas mettre en gras les dossiers comportant des messages non lus"
+  },
+  "accountcolors_folder_showlines": {
+    "message": "Montrer les lignes d'arborescence"
+  },
+  "accountcolors_folder_darkerbar": {
+    "message": "Barre de sélection plus sombre"
+  },
+  "accountcolors_folder_incspacing": {
+    "message": "Augmenter l'espacement entre les lignes en fonction de la taille de la police des comptes (même si cette taille n'est pas sélectionnée)"
+  },
+  "accountcolors_folder_hoverselect": {
+    "message": "Reinstate default hover and select styles"
+  },
+  "accountcolors_folder_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_folder_colorbkgd_account_icon": {
+    "message": "Render Account Background Color as Icon Color"
+  },
+  "accountcolors_folder_colorbkgd_folder_icon": {
+    "message": "Render Folder Background Color as Icon Color"
+  },
+  "accountcolors_thread_setfontstyle": {
+    "message": "Style de la police du sujet"
+  },
+  "accountcolors_thread_setfontsize": {
+    "message": "Taille de la police du sujet"
+  },
+  "accountcolors_thread_setfromstyle": {
+    "message": "Style de la police du champ expéditeur"
+  },
+  "accountcolors_thread_setfromsize": {
+    "message": "Taille de la police du champ expéditeur"
+  },
+  "accountcolors_thread_colorfont": {
+    "message": "Couleur de la police du sujet"
+  },
+  "accountcolors_thread_colorbkgd": {
+    "message": "Couleur de fond des lignes"
+  },
+  "accountcolors_thread_colorfrom": {
+    "message": "Couleur de fond de du champ expéditeur"
+  },
+  "accountcolors_thread_colorother": {
+    "message": "Couleur des polices pour Destinataire/Date/Taille/Compte/etc"
+  },
+  "accountcolors_thread_colorpanebkgd": {
+    "message": "Color Pane Background"
+  },
+  "accountcolors_thread_blackrowfont": {
+    "message": "Black Row Fonts"
+  },
+  "accountcolors_thread_lightpanebkgd": {
+    "message": "Light Pane Background"
+  },
+  "accountcolors_thread_whiterowfont": {
+    "message": "White Row Fonts"
+  },
+  "accountcolors_thread_darkpanebkgd": {
+    "message": "Dark Pane Background"
+  },
+  "accountcolors_thread_hdraccount": {
+    "message": "Couleur basée sur l'en-tête du message et non le dossier du compte"
+  },
+  "accountcolors_thread_boldsubject": {
+    "message": "Gras pour l'objet des messages non lus"
+  },
+  "accountcolors_thread_boldfrom": {
+    "message": "Gras pour l'expéditeur des messages non lus"
+  },
+  "accountcolors_thread_hidestripes": {
+    "message": "Cacher les lignes des colonnes"
+  },
+  "accountcolors_thread_showstripes": {
+    "message": "Montrer les hachures de ligne"
+  },
+  "accountcolors_thread_darkerbar": {
+    "message": "Barre de sélection plus sombre"
+  },
+  "accountcolors_thread_incspacing": {
+    "message": "Augmenter l'espacement entre les lignes en fonction de la taille de la police du sujet (même si cette taille n'est pas sélectionnée)"
+  },
+  "accountcolors_thread_hoverselect": {
+    "message": "Reinstate default hover and select styles"
+  },
+  "accountcolors_thread_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_thread_colorbkgd_row_label": {
+    "message": "Color Row Background as Label in Table View on"
+  },
+  "accountcolors_thread_colorbkgd_card_label": {
+    "message": "Color Row Background as Label in Card View with"
+  },
+  "accountcolors_thread_color_unified_only": {
+    "message": "Only Color in Unified Folder"
+  },
+  "accountcolors_message_setfontstyle": {
+    "message": "Style de la police du sujet"
+  },
+  "accountcolors_message_setfontsize": {
+    "message": "Taille de la police du sujet"
+  },
+  "accountcolors_message_setfromstyle": {
+    "message": "From Font Style"
+  },
+  "accountcolors_message_setfromsize": {
+    "message": "From Font Size"
+  },
+  "accountcolors_message_colorfont": {
+    "message": "Couleur de la police du sujet"
+  },
+  "accountcolors_message_colorbkgd": {
+    "message": "Couleur de fond de l'en-tête"
+  },
+  "accountcolors_message_colorfrom": {
+    "message": "Color From Font"
+  },
+  "accountcolors_message_blackhdrlabels": {
+    "message": "Black Header Labels"
+  },
+  "accountcolors_message_whitehdrlabels": {
+    "message": "White Header Labels"
+  },
+  "accountcolors_message_hdraccount": {
+    "message": "Couleur basée sur l'en-tête du message et non le dossier du compte"
+  },
+  "accountcolors_message_defaultbkgd": {
+    "message": "Retain default light/dark background if White selected"
+  },
+  "accountcolors_message_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_message_colorbkgd_header_label": {
+    "message": "Color Header Background as Label"
+  },
+  "accountcolors_compose_setfontstyle": {
+    "message": "Style de la police du sujet"
+  },
+  "accountcolors_compose_setfontsize": {
+    "message": "Taille de la police du sujet"
+  },
+  "accountcolors_compose_setidfontstyle": {
+    "message": "Style de la police de l'identité"
+  },
+  "accountcolors_compose_setidfontsize": {
+    "message": "Taille de la police de l'identité"
+  },
+  "accountcolors_compose_colorfont": {
+    "message": "Couleur de la police du sujet"
+  },
+  "accountcolors_compose_colorbkgd": {
+    "message": "Couleur de fond du sujet"
+  },
+  "accountcolors_compose_colorfromfont": {
+    "message": "Couleur de la police de l'expéditeur"
+  },
+  "accountcolors_compose_colorfrombkgd": {
+    "message": "Couleur de fond de l'expéditeur"
+  },
+  "accountcolors_compose_colortofont": {
+    "message": "Color To/Cc/Bcc Fonts"
+  },
+  "accountcolors_compose_colortobkgd": {
+    "message": "Couleur des fonds Pour/Cc/Bcc"
+  },
+  "accountcolors_compose_coloratmfont": {
+    "message": "Color Attachment Font"
+  },
+  "accountcolors_compose_coloratmbkgd": {
+    "message": "Couleur de fond des pièces jointes"
+  },
+  "accountcolors_compose_colorhdrfont": {
+    "message": "Color Header Font"
+  },
+  "accountcolors_compose_colorhdrbkgd": {
+    "message": "Couleur de fond de l'en-tête"
+  },
+  "accountcolors_compose_blackhdrlabels": {
+    "message": "Black Header Labels"
+  },
+  "accountcolors_compose_whitehdrlabels": {
+    "message": "White Header Labels"
+  },
+  "accountcolors_compose_blackfieldfont": {
+    "message": "Black Field Fonts"
+  },
+  "accountcolors_compose_lightfieldbkgd": {
+    "message": "Light Field Backgrounds (on hover or focus)"
+  },
+  "accountcolors_compose_whitefieldfont": {
+    "message": "White Field Fonts"
+  },
+  "accountcolors_compose_darkfieldbkgd": {
+    "message": "Dark Field Backgrounds (on hover or focus)"
+  },
+  "accountcolors_compose_defaultbkgd": {
+    "message": "Retain default light/dark background if White selected"
+  },
+  "accountcolors_compose_hoverfrom": {
+    "message": "Reinstate default hover style (on From menu)"
+  },
+  "accountcolors_compose_colorbkgd_gradient": {
+    "message": "Color Background as Gradient"
+  },
+  "accountcolors_compose_colorbkgd_idmenu_label": {
+    "message": "Color Identity Background in From Menu as Label"
+  },
+  "accountcolors_picker_fonttitle": {
+    "message": "Palette de couleurs de la police"
+  },
+  "accountcolors_picker_bkgdtitle": {
+    "message": "Palette de couleurs du fond"
+  },
+  "accountcolors_picker_sample": {
+    "message": "Exemple"
+  },
+  "accountcolors_picker_red": {
+    "message": "R :"
+  },
+  "accountcolors_picker_green": {
+    "message": "V :"
+  },
+  "accountcolors_picker_blue": {
+    "message": "B :"
+  },
+  "accountcolors_picker_hue": {
+    "message": "T :"
+  },
+  "accountcolors_picker_saturation": {
+    "message": "S :"
+  },
+  "accountcolors_picker_value": {
+    "message": "V :"
+  },
+  "accountcolors_picker_autobkgd": {
+    "message": "Couleur d'arrière-plan automatique"
+  },
+  "accountcolors_picker_applyall": {
+    "message": "Apply color to all identities"
+  },
+  "accountcolors_picker_okay": {
+    "message": "OK"
+  },
+  "accountcolors_picker_cancel": {
+    "message": "Annuler"
+  }
+}
