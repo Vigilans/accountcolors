@@ -44,6 +44,7 @@ pref("extensions.accountcolors.folder-darkerbar", false);
 pref("extensions.accountcolors.folder-incspacing", false);
 pref("extensions.accountcolors.folder-hoverselect", true);
 pref("extensions.accountcolors.folder-colorbkgd-gradient", false);
+pref("extensions.accountcolors.folder-colorbkgd-gradient-reverse", false);
 pref("extensions.accountcolors.folder-colorbkgd-account-icon", true);
 pref("extensions.accountcolors.folder-colorbkgd-folder-icon", false);
 
@@ -74,6 +75,7 @@ pref("extensions.accountcolors.thread-darkerbar", false);
 pref("extensions.accountcolors.thread-incspacing", false);
 pref("extensions.accountcolors.thread-hoverselect", true);
 pref("extensions.accountcolors.thread-colorbkgd-gradient", false);
+pref("extensions.accountcolors.thread-colorbkgd-gradient-reverse", false);
 pref("extensions.accountcolors.thread-colorbkgd-row-label", false);
 pref("extensions.accountcolors.thread-row-label-position", 0);
 pref("extensions.accountcolors.thread-row-label-width", 2);
@@ -100,6 +102,7 @@ pref("extensions.accountcolors.message-whitehdrlabels", false);
 pref("extensions.accountcolors.message-hdraccount", false);
 pref("extensions.accountcolors.message-defaultbkgd", false);
 pref("extensions.accountcolors.message-colorbkgd-gradient", false);
+pref("extensions.accountcolors.message-colorbkgd-gradient-reverse", false);
 pref("extensions.accountcolors.message-colorbkgd-header-label", false);
 pref("extensions.accountcolors.message-header-label-width", 4);
 
@@ -132,6 +135,7 @@ pref("extensions.accountcolors.compose-darkfieldbkgd", false);
 pref("extensions.accountcolors.compose-defaultbkgd", false);
 pref("extensions.accountcolors.compose-hoverfrom", true);
 pref("extensions.accountcolors.compose-colorbkgd-gradient", false);
+pref("extensions.accountcolors.compose-colorbkgd-gradient-reverse", false);
 pref("extensions.accountcolors.compose-colorbkgd-idmenu-label", false);
 pref("extensions.accountcolors.compose-idmenu-label-width", 4);
 

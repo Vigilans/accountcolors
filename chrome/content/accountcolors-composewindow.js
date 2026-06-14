@@ -79,6 +79,7 @@ var accountColorsCompose = {
   composeWindow: function (event, clear = false) {
     var i, menulist, accountidkey, menupopup, menuitem;
     var defaultbkgd, bkgdcolor, fontcolor, element, idkey, fontstyle, fontsize, width;
+    var gradientDir = accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient-reverse") ? "to left" : "to right";
 
     menulist = document.getElementById("msgIdentity");
 
@@ -110,7 +111,7 @@ var accountColorsCompose = {
       if (defaultbkgd) {
         element.style.backgroundColor = "";
       } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
-        element.style.setProperty("background-image", "linear-gradient(to right, " + bkgdcolor + ", transparent 100%", "important");
+        element.style.setProperty("background-image", "linear-gradient(" + gradientDir + ", " + bkgdcolor + ", transparent 100%", "important");
       } else {
         element.style.setProperty("background-color", bkgdcolor, "important");
       }
@@ -178,7 +179,7 @@ var accountColorsCompose = {
         menulist.style.backgroundColor = "";
         menulist.style.backgroundImage = "";
       } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
-        menulist.style.backgroundImage = "linear-gradient(to right, " + bkgdcolor + ", transparent 100%)";
+        menulist.style.backgroundImage = "linear-gradient(" + gradientDir + ", " + bkgdcolor + ", transparent 100%)";
         menulist.style.backgroundColor = "";
       } else if (defaultbkgd) {
         menulist = document.getElementById("msgIdentity");
@@ -205,7 +206,7 @@ var accountColorsCompose = {
             menuitem.style.backgroundColor = "";
             menuitem.style.setProperty("border-radius", "0", "");
           } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
-            menuitem.style.backgroundImage = "linear-gradient(to right, " + bkgdcolor + ", transparent 100%)";
+            menuitem.style.backgroundImage = "linear-gradient(" + gradientDir + ", " + bkgdcolor + ", transparent 100%)";
             menuitem.style.backgroundColor = "";
             menuitem.style.removeProperty("border-radius");
           } else {
@@ -254,9 +255,15 @@ var accountColorsCompose = {
         document.documentElement.style.removeProperty("--ac-colortobkgd");
         document.getElementById("msgcomposeWindow").removeAttribute("ac-colortobkgd");
         document.getElementById("msgcomposeWindow").removeAttribute("ac-colortobkgd-asgradient");
+        document.getElementById("msgcomposeWindow").removeAttribute("ac-colortobkgd-asgradient-reverse");
       } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
         document.documentElement.style.setProperty("--ac-colortobkgd", bkgdcolor, "");
         document.getElementById("msgcomposeWindow").setAttribute("ac-colortobkgd-asgradient", "");
+        if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient-reverse")) {
+          document.getElementById("msgcomposeWindow").setAttribute("ac-colortobkgd-asgradient-reverse", "");
+        } else {
+          document.getElementById("msgcomposeWindow").removeAttribute("ac-colortobkgd-asgradient-reverse");
+        }
       } else {
         document.documentElement.style.setProperty("--ac-colortobkgd", bkgdcolor, "");
         document.getElementById("msgcomposeWindow").setAttribute("ac-colortobkgd", "");
@@ -265,6 +272,7 @@ var accountColorsCompose = {
       document.documentElement.style.removeProperty("--ac-colortobkgd");
       document.getElementById("msgcomposeWindow").removeAttribute("ac-colortobkgd");
       document.getElementById("msgcomposeWindow").removeAttribute("ac-colortobkgd-asgradient");
+      document.getElementById("msgcomposeWindow").removeAttribute("ac-colortobkgd-asgradient-reverse");
     }
 
     /* Color attachment font */
@@ -288,7 +296,7 @@ var accountColorsCompose = {
       if (defaultbkgd) {
         element.style.backgroundColor = "";
       } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
-        element.style.setProperty("background-image", "linear-gradient(to right, " + bkgdcolor + ", transparent 100%", "important");
+        element.style.setProperty("background-image", "linear-gradient(" + gradientDir + ", " + bkgdcolor + ", transparent 100%", "important");
       } else {
         element.style.setProperty("background-color", bkgdcolor, "important");
       }
@@ -338,7 +346,7 @@ var accountColorsCompose = {
         if (defaultbkgd) {
           element.style.backgroundColor = "";
         } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
-          element.style.setProperty("background-image", "linear-gradient(to right, " + bkgdcolor + ", transparent 100%", "important");
+          element.style.setProperty("background-image", "linear-gradient(" + gradientDir + ", " + bkgdcolor + ", transparent 100%", "important");
         } else {
           element.style.setProperty("background-color", bkgdcolor, "important");
         }
@@ -349,7 +357,7 @@ var accountColorsCompose = {
         if (defaultbkgd) {
           element.style.backgroundColor = "";
         } else if (accountColorsCompose.prefs.getBoolPref("compose-colorbkgd-gradient")) {
-          element.style.setProperty("background-image", "linear-gradient(to right, " + bkgdcolor + ", transparent 100%", "important");
+          element.style.setProperty("background-image", "linear-gradient(" + gradientDir + ", " + bkgdcolor + ", transparent 100%", "important");
         } else {
           element.style.setProperty("background-color", bkgdcolor, "important");
         }

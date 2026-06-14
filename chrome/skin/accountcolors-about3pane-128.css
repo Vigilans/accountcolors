@@ -64,6 +64,16 @@
     background-color: unset;
 }
 
+#folderTree[ac-bkgdasgradient][ac-bkgdasgradient-reverse] li[is="folder-tree-row"]:not(.selected) > .container {
+    background-image: linear-gradient(to left,
+        var(--ac-bkgd-color),
+        color-mix(in srgb, var(--ac-bkgd-color) 80%, transparent) 4%,
+        color-mix(in srgb, var(--ac-bkgd-color) 60%, transparent) 8%,
+        color-mix(in srgb, var(--ac-bkgd-color) 40%, transparent) 16%,
+        color-mix(in srgb, var(--ac-bkgd-color) 20%, transparent) 32%,
+        transparent 100%);
+}
+
 /* Folder Pane - Font Style / Font Weight */
 
 #folderTree li[is="folder-tree-row"][ac-fsw="normal"] { font-style: normal; font-weight:normal; }
@@ -210,9 +220,17 @@
     background-color: unset;
 }
 
+#threadPane[ac-bkgdasgradient][ac-bkgdasgradient-reverse] tr:not(.selected) .card-container {
+    background-image: linear-gradient(to left, var(--ac-bkgd-color), transparent 100%);
+}
+
 #threadPane[ac-colorpanebkgd][ac-bkgdasgradient] > #threadTree {
     background-image: linear-gradient(to right, var(--ac-bkgd-color, var(--tree-view-bg)), transparent 100%);
     background-color: var(--tree-view-bg);
+}
+
+#threadPane[ac-colorpanebkgd][ac-bkgdasgradient][ac-bkgdasgradient-reverse] > #threadTree {
+    background-image: linear-gradient(to left, var(--ac-bkgd-color, var(--tree-view-bg)), transparent 100%);
 }
 
 /* Thread Pane - Font Style / Font Weight */

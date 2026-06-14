@@ -213,7 +213,8 @@ var accountColorsAboutMessage = {
       } else if (accountColorsAboutMessage.prefs.getBoolPref("message-colorbkgd-gradient")) {
         element = document.getElementById("messageHeader");
         if (element != null) {
-          element.style.backgroundImage = "linear-gradient(to right, " + bkgdcolor + " 0%, transparent 100%)";
+          var gradientDir = accountColorsAboutMessage.prefs.getBoolPref("message-colorbkgd-gradient-reverse") ? "to left" : "to right";
+          element.style.backgroundImage = "linear-gradient(" + gradientDir + ", " + bkgdcolor + " 0%, transparent 100%)";
           element.style.backgroundColor = "";
         }
       } else {
