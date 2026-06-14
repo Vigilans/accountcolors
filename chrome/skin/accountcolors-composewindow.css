@@ -215,9 +215,19 @@
     background-image: linear-gradient(to right, var(--ac-colortobkgd), transparent 100%);
 }
 
+:root[ac-colortobkgd-asgradient][ac-colortobkgd-asgradient-reverse] #addressingWidget textbox
+{
+    background-image: linear-gradient(to left, var(--ac-colortobkgd), transparent 100%);
+}
+
 :root[ac-colortobkgd-asgradient] #recipientsContainer .input-container
 {
     background-image: linear-gradient(to right, var(--ac-colortobkgd), transparent 100%);
+}
+
+:root[ac-colortobkgd-asgradient][ac-colortobkgd-asgradient-reverse] #recipientsContainer .input-container
+{
+    background-image: linear-gradient(to left, var(--ac-colortobkgd), transparent 100%);
 }
 
 /* Attachment font color */

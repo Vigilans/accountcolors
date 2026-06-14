@@ -488,6 +488,21 @@ var accountColorsOptions = {
       checkbox.checked = false;
     }
 
+    menulist = document.getElementById("accountcolors-folder-colorbkgd-gradient-direction");
+    menulist.disabled = !checkbox.checked;
+    menulist.appendItem("Left to Right", 0);
+    menulist.appendItem("Right to Left", 1);
+    try {
+      if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+        value = accountColorsOptions.prefs.getBoolPref("folder-colorbkgd-gradient-reverse") ? 1 : 0;
+        menulist.selectedIndex = value;
+      } else {
+        menulist.style.display = "none";
+      }
+    } catch (e) {
+      menulist.selectedIndex = 0;
+    }
+
     checkbox = document.getElementById("accountcolors-folder-colorbkgd-account-icon");
     try {
       if (accountColorsUtilities.thunderbirdVersion.major > 102) {
@@ -768,6 +783,21 @@ var accountColorsOptions = {
       checkbox.checked = false;
     }
 
+    menulist = document.getElementById("accountcolors-thread-colorbkgd-gradient-direction");
+    menulist.disabled = !checkbox.checked;
+    menulist.appendItem("Left to Right", 0);
+    menulist.appendItem("Right to Left", 1);
+    try {
+      if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+        value = accountColorsOptions.prefs.getBoolPref("thread-colorbkgd-gradient-reverse") ? 1 : 0;
+        menulist.selectedIndex = value;
+      } else {
+        menulist.style.display = "none";
+      }
+    } catch (e) {
+      menulist.selectedIndex = 0;
+    }
+
     checkbox = document.getElementById("accountcolors-thread-colorbkgd-row-label");
     try {
       if (accountColorsUtilities.thunderbirdVersion.major > 102) {
@@ -1045,6 +1075,21 @@ var accountColorsOptions = {
       }
     } catch (e) {
       checkbox.checked = false;
+    }
+
+    menulist = document.getElementById("accountcolors-message-colorbkgd-gradient-direction");
+    menulist.disabled = !checkbox.checked;
+    menulist.appendItem("Left to Right", 0);
+    menulist.appendItem("Right to Left", 1);
+    try {
+      if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+        value = accountColorsOptions.prefs.getBoolPref("message-colorbkgd-gradient-reverse") ? 1 : 0;
+        menulist.selectedIndex = value;
+      } else {
+        menulist.style.display = "none";
+      }
+    } catch (e) {
+      menulist.selectedIndex = 0;
     }
 
     checkbox = document.getElementById("accountcolors-message-colorbkgd-header-label");
@@ -1356,6 +1401,21 @@ var accountColorsOptions = {
       checkbox.checked = false;
     }
 
+    menulist = document.getElementById("accountcolors-compose-colorbkgd-gradient-direction");
+    menulist.disabled = !checkbox.checked;
+    menulist.appendItem("Left to Right", 0);
+    menulist.appendItem("Right to Left", 1);
+    try {
+      if (accountColorsUtilities.thunderbirdVersion.major > 102) {
+        value = accountColorsOptions.prefs.getBoolPref("compose-colorbkgd-gradient-reverse") ? 1 : 0;
+        menulist.selectedIndex = value;
+      } else {
+        menulist.style.display = "none";
+      }
+    } catch (e) {
+      menulist.selectedIndex = 0;
+    }
+
     checkbox = document.getElementById("accountcolors-compose-colorbkgd-idmenu-label");
     try {
       if (accountColorsUtilities.thunderbirdVersion.major > 102) {
@@ -1438,6 +1498,7 @@ var accountColorsOptions = {
     accountColorsOptions.prefs.setBoolPref("folder-incspacing", document.getElementById("accountcolors-folder-incspacing").checked);
     accountColorsOptions.prefs.setBoolPref("folder-hoverselect", document.getElementById("accountcolors-folder-hoverselect").checked);
     accountColorsOptions.prefs.setBoolPref("folder-colorbkgd-gradient", document.getElementById("accountcolors-folder-colorbkgd-gradient").checked);
+    accountColorsOptions.prefs.setBoolPref("folder-colorbkgd-gradient-reverse", document.getElementById("accountcolors-folder-colorbkgd-gradient-direction").value == 1);
     accountColorsOptions.prefs.setBoolPref("folder-colorbkgd-account-icon", document.getElementById("accountcolors-folder-colorbkgd-account-icon").checked);
     accountColorsOptions.prefs.setBoolPref("folder-colorbkgd-folder-icon", document.getElementById("accountcolors-folder-colorbkgd-folder-icon").checked);
 
@@ -1468,6 +1529,7 @@ var accountColorsOptions = {
     accountColorsOptions.prefs.setBoolPref("thread-incspacing", document.getElementById("accountcolors-thread-incspacing").checked);
     accountColorsOptions.prefs.setBoolPref("thread-hoverselect", document.getElementById("accountcolors-thread-hoverselect").checked);
     accountColorsOptions.prefs.setBoolPref("thread-colorbkgd-gradient", document.getElementById("accountcolors-thread-colorbkgd-gradient").checked);
+    accountColorsOptions.prefs.setBoolPref("thread-colorbkgd-gradient-reverse", document.getElementById("accountcolors-thread-colorbkgd-gradient-direction").value == 1);
     accountColorsOptions.prefs.setBoolPref("thread-colorbkgd-row-label", document.getElementById("accountcolors-thread-colorbkgd-row-label").checked);
     accountColorsOptions.prefs.setIntPref("thread-row-label-position", document.getElementById("accountcolors-thread-row-label-position").value);
     accountColorsOptions.prefs.setIntPref("thread-row-label-width", document.getElementById("accountcolors-thread-row-label-width").value);
@@ -1494,6 +1556,7 @@ var accountColorsOptions = {
     // accountColorsOptions.prefs.setBoolPref("message-defaultbkgd", document.getElementById("accountcolors-message-defaultbkgd").checked);
     accountColorsOptions.prefs.setBoolPref("message-hdraccount", document.getElementById("accountcolors-message-hdraccount").checked);
     accountColorsOptions.prefs.setBoolPref("message-colorbkgd-gradient", document.getElementById("accountcolors-message-colorbkgd-gradient").checked);
+    accountColorsOptions.prefs.setBoolPref("message-colorbkgd-gradient-reverse", document.getElementById("accountcolors-message-colorbkgd-gradient-direction").value == 1);
     accountColorsOptions.prefs.setBoolPref("message-colorbkgd-header-label", document.getElementById("accountcolors-message-colorbkgd-header-label").checked);
     accountColorsOptions.prefs.setIntPref("message-header-label-width", document.getElementById("accountcolors-message-header-label-width").value);
 
@@ -1526,6 +1589,7 @@ var accountColorsOptions = {
     // accountColorsOptions.prefs.setBoolPref("compose-defaultbkgd", document.getElementById("accountcolors-compose-defaultbkgd").checked);
     accountColorsOptions.prefs.setBoolPref("compose-hoverfrom", document.getElementById("accountcolors-compose-hoverfrom").checked);
     accountColorsOptions.prefs.setBoolPref("compose-colorbkgd-gradient", document.getElementById("accountcolors-compose-colorbkgd-gradient").checked);
+    accountColorsOptions.prefs.setBoolPref("compose-colorbkgd-gradient-reverse", document.getElementById("accountcolors-compose-colorbkgd-gradient-direction").value == 1);
     accountColorsOptions.prefs.setBoolPref("compose-colorbkgd-idmenu-label", document.getElementById("accountcolors-compose-colorbkgd-idmenu-label").checked);
     accountColorsOptions.prefs.setIntPref("compose-idmenu-label-width", document.getElementById("accountcolors-compose-idmenu-label-width").value);
   },
