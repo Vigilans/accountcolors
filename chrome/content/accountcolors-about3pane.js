@@ -776,6 +776,12 @@ var accountColorsAbout3Pane_102 = {
               fontcolor = accountColorsUtilities.fontColorPref(accountidkey);
               props += " " + "ac-fc-" + fontcolor.substr(1, 6);
             }
+
+            /* Bold from on unread messages */
+
+            if (accountColorsAbout3Pane.prefs.getBoolPref("thread-boldfrom") && props.includes(" incoming")) {
+              props += " " + "ac-boldfrom";
+            }
           } /* any other column */ else {
             /* add extra properties for recipient/date/size/account/etc (other) color */
             /* required to select tree element styles defined in accountcolors-messengerwindow[-generated].css */
@@ -1490,6 +1496,17 @@ var accountColorsAbout3Pane_115 = {
             element.style.setProperty("--ac-font-color", fontcolor);
           } else {
             element.style.removeProperty("--ac-font-color");
+          }
+
+          /* Bold from on unread messages */
+
+          if (
+            accountColorsAbout3Pane.prefs.getBoolPref("thread-boldfrom") &&
+            !this.dataset.properties.split(" ").includes("outgoing")
+          ) {
+            element.setAttribute("ac-boldfrom", "");
+          } else {
+            element.removeAttribute("ac-boldfrom");
           }
 
           continue;
