@@ -165,6 +165,21 @@
 
 /* Thread Pane - Font Colors / Background Colors */
 
+/* Reinstate default font and background colors for selected and hover rows */
+
+[is="tree-view-table-body"]:focus > tr.selected,
+[is="tree-view-table-body"]:focus-within tr.selected,
+[is="tree-view-table-body"] tr.selected:focus-within {
+    background-color: var(--tag-color, var(--listbox-focused-selected-bg)) !important;
+    color: var(--tag-contrast-color, var(--listbox-selected-color)) !important;
+}
+
+[is="tree-view-table-body"]:focus tr.selected *,
+[is="tree-view-table-body"]:focus-within tr.selected *,
+[is="tree-view-table-body"] tr.selected:focus-within * {
+    color: inherit !important;
+}
+
 #threadTree tr[is="thread-row"]:not(.selected) > td, #threadTree tr[is="thread-card"]:not(.selected) .subject {
     color: var(--tag-color, var(--ac-font-color, currentColor));
 }
