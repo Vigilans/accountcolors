@@ -1371,7 +1371,7 @@ var accountColorsAbout3Pane_115 = {
       /* Enable coloring only in Unified folder if specified */
 
       if (accountColorsAbout3Pane.prefs.getBoolPref("thread-color-unified-only")) {
-        coloringDisabled = !!window.gFolder && window.gFolder.server.hostName != "smart mailboxes";
+        coloringDisabled = !!window.gFolder && (window.gFolder.server.hostname ?? window.gFolder.server.hostName) != "smart mailboxes";
       }
 
       /* Set row properties */
@@ -1555,7 +1555,7 @@ var accountColorsAbout3Pane_115 = {
       /* Enable coloring only in Unified folder if specified */
 
       if (accountColorsAbout3Pane.prefs.getBoolPref("thread-color-unified-only")) {
-        coloringDisabled = !!window.gFolder && window.gFolder.server.hostName != "smart mailboxes";
+        coloringDisabled = !!window.gFolder && (window.gFolder.server.hostname ?? window.gFolder.server.hostName) != "smart mailboxes";
       }
 
       /* Set card properties */
